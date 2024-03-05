@@ -102,14 +102,30 @@
           
         </section>
 
-        <section class="select_plan hidden">
+        <section class="select_plan p-5 flex flex-col gap-4">
           <h2 class="text-3xl font-bold">Select your plan</h2>
           <p class=" text-2xl">You have the option of monthly or yearly billing.</p>
-          <div class="arcade flex md:flex-col">
+          <div class="select_box arcade flex md:flex-col gap-4 px-4 py-2">
             <img src="assets/images/icon-arcade.svg" alt="">
             <div class="content">
-              <h4>Arcade</h4>
+              <h4 class="font-bold">Arcade</h4>
               <p>$9/mo</p>
+            </div>
+          </div>
+
+          <div class="select_box arcade flex md:flex-col gap-4 px-4 py-2">
+            <img src="assets/images/icon-advanced.svg" alt="">
+            <div class="content">
+              <h4 class="font-bold">Advance</h4>
+              <p>$12/mo</p>
+            </div>
+          </div>
+
+          <div class="select_box arcade flex md:flex-col gap-4 px-4 py-2">
+            <img src="assets/images/icon-pro.svg" alt="">
+            <div class="content">
+              <h4 class="font-bold">Pro</h4>
+              <p>$15/mo</p>
             </div>
           </div>
 
@@ -122,7 +138,7 @@
           Monthly
           Yearly
 
-          <div class="inputbx">
+          <div class="inputbx flex justify-between">
             <input type="button" value="Go Back">
             <input type="button" value="Next Step">
 

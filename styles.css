@@ -166,6 +166,37 @@ main .personal_info .btnbx input{
     bottom: 0;
 }
 
+
+main .select_plan {
+    width: 95%;
+    height: fit-content;
+    position: absolute;
+    top: 7.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--Alabaster);
+    background-color: red;
+    border-radius:  10px;
+}
+main .select_plan .select_box{
+    border: 1px solid var(--Cool_gray);
+    border-radius: 5px;
+}
+main .select_plan input{
+    height: 3rem;
+    width: 100%;
+    padding: 0 10px;
+    border: 1px solid var(--Cool_gray);
+    border-radius: 5px;
+}
+main .select_plan .btnbx input{
+    width: 10rem;
+    background-color: var(--Marine_blue);
+    color: var(--Alabaster);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
 @media only screen and (min-width: 768px){
     body{
         justify-content: center;
