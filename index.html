@@ -71,7 +71,7 @@
 
     <main>
       <form action="" class="flex">
-        <section class="personal_info flex flex-col gap-4 p-8">
+        <section class="personal_info flex flex-col gap-4 p-8 opacity-0">
           <header>
             <h2 class="text-3xl font-bold">Personal info</h2>
             <p class=" text-lg">Please provide your name, email address, and phone number.</p>
@@ -93,58 +93,62 @@
               <input type="text" id="phone" placeholder="+1234567890">
             </div>
 
-
+            <!-- 
             <div class="btnbx  w-full flex justify-end mt-10">
               <input type="submit" value="Next Step">
-            </div>
+            </div> -->
           </div>
 
-          
+
         </section>
 
-        <section class="select_plan p-5 flex flex-col gap-4">
+        <section class="select_plan p-5 py-6 flex flex-col gap-4">
           <h2 class="text-3xl font-bold">Select your plan</h2>
-          <p class=" text-2xl">You have the option of monthly or yearly billing.</p>
-          <div class="select_box arcade flex md:flex-col gap-4 px-4 py-2">
-            <img src="assets/images/icon-arcade.svg" alt="">
-            <div class="content">
-              <h4 class="font-bold">Arcade</h4>
-              <p>$9/mo</p>
+          <p class=" text-xl">You have the option of monthly or yearly billing.</p>
+
+          <div class="planbx flex flex-col md:flex-row gap-4">
+            <div class="select_box arcade flex md:flex-col gap-4 px-4 py-3">
+              <img src="assets/images/icon-arcade.svg" alt="">
+              <div class="content">
+                <h4 class="font-bold">Arcade</h4>
+                <p>$9/mo</p>
+              </div>
             </div>
-          </div>
 
-          <div class="select_box arcade flex md:flex-col gap-4 px-4 py-2">
-            <img src="assets/images/icon-advanced.svg" alt="">
-            <div class="content">
-              <h4 class="font-bold">Advance</h4>
-              <p>$12/mo</p>
+            <div class="select_box arcade flex md:flex-col gap-4 px-4 py-3">
+              <img src="assets/images/icon-advanced.svg" alt="">
+              <div class="content">
+                <h4 class="font-bold">Advance</h4>
+                <p>$12/mo</p>
+              </div>
             </div>
-          </div>
 
-          <div class="select_box arcade flex md:flex-col gap-4 px-4 py-2">
-            <img src="assets/images/icon-pro.svg" alt="">
-            <div class="content">
-              <h4 class="font-bold">Pro</h4>
-              <p>$15/mo</p>
+            <div class="select_box arcade flex md:flex-col gap-4 px-4 py-3">
+              <img src="assets/images/icon-pro.svg" alt="">
+              <div class="content">
+                <h4 class="font-bold">Pro</h4>
+                <p>$15/mo</p>
+              </div>
             </div>
-          </div>
-
-          Advanced
-          $12/mo
-
-          Pro
-          $15/mo
-
-          Monthly
-          Yearly
-
-          <div class="inputbx flex justify-between">
-            <input type="button" value="Go Back">
-            <input type="button" value="Next Step">
 
           </div>
 
+          <div class="togglebx py-6 font-medium flex justify-center items-center gap-8">
+            <p>Monthly</p>
+            <div class="toggle flex justify-center items-center relative">
+              <span class="absolute bg-white h-4 w-4 rounded-full left-0"></span>
+              <input type="checkbox" class="opacity-0">
+            </div>
+
+            <p>Yearly</p>
+          </div>
         </section>
+
+        <div class="btnbx flex justify-between absolute">
+          <input type="button" value="Go Back">
+          <input type="button" value="Next Step">
+
+        </div>
       </form>
     </main>
   </div>

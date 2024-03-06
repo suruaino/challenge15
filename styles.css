@@ -46,10 +46,10 @@ body{
  
 }
 .main_wrapper{
-    height: 65%;
+    height: 100%;
     width: 100%;
     background-color: transparent;
-    padding: 1rem;
+    /* padding: 1rem; */
     border-radius: 10px;
     position: relative;
 }
@@ -59,7 +59,7 @@ aside{
     background-position: 0 88.3%;
     background-size: cover;
     /* width: 100%; */
-    height: 50%;
+    height: 34%;
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -175,12 +175,19 @@ main .select_plan {
     left: 50%;
     transform: translateX(-50%);
     background-color: var(--Alabaster);
-    background-color: red;
+    /* background-color: red; */
     border-radius:  10px;
+}
+main .select_plan > p{
+    color: var(--Cool_gray);
 }
 main .select_plan .select_box{
     border: 1px solid var(--Cool_gray);
     border-radius: 5px;
+}
+main .select_plan .select_box .content p{
+    font-weight: 400;
+    color: var(--Cool_gray);
 }
 main .select_plan input{
     height: 3rem;
@@ -189,13 +196,47 @@ main .select_plan input{
     border: 1px solid var(--Cool_gray);
     border-radius: 5px;
 }
-main .select_plan .btnbx input{
-    width: 10rem;
+main .select_plan .togglebx{
+    width: 100%;
+    background-color: rgba(44, 85, 97, 0.01);
+    border-radius: 10px;
+}
+main .select_plan .togglebx .toggle{
+    background-color: var(--Marine_blue);
+    width: 2.5rem;
+    height: 1rem;
+    padding: 10px 16px;
+    border: 2px solid var(--Marine_blue);
+    border-radius: 20px;
+}
+main .btnbx{
+    background-color: var(--Alabaster);
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    padding: 1rem;
+}
+main .btnbx input{
+    width: fit-content;
     background-color: var(--Marine_blue);
     color: var(--Alabaster);
-    position: absolute;
+    padding: .5rem 1rem;
     right: 0;
     bottom: 0;
+}
+main .btnbx input:first-child{
+    background-color: transparent;
+    border: none;
+    color: var(--Cool_gray);
+    font-weight: 500;
+    left: 0;
+    padding: 0;
+}
+main .btnbx input:last-child{
+    font-weight: 500;
+    right: 0;
+    border-radius: 5px;
 }
 @media only screen and (min-width: 768px){
     body{
@@ -218,11 +259,40 @@ main .select_plan .btnbx input{
         position: static;
         left: none;
         transform: none;
+        display: none;
     }
     main .personal_info .btnbx input{
         width: 10rem;
         background-color: var(--Marine_blue);
         color: var(--Alabaster);
         position: static;
+    }
+    main .select_plan {
+        width: 100%;
+        /*height: fit-content;
+        position: absolute;
+        top: 7.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--Alabaster);
+        background-color: red;
+        border-radius:  10px; */
+        height: auto;
+        position: static;
+        left: none;
+        transform: none;
+    }
+    main .select_plan .planbx{
+        /* justify-content: start; */
+    }
+    main .select_plan .planbx .select_box{
+        min-width: calc(100% / 3);
+        max-width: 6.5rem;
+    }
+    main .select_plan .planbx .select_box img{
+        width: 2rem;
+    }
+    main .select_plan .togglebx{
+        width: 107.5%;
     }
 }
