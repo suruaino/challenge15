@@ -58,7 +58,6 @@ aside{
     background-repeat: no-repeat;
     background-position: 0 88.3%;
     background-size: cover;
-    /* width: 100%; */
     height: 34%;
     display: flex;
     justify-content: center;
@@ -71,7 +70,6 @@ aside{
     left: 0;
     right: 0;
     bottom: 100%;
-    /* border: 2px solid red; */
 }
 aside > div{
     display: flex;
@@ -242,7 +240,7 @@ main .btnbx input:last-child{
 
 main .add_ons{
     width: 95%;
-    height: fit-content;
+    min-height: 30.5rem;
     position: absolute;
     top: 7.5rem;
     left: 50%;
@@ -299,25 +297,18 @@ main .finishing_up{
         position: static;
     }
     main .select_plan {
-        width: 100%;
-        /*height: fit-content;
-        position: absolute;
-        top: 7.5rem;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: var(--Alabaster);
-        background-color: red;
-        border-radius:  10px; */
         height: auto;
+        transform: none;
+        border: 1px solid red;
         position: static;
         left: none;
-        transform: none;
+
     }
     main .select_plan .planbx{
         /* justify-content: start; */
     }
     main .select_plan .planbx .select_box{
-        min-width: calc(100% / 3);
+        min-width: calc(95% / 3);
         max-width: 6.5rem;
     }
     main .select_plan .planbx .select_box img{
@@ -325,5 +316,9 @@ main .finishing_up{
     }
     main .select_plan .togglebx{
         width: 107.5%;
+    }
+
+    main .add_ons{
+        display: none;
     }
 }
