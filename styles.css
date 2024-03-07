@@ -214,6 +214,7 @@ main .btnbx{
     width: 100%;
     left: 50%;
     transform: translateX(-50%);
+    position: fixed;
     bottom: 0;
     padding: 1rem;
 }
@@ -237,6 +238,36 @@ main .btnbx input:last-child{
     font-weight: 500;
     right: 0;
     border-radius: 5px;
+}
+
+main .add_ons{
+    width: 95%;
+    height: fit-content;
+    position: absolute;
+    top: 7.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--Alabaster);
+    /* background-color: red; */
+    border-radius:  10px;
+    z-index: 3;
+}
+main .add_ons .select_box{
+    border: 1px solid var(--Cool_gray);
+    border-radius: 5px;
+}
+
+main .finishing_up{
+    width: 95%;
+    height: fit-content;
+    position: absolute;
+    top: 7.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--Alabaster);
+    /* background-color: red; */
+    border-radius:  10px;
+    z-index: 3;
 }
 @media only screen and (min-width: 768px){
     body{
