@@ -51,12 +51,12 @@ body{
     max-width: 60rem;
     /* overflow-x: hidden; */
     background-color: transparent;
-    border:  1px solid green;
+    /* border:  1px solid green; */
     border-radius: 10px;
     /* position: relative; */
 }
 main form{
-    border:  4px solid orange;
+    /* border:  4px solid orange; */
     width: 70%;
     overflow-x: scroll;
     position: relative;
@@ -75,7 +75,7 @@ aside{
     justify-content: center;
     gap: 2rem;
     padding: 2rem 1.5rem;
-    border: 4px solid red;
+    /* border: 4px solid red; */
     /* border-radius: 10px; */
     /* position: absolute; */
     /* top: 0;
@@ -281,7 +281,7 @@ main .finishing_up{
     }
     main .personal_info {
         height: auto;
-        border: 1px solid yellow;
+        /* border: 1px solid yellow; */
      
     }
     main .personal_info .btnbx input{
@@ -291,7 +291,7 @@ main .finishing_up{
     }
     main .select_plan {
         height: auto;
-        border: 1px solid red;
+        /* border: 1px solid red; */
         /* padding: auto 8rem; */
 
     }
