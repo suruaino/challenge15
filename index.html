@@ -70,8 +70,8 @@
     </aside>
 
     <main class="flex flex-col md:flex-row">
-      <form action="" class="flex gap-4">
-        <section class="personal_info flex flex-col gap-4 p-8">
+      <form action="" class="flex gap-8">
+        <section class="personal_info px-20 flex flex-col gap-4 p-8">
           <header>
             <h2 class="text-3xl font-bold">Personal info</h2>
             <p class=" text-lg">Please provide your name, email address, and phone number.</p>
@@ -97,17 +97,17 @@
 
         </section>
 
-        <section class="select_plan p-5 py-6 flex flex-col gap-8">
+        <section class="select_plan px-20 py-6 flex flex-col gap-8">
           <header>
             <h2 class="text-3xl font-bold">Select your plan</h2>
             <p class=" text-xl">You have the option of monthly or yearly billing.</p>
           </header>
           <div class="content_container">
-            <article id="plan_monthly" class="flex flex-col gap-4">
+            <article id="plan_monthly" class=" flex flex-col gap-4">
             
 
-              <div class="planbx flex flex-col md:flex-row gap-4">
-                <div class="select_box arcade flex md:flex-col gap-4 px-4 py-3">
+              <div class="planbx flex flex-col md:flex-row">
+                <div class="select_box arcade flex md:flex-col gap-2 px-4 py-3">
                   <img src="assets/images/icon-arcade.svg" alt="">
                   <div class="content">
                     <h4 class="font-bold">Arcade</h4>
@@ -179,13 +179,13 @@
 
         </section>
 
-        <section class="add_ons px-5 py-2 flex flex-col justify-center gap-8 shadow-lg border-2">
+        <section class="add_ons px-20 py-6 flex flex-col gap-8 shadow-lg border-2">
           <header>
             <h2 class="text-3xl font-bold">Pick add-ons</h2>
             <p class=" text-xl">Add-ons help enhance your gaming experience.</p>
           </header>
           <div class="add_ons_content flex gap-4">
-            <article id="add_monthly" class="flex flex-col gap-4">
+            <article id="add_monthly" class="w-full flex flex-col gap-4">
             
               <div class="planbx w-full  border-2 flex flex-col gap-4">
                 <div class="select_box online_service flex justify-between items-center gap-6 px-4 py-3">
@@ -269,7 +269,7 @@
         </section>
 
 
-        <section class="finishing_up p-5 py-6 shadow-lg">
+        <section class="finishing_up px-20 py-6 shadow-lg">
           <article id="summary_screen" class="flex flex-col gap-4">
             <h2 class="text-3xl font-bold">Finishing up</h2>
             <p class=" text-xl">Double-check everything looks OK before confirming.</p>
@@ -278,14 +278,14 @@
 
         </section>
 
-        <dialog class="finishing_up p-5 px-16 py-20 shadow-lg flex flex-col justify-center items-center gap-4 hidden">
+        <dialog class="finishing_up px-20 px-16 py-20 shadow-lg flex flex-col justify-center items-center gap-4 hidden">
           <img src="assets/images/icon-thank-you.svg" alt="">
           <h2 class="text-3xl font-bold">Thank you!</h2>
           <p class=" text-xl text-center">
             Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com.
           </p>
         </dialog>
-        <div class="btnbx flex justify-between absolute">
+        <div class="btnbx px-20 flex justify-between absolute">
           <input type="button" value="Go Back">
           <input type="button" value="Next Step">
 
@@ -299,6 +299,9 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Suru Emmanuel</a>.
   </div>
+
+
+  <script src="main.js"></script>
 </body>
 
 </html>

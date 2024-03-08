@@ -55,8 +55,14 @@ body{
     border-radius: 10px;
     /* position: relative; */
 }
+main form{
+    border:  4px solid orange;
+    width: 70%;
+    overflow-x: scroll;
+    position: relative;
+}
 section{
-    min-width: fit-content;
+    min-width: 100%;
     /* margin-left: 40rem; */
 }
 aside{
@@ -69,7 +75,7 @@ aside{
     justify-content: center;
     gap: 2rem;
     padding: 2rem 1.5rem;
-    /* border: 1px solid red; */
+    border: 4px solid red;
     /* border-radius: 10px; */
     /* position: absolute; */
     /* top: 0;
@@ -113,7 +119,7 @@ aside > div span:last-child h4{
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        width: 15rem;
+        min-width: 15rem;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -121,7 +127,7 @@ aside > div span:last-child h4{
         gap: 12px;
         padding: 2rem 1.5rem;
         /* position: static; */
-        border: none;
+        /* border: none; */
         border-radius: 10px;
     }
     aside > div span:last-child{
@@ -135,7 +141,7 @@ main{
     /* padding: 2rem 20rem; */
     /* position: relative; */
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     width: 100%;
     height: 100%;
     
@@ -205,14 +211,14 @@ main .select_plan .togglebx .toggle{
     border: 2px solid var(--Marine_blue);
     border-radius: 20px;
 }
-main .btnbx{
+main form .btnbx{
     background-color: var(--Alabaster);
     width: 100%;
     left: 50%;
     transform: translateX(-50%);
-    position: fixed;
+    position: absolute;
     bottom: 0;
-    padding: 1rem;
+    padding: 1rem 2rem;
 }
 main .btnbx input{
     width: fit-content;
@@ -242,7 +248,7 @@ main .add_ons{
     background-color: var(--Alabaster);
     /* background-color: red; */
     border-radius:  10px;
-    z-index: 3;
+    /* z-index: 3; */
 }
 main .add_ons .select_box{
     border: 1px solid var(--Cool_gray);
@@ -262,7 +268,7 @@ main .finishing_up{
         justify-content: center;
     }
     .main_wrapper{
-        height: 65%;
+        height: 75%;
         width: fit-content;
         background-color: var(--Alabaster);
         padding: 1rem;
@@ -286,21 +292,24 @@ main .finishing_up{
     main .select_plan {
         height: auto;
         border: 1px solid red;
-  
+        /* padding: auto 8rem; */
 
     }
     main .select_plan .planbx{
-        /* justify-content: start; */
+        height: 10rem;
+        /* border: 1px solid green; */
+        gap: .8rem
     }
     main .select_plan .planbx .select_box{
         min-width: calc(95% / 3);
-        max-width: 6.5rem;
+        /* max-width: 6.5rem; */
     }
     main .select_plan .planbx .select_box img{
         width: 2rem;
     }
     main .select_plan .togglebx{
-        width: 107.5%;
+        min-width: 100%;
+        /* background-color: red; */
     }
 
     main .add_ons{
