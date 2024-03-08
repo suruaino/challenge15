@@ -48,10 +48,16 @@ body{
 .main_wrapper{
     height: 100%;
     width: 100%;
+    max-width: 60rem;
+    /* overflow-x: hidden; */
     background-color: transparent;
-    /* padding: 1rem; */
+    border:  1px solid green;
     border-radius: 10px;
-    position: relative;
+    /* position: relative; */
+}
+section{
+    min-width: fit-content;
+    /* margin-left: 40rem; */
 }
 aside{
     background: url(assets/images/bg-sidebar-desktop.svg);
@@ -65,10 +71,10 @@ aside{
     padding: 2rem 1.5rem;
     /* border: 1px solid red; */
     /* border-radius: 10px; */
-    position: absolute;
-    top: 0;
+    /* position: absolute; */
+    /* top: 0;
     left: 0;
-    right: 0;
+    right: 0; */
     bottom: 100%;
 }
 aside > div{
@@ -114,7 +120,7 @@ aside > div span:last-child h4{
         justify-content: start;
         gap: 12px;
         padding: 2rem 1.5rem;
-        position: static;
+        /* position: static; */
         border: none;
         border-radius: 10px;
     }
@@ -127,21 +133,17 @@ main{
     /* background-color: var(--Alabaster); */
     /* background-color: red; */
     /* padding: 2rem 20rem; */
-    position: relative;
+    /* position: relative; */
     display: flex;
     justify-content: center;
     width: 100%;
     height: 100%;
-    z-index: 2;
     
 }
+
 main .personal_info {
     width: 95%;
     height: fit-content;
-    position: absolute;
-    top: 7.5rem;
-    left: 50%;
-    transform: translateX(-50%);
     background-color: var(--Alabaster);
     border-radius:  10px;
 }
@@ -168,10 +170,6 @@ main .personal_info .btnbx input{
 main .select_plan {
     width: 95%;
     height: fit-content;
-    position: absolute;
-    top: 7.5rem;
-    left: 50%;
-    transform: translateX(-50%);
     background-color: var(--Alabaster);
     /* background-color: red; */
     border-radius:  10px;
@@ -241,10 +239,6 @@ main .btnbx input:last-child{
 main .add_ons{
     width: 95%;
     min-height: 30.5rem;
-    position: absolute;
-    top: 7.5rem;
-    left: 50%;
-    transform: translateX(-50%);
     background-color: var(--Alabaster);
     /* background-color: red; */
     border-radius:  10px;
@@ -258,10 +252,6 @@ main .add_ons .select_box{
 main .finishing_up{
     width: 95%;
     height: fit-content;
-    position: absolute;
-    top: 7.5rem;
-    left: 50%;
-    transform: translateX(-50%);
     background-color: var(--Alabaster);
     /* background-color: red; */
     border-radius:  10px;
@@ -285,23 +275,18 @@ main .finishing_up{
     }
     main .personal_info {
         height: auto;
-        position: static;
-        left: none;
-        transform: none;
-        display: none;
+        border: 1px solid yellow;
+     
     }
     main .personal_info .btnbx input{
         width: 10rem;
         background-color: var(--Marine_blue);
         color: var(--Alabaster);
-        position: static;
     }
     main .select_plan {
         height: auto;
-        transform: none;
         border: 1px solid red;
-        position: static;
-        left: none;
+  
 
     }
     main .select_plan .planbx{
@@ -319,6 +304,6 @@ main .finishing_up{
     }
 
     main .add_ons{
-        display: none;
+        background-color: var(--Alabaster);
     }
 }
