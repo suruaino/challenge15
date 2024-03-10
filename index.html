@@ -71,7 +71,7 @@
 
     <main class="flex flex-col md:flex-row">
       <form action="" class="flex gap-8">
-        <section class="personal_info px-20 flex flex-col gap-4 p-8">
+        <section class="personal_info px-20 flex flex-col gap-4 p-8 hidden">
           <header>
             <h2 class="text-3xl font-bold">Personal info</h2>
             <p class=" text-lg">Please provide your name, email address, and phone number.</p>
@@ -107,15 +107,19 @@
             
 
               <div class="planbx flex flex-col md:flex-row">
-                <div class="select_box arcade flex md:flex-col gap-2 px-4 py-3">
+                <div id="arcade" class="select_box arcade flex md:flex-col gap-2 px-4 py-3 relative">
+                  <input type="radio" name="radio_plan" class=" absolute">
+                  <!-- <div class="arcade_contentbx"> -->
                   <img src="assets/images/icon-arcade.svg" alt="">
                   <div class="content">
                     <h4 class="font-bold">Arcade</h4>
                     <p>$9/mo</p>
                   </div>
+                <!-- </div> -->
                 </div>
   
-                <div class="select_box arcade flex md:flex-col gap-4 px-4 py-3">
+                <div id="advance" class="select_box arcade flex md:flex-col gap-4 px-4 py-3 relative">
+                  <input type="radio" name="radio_plan" class=" absolute">
                   <img src="assets/images/icon-advanced.svg" alt="">
                   <div class="content">
                     <h4 class="font-bold">Advance</h4>
@@ -123,7 +127,8 @@
                   </div>
                 </div>
   
-                <div class="select_box arcade flex md:flex-col gap-4 px-4 py-3">
+                <div id="pro" class="select_box arcade flex md:flex-col gap-4 px-4 py-3 relative">
+                  <input type="radio" name="radio_plan" class=" absolute">
                   <img src="assets/images/icon-pro.svg" alt="">
                   <div class="content">
                     <h4 class="font-bold">Pro</h4>
