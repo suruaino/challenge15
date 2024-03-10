@@ -204,8 +204,14 @@ main .select_plan>p {
 main .select_plan .select_box {
     border: 1px solid var(--Cool_gray);
     border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
 }
 
+main .select_plan .select_box:hover {
+    background-color: var(--Magnolia);
+    border: 1px solid black;
+}
 .arcade_contentbx {
     width: 100%;
    

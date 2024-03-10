@@ -1,12 +1,17 @@
 let summaryScreen = document.getElementById('screen');
 let toggleBar = document.getElementById("toggle");
 
+let planBx = document.querySelectorAll(".select_box");
 
-let arcade = document.getElementById("arcade");
+planBx.forEach((container, index) => {
+    const radio = container.querySelector('input[type="radio"]');
+    
+    container.addEventListener('click', () => {
+        radio.checked = true;
+        // container.style.backgroundColor = "red"
+    });
+});
 
-arcade.addEventListener("click", function(){
-    document.querySelector('input[type="radio"]').checked = "true"
-}) 
 summaryScreen.innerText = "Weldon bro, This is your summary page!";
 
 function toggled(){
