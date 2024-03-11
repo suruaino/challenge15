@@ -177,6 +177,7 @@ main .personal_info input {
     padding: 0 10px;
     border: 1px solid var(--Cool_gray);
     border-radius: 5px;
+    
 }
 
 main .personal_info .btnbx input {
@@ -229,6 +230,7 @@ main .select_plan .select_box > input {
     border: 1px solid var(--Cool_gray);
     border-radius: 5px;
     cursor: pointer;
+    opacity: 0;
 }
 
 main .select_plan .togglebx {
@@ -313,6 +315,9 @@ main .add_ons {
     /* z-index: 3; */
 }
 
+main .add_ons #add_yearly{
+    display: none;
+}
 main .add_ons .select_box {
     border: 1px solid var(--Cool_gray);
     border-radius: 5px;
