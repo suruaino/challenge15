@@ -9,17 +9,21 @@ planBx.forEach((container, index) => {
 
   container.addEventListener("click", () => {
     radio.checked = true;
-    // container.style.backgroundColor = "red"
   });
 });
 
 summaryScreen.innerText = "Weldon bro, This is your summary page!";
 let monthly = document.getElementById("monthly");
 let yearly = document.getElementById("yearly");
-let checkInput = document.getElementById("toggle_input")
+let monthlyPlan = document.getElementById("plan_monthly");
+let yearlyPlan = document.getElementById("plan_yearly");
+let checkInput = document.getElementById("toggle_input");
 
-checkInput.addEventListener('change', function() {
-    monthly.style.color = this.checked ? "#9699ab" : "#02295a";
-    yearly.style.color = this.checked ? "#02295a" : "#9699ab";
+checkInput.addEventListener("change", function () {
+  monthly.style.color = this.checked ? "#9699ab" : "#02295a";
+  yearly.style.color = this.checked ? "#02295a" : "#9699ab";
+  monthlyPlan.style.display = this.checked ? "none" : "flex";
+  yearlyPlan.style.display = this.checked ? "flex" : "none";
 });
+
 // })
