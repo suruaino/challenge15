@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let toggleBar = document.getElementById("toggle");
 
   let planBx = document.querySelectorAll(".select_box");
-
   planBx.forEach((container, index) => {
     const radio = container.querySelector('input[type="radio"]');
 
@@ -13,7 +12,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     container.addEventListener("click", () => {
       radio.checked = true;
-      finishPlan.innerHTML = `+$ ${radio.value}/mo`;
+      finishPlan.innerText = ` ${radio.value}`;
+      finishAdd.innerText = container.style.border = this
+        ? "1px solid #02295a"
+        : "1px solid red";
+      container.style.backgroundColor = "#f0f6ff";
+    });
+  });
+
+  let addBx = document.querySelectorAll(".left");
+  addBx.forEach((container, index) => {
+    const check = container.querySelector('input[type="checkbox"]');
+    let finishAdd = document.getElementById("finish_add");
+    container.addEventListener("click", () => {
+      check.checked = true;
+      finishAdd.innerText = `${check.value}`;
     });
   });
 

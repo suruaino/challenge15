@@ -18,6 +18,7 @@
     --Cool_gray: #9699ab;
     --Cool_gray: hsl(231, 11%, 63%);
     --Light_gray: hsl(229, 24%, 87%);
+    /* --Magnolia: #f0f6ff; */
     --Magnolia: hsl(217, 100%, 97%);
     --Alabaster: hsl(231, 100%, 99%);
     --White: hsl(0, 0%, 100%);
@@ -203,7 +204,7 @@ main .select_plan>p {
 }
 
 main .select_plan .select_box {
-    border: 1px solid var(--Cool_gray);
+    border: 1px solid var(--Light_gray);
     border-radius: 5px;
     cursor: pointer;
     transition: 0.5s;
