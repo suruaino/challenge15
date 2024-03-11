@@ -7,7 +7,7 @@
 :root {
 
     /*### Primary colors*/
-
+    /* --Marine_blue: #02295a; */
     --Marine_blue: hsl(213, 96%, 18%);
     --Purplish_blue: hsl(243, 100%, 62%);
     --Pastel_blue: hsl(228, 100%, 84%);
@@ -15,7 +15,7 @@
     --Strawberry_red: hsl(354, 84%, 57%);
 
     /*### Neutral colors*/
-
+    --Cool_gray: #9699ab;
     --Cool_gray: hsl(231, 11%, 63%);
     --Light_gray: hsl(229, 24%, 87%);
     --Magnolia: hsl(217, 100%, 97%);
@@ -222,12 +222,13 @@ main .select_plan .select_box .content p {
     color: var(--Cool_gray);
 }
 
-main .select_plan input {
+main .select_plan .select_box > input {
     height: 3rem;
     width: 100%;
     padding: 0 10px;
     border: 1px solid var(--Cool_gray);
     border-radius: 5px;
+    cursor: pointer;
 }
 
 main .select_plan .togglebx {
@@ -236,20 +237,39 @@ main .select_plan .togglebx {
     border-radius: 10px;
 }
 
-main .select_plan .togglebx .toggle {
+main .select_plan .togglebx .toggle_container {
     background-color: var(--Marine_blue);
     width: 2.5rem;
     height: 1rem;
     padding: 10px 16px;
     border: 2px solid var(--Marine_blue);
     border-radius: 20px;
+
 }
 
-main .select_plan .togglebx .toggle input {
+main .select_plan .togglebx .toggle_container > #toggle_span {
+    width: 1rem;
+    height: 1rem;
+    background-color: aliceblue;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    right: auto;
+    /* transition: 1s; */
+}
+
+main .select_plan .togglebx .toggle_container > input {
     width: 100%;
     height: 100%;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 10;
 }
-
+main .select_plan .togglebx .toggle_container > input:checked + #toggle_span{
+    right: 0;
+    left: auto;
+}
 main form .btnbx {
     background-color: var(--Alabaster);
     width: 100%;
