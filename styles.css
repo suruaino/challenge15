@@ -319,7 +319,7 @@ main .add_ons {
 main .add_ons #add_yearly{
     display: none;
 }
-main .add_ons .select_box {
+main .add_ons .add_container {
     border: 1px solid var(--Cool_gray);
     border-radius: 5px;
 }

@@ -1,23 +1,30 @@
 document.addEventListener("DOMContentLoaded", function () {
   let summaryScreen = document.getElementById("screen");
   let toggleBar = document.getElementById("toggle");
-
-  let planBx = document.querySelectorAll(".select_box");
-  planBx.forEach((container, index) => {
-    const radio = container.querySelector('input[type="radio"]');
-
-    let finishPlan = document.getElementById("finish_plan");
+  let finishPlan = document.getElementById("finish_plan");
     let finishAdd = document.getElementById("finish_add");
     let total = document.getElementById("total");
 
+  let planBx = document.querySelectorAll(".select_box");
+
+  planBx.forEach((container, index) => {
+    const radio = container.querySelector('input[type="radio"]');
     container.addEventListener("click", () => {
       radio.checked = true;
       finishPlan.innerText = ` ${radio.value}`;
-      finishAdd.innerText = container.style.border = this
-        ? "1px solid #02295a"
-        : "1px solid red";
+      container.style.border = this? "1px solid #02295a" : "1px solid red";
       container.style.backgroundColor = "#f0f6ff";
+
+    //   let check = document.querySelector('input[type="checkbox"]:checked');
+    //     let checkValue = parseFloat(check.value);
+    //     let radioValue = parseFloat(radio.value);
+
+    //     if (!isNaN(checkValue) && !isNaN(radioValue)) {
+    //         total = checkValue + radioValue;
+    //         console.log(`Total: ${total}`);
+    //     }
     });
+    
   });
 
   let addBx = document.querySelectorAll(".left");
@@ -26,9 +33,13 @@ document.addEventListener("DOMContentLoaded", function () {
     let finishAdd = document.getElementById("finish_add");
     container.addEventListener("click", () => {
       check.checked = true;
-      finishAdd.innerText = `${check.value}`;
+      finishAdd.innerText = `${check.value}`
     });
+    
   });
+
+    total.innerText = `I am total`
+
 
   // summaryScreen.innerText = "Weldon bro, This is your summary page!";
   let monthly = document.getElementById("monthly");

@@ -194,7 +194,7 @@
             <article id="add_monthly" class="w-full flex flex-col gap-4">
             
               <div class="add_monthlybx w-full flex flex-col gap-4">
-                <div class="select_box online_service flex justify-between items-center gap-6 px-4 py-3">
+                <div class="add_container online_service flex justify-between items-center gap-6 px-4 py-3">
                   <div class="left flex gap-6">
                     <input type="checkbox" value="+$1/mo" class="add_inputs w-5">
                     <div class="content">
@@ -205,7 +205,7 @@
                   <p>+$1/mo</p>
                 </div>
   
-                <div class="select_box large_storage flex justify-between items-center gap-6 px-4 py-3">
+                <div class="add_container large_storage flex justify-between items-center gap-6 px-4 py-3">
                   <div class="left flex gap-6">
                     <input type="checkbox" value="+$2/mo" class="add_inputs w-5">
                     <div class="content">
@@ -216,7 +216,7 @@
                   <p>+$2/mo</p>
                 </div>
   
-                <div class="select_box online_service flex justify-between items-center gap-6 px-4 py-3">
+                <div class="add_container online_service flex justify-between items-center gap-6 px-4 py-3">
                   <div class="left flex gap-6">
                     <input type="checkbox" value="+$2/mo" class="add_inputs w-5">
                     <div class="content">
@@ -234,7 +234,7 @@
             <article id="add_yearly" class="flex flex-col gap-4"><!--Remember to add flex and remove hidden when toggled-->
        
               <div class="planbx flex flex-col gap-4">
-                <div class="select_box online_service flex justify-between items-center gap-6 px-4 py-3">
+                <div class="add_container online_service flex justify-between items-center gap-6 px-4 py-3">
                   <div class="left flex gap-6">
                     <input type="checkbox" value="+$10/yr" class="add_inputs w-5">
                     <div class="content">
@@ -245,7 +245,7 @@
                   <p>+$10/yr</p>
                 </div>
   
-                <div class="select_box large_storage flex justify-between items-center gap-6 px-4 py-3">
+                <div class="add_container large_storage flex justify-between items-center gap-6 px-4 py-3">
                   <div class="left flex gap-6">
                     <input type="checkbox" value="+$20/yr" class="add_inputs w-5">
                     <div class="content">
@@ -256,7 +256,7 @@
                   <p>+$20/yr</p>
                 </div>
   
-                <div class="select_box online_service flex justify-between items-center gap-6 px-4 py-3">
+                <div class="add_container online_service flex justify-between items-center gap-6 px-4 py-3">
                   <div class="left flex gap-6">
                     <input type="checkbox" value="+$20/yr" class="add_inputs w-5">
                     <div class="content">
@@ -277,14 +277,24 @@
 
         <section class="finishing_up px-20 py-6 shadow-lg">
           <article id="summary_screen" class="flex flex-col gap-4">
+            
             <h2 class="text-3xl font-bold">Finishing up</h2>
             <p id="screen" class=" text-xl">Double-check everything looks OK before confirming.</p>
-
+          
             <div class="finishing_content">
-              <div id="finish_plan"></div>
-              <div id="finish_add"></div>
-              <div id="total"></div>
+              <div class="finishing_planbx">
+                <div id="finish_plan"></div>
+              </div>
+
+              <div class="finishing_addpx">
+                <div id="finish_add"></div>
+              </div>
+
+              <div class="totalbx">
+                <div id="total"></div>
+              </div>
             </div>
+
           </article>
 
         </section>
