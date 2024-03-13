@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-  let summaryScreen = document.getElementById("screen");
-  let toggleBar = document.getElementById("toggle");
+//   let summaryScreen = document.getElementById("screen");
+//   let toggleBar = document.getElementById("toggle");
   let finishPlan = document.getElementById("finish_plan");
   let finishAdd = document.getElementById("finish_add");
+  let selectedPlan = document.getElementById("selected_plan");
   let total = document.getElementById("total");
 
   let planBx = document.querySelectorAll(".select_box");
@@ -12,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     container.addEventListener("click", () => {
       radio.checked = true;
       finishPlan.innerText = ` ${radio.value}`;
+      selectedPlan.innerText = ``
       container.style.border = this ? "1px solid #02295a" : "1px solid red";
       container.style.backgroundColor = "#f0f6ff";
     });
@@ -26,7 +28,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  total.innerText = `I am your Total`;
+  function calcTotal(){
+    let planValue = parseFloat(finishPlan.innerText.trim().substring(1)) || 0;
+    let addValue = parseFloat(finishAdd.innerText.trim().substring(1)) || 0;
+    return `$ ${planValue} + ${addValue}`; 
+
+  }
+  total.innerText = calcTotal();
 
   // summaryScreen.innerText = "Weldon bro, This is your summary page!";
   let monthly = document.getElementById("monthly");
@@ -46,12 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
     yearlyAdd.style.display = this.checked ? "flex" : "none";
   });
 
-  //===== FINISHING UP=====
-  // let finishPlan = document.getElementById("finish_plan");
-  // let finishAdd = document.getElementById("finish_add");
-  // let total = document.getElementById("total");
-
-  // finishPlan.innerHTML = `+$ ${document.getElementById("arcade").value}/mo`;
 });
 
 // document.addEventListener("DOMContentLoaded", function () {

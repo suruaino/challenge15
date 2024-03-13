@@ -97,7 +97,7 @@
 
         </section>
 
-        <section class="select_plan px-20 py-6 flex flex-col gap-8">
+        <section id="plan" class="select_plan px-20 py-6 flex flex-col gap-8">
           <header>
             <h2 class="text-3xl font-bold">Select your plan</h2>
             <p class=" text-xl">You have the option of monthly or yearly billing.</p>
@@ -282,17 +282,26 @@
             <p id="screen" class=" text-xl">Double-check everything looks OK before confirming.</p>
           
             <div class="finishing_content">
-              <div class="finishing_planbx">
+              <div class="finishing_planbx flex justify-between border-b-2">
+                <div class="selected_planbx">
+                  <div id="selected_plan"> Testing plan</div>
+                  <div class="link_to_plan"><a href="#plan">Change</a></div>
+                </div>
                 <div id="finish_plan"></div>
               </div>
 
-              <div class="finishing_addpx">
+              <div class="finishing_addpx flex justify-between">
+                <div class="selected_addbx">
+                  <div id="selected_add">Testin add</div>
+                </div>
                 <div id="finish_add"></div>
               </div>
 
-              <div class="totalbx">
-                <div id="total"></div>
-              </div>
+            </div>
+
+            <div class="totalbx flex justify-between px-4">
+              <p>Total(per month)</p>
+              <div id="total"></div>
             </div>
 
           </article>
