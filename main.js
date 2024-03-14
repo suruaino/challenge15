@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-//   let summaryScreen = document.getElementById("screen");
-//   let toggleBar = document.getElementById("toggle");
+  //   let summaryScreen = document.getElementById("screen");
+  //   let toggleBar = document.getElementById("toggle");
   let finishPlan = document.getElementById("finish_plan");
   let finishAdd = document.getElementById("finish_add");
   let selectedPlan = document.getElementById("selected_plan");
@@ -10,10 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   planBx.forEach((container, index) => {
     const radio = container.querySelector('input[type="radio"]');
+    const planOutput = container.querySelector(".select_box .content h4").innerText;
     container.addEventListener("click", () => {
       radio.checked = true;
       finishPlan.innerText = ` ${radio.value}`;
-      selectedPlan.innerText = ``
+      selectedPlan.innerText = `${planOutput}`;
       container.style.border = this ? "1px solid #02295a" : "1px solid red";
       container.style.backgroundColor = "#f0f6ff";
     });
@@ -28,11 +29,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  function calcTotal(){
+  function calcTotal() {
     let planValue = parseFloat(finishPlan.innerText.trim().substring(1)) || 0;
     let addValue = parseFloat(finishAdd.innerText.trim().substring(1)) || 0;
-    return `$ ${planValue} + ${addValue}`; 
-
+    return `$ ${planValue} + ${addValue}`;
   }
   total.innerText = calcTotal();
 
@@ -53,7 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
     monthlyAdd.style.display = this.checked ? "none" : "flex";
     yearlyAdd.style.display = this.checked ? "flex" : "none";
   });
-
 });
 
 // document.addEventListener("DOMContentLoaded", function () {
