@@ -4,13 +4,16 @@ document.addEventListener("DOMContentLoaded", function () {
   let finishPlan = document.getElementById("finish_plan");
   let finishAdd = document.getElementById("finish_add");
   let selectedPlan = document.getElementById("selected_plan");
+  let selectedAdd = document.getElementById("selected_add");
   let total = document.getElementById("total");
 
   let planBx = document.querySelectorAll(".select_box");
 
   planBx.forEach((container, index) => {
     const radio = container.querySelector('input[type="radio"]');
-    const planOutput = container.querySelector(".select_box .content h4").innerText;
+    const planOutput = container.querySelector(
+      ".select_box .content h4"
+    ).innerText;
     container.addEventListener("click", () => {
       radio.checked = true;
       finishPlan.innerText = ` ${radio.value}`;
@@ -21,11 +24,17 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   let addBx = document.querySelectorAll(".left");
+  //   let selectedAddValue = [];
   addBx.forEach((container, index) => {
     const check = container.querySelector('input[type="checkbox"]');
+    let addOutput = container.querySelector(
+      ".add_container .left .content h4"
+    ).innerText;
+
     container.addEventListener("click", () => {
       check.checked = true;
       finishAdd.innerText = `${check.value}`;
+      selectedAdd.innerText = `${addOutput}`;
     });
   });
 
@@ -54,6 +63,21 @@ document.addEventListener("DOMContentLoaded", function () {
     yearlyAdd.style.display = this.checked ? "flex" : "none";
   });
 });
+
+/*===== Navigative BTN algorithm =====*/
+let btnBox = document.getElementById("btnbx");
+let nextBtn = document.getElementById("nextbtn");
+let backBtn = document.getElementById("backbtn");
+let form = document.getElementById("form");
+
+backBtn.addEventListener("click", function () {
+//   form.style.display = "none";
+});
+
+nextBtn.addEventListener("click", function () {
+    form.style.translate = - 100 + "%";
+})
+// }
 
 // document.addEventListener("DOMContentLoaded", function () {
 //     let summaryScreen = document.getElementById("screen");

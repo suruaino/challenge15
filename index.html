@@ -70,7 +70,7 @@
     </aside>
 
     <main class="flex flex-col md:flex-row">
-      <form action="" class="flex gap-8">
+      <form action="" id="form" class="flex gap-8">
         <section class="personal_info px-20 flex flex-col gap-4 p-8 hidden">
           <header>
             <h2 class="text-3xl font-bold">Personal info</h2>
@@ -284,24 +284,24 @@
             <div class="finishing_content">
               <div class="finishing_planbx flex justify-between border-b-2">
                 <div class="selected_planbx">
-                  <div id="selected_plan"> Testing plan</div>
-                  <div class="link_to_plan"><a href="#plan">Change</a></div>
+                  <div id="selected_plan" class="font-bold"></div>
+                  <div class="link_to_plan underline text-gray-400"><a href="#plan">Change</a></div>
                 </div>
-                <div id="finish_plan"></div>
+                <div id="finish_plan" class="font-bold"></div>
               </div>
 
               <div class="finishing_addpx flex justify-between">
                 <div class="selected_addbx">
-                  <div id="selected_add">Testin add</div>
+                  <div id="selected_add" class="font-bold"></div>
                 </div>
-                <div id="finish_add"></div>
+                <div id="finish_add" class="font-bold"></div>
               </div>
 
             </div>
 
-            <div class="totalbx flex justify-between px-4">
+            <div class="totalbx font-bold text-gray-400 flex justify-between px-4">
               <p>Total(per month)</p>
-              <div id="total"></div>
+              <div id="total" class="text-xl text-blue-600"></div>
             </div>
 
           </article>
@@ -315,9 +315,9 @@
             Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com.
           </p>
         </dialog>
-        <div class="btnbx px-20 flex justify-between absolute">
-          <input type="button" value="Go Back">
-          <input type="button" value="Next Step">
+        <div id="btnbx" class="btnbx px-20 flex justify-between ">
+          <input id="backbtn" type="button" value="Go Back">
+          <input id="nextbtn" type="button" value="Next Step">
 
         </div>
       </form>

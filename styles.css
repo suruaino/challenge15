@@ -278,7 +278,7 @@ main form .btnbx {
     width: 100%;
     left: 50%;
     transform: translateX(-50%);
-    position: absolute;
+    position: fixed;
     bottom: 0;
     padding: 1rem 2rem;
 }
@@ -290,6 +290,7 @@ main .btnbx input {
     padding: .5rem 1rem;
     right: 0;
     bottom: 0;
+    cursor: pointer;
 }
 
 main .btnbx input:first-child {
