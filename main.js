@@ -68,14 +68,21 @@ document.addEventListener("DOMContentLoaded", function () {
 let btnBox = document.getElementById("btnbx");
 let nextBtn = document.getElementById("nextbtn");
 let backBtn = document.getElementById("backbtn");
-let form = document.getElementById("form");
+let formBx = document.getElementById("formbx");
 
+let width = 100 + "%";
+formBx.style.width = width;
 backBtn.addEventListener("click", function () {
-//   form.style.display = "none";
+
+    // let width = 100 + "%";
+    // let newWidth =+ width; 
+    formBx.style.translate = 100 + "%";;
 });
 
-nextBtn.addEventListener("click", function () {
-    form.style.translate = - 100 + "%";
+nextBtn.addEventListener("click", function (width) {
+    // let width = 
+    // let newWidth =+ width; 
+    formBx.style.translate =;
 })
 // }
 

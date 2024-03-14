@@ -66,6 +66,9 @@ main form {
     position: relative;
 }
 
+main form .formbx{
+    width: auto;
+}
 section {
     min-width: 100%;
     /* margin-left: 40rem; */
