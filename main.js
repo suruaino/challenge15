@@ -83,6 +83,10 @@ nextBtn.addEventListener("click", function (width) {
     // let width = 
     // let newWidth =+ width; 
 })
+
+     
+
+
 // }
 
 // document.addEventListener("DOMContentLoaded", function () {
