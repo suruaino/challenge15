@@ -66,23 +66,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /*===== Navigative BTN algorithm =====*/
 let btnBox = document.getElementById("btnbx");
-let nextBtn = document.getElementById("nextbtn");
-let backBtn = document.getElementById("backbtn");
+let nextBtn = document.querySelectorAll(".btnbx .next");
+let backBtn = document.querySelectorAll(".btnbx .back");
 let formBx = document.getElementById("formbx");
 
-let width = 100 + "%";
-formBx.style.width = width;
-backBtn.addEventListener("click", function () {
 
-    // let width = 100 + "%";
-    // let newWidth =+ width; 
-    formBx.style.translate = 100 + "%";;
+nextBtn.forEach(container => {
+  container.addEventListener("click", function () {
+    formBx.style.translate = -100 + "%";
 });
-
-nextBtn.addEventListener("click", function (width) {
-    // let width = 
-    // let newWidth =+ width; 
 })
+
 
      
 
