@@ -82,7 +82,6 @@ backBtn.addEventListener("click", function () {
 nextBtn.addEventListener("click", function (width) {
     // let width = 
     // let newWidth =+ width; 
-    formBx.style.translate =;
 })
 // }
 

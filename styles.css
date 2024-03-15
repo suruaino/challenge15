@@ -71,8 +71,10 @@ main form .formbx{
 }
 section {
     min-width: 100%;
+    position: relative;
     /* margin-left: 40rem; */
 }
+
 
 aside {
     background: url(assets/images/bg-sidebar-desktop.svg);
@@ -276,36 +278,41 @@ main .select_plan .togglebx .toggle_container > input:checked + #toggle_span{
     right: 0;
     left: auto;
 }
-main form .btnbx {
-    background-color: var(--Alabaster);
-    width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    position: fixed;
+main section>.btnbx {
+    /* background-color: var(--Alabaster); */
+    background-color: red;
+    width: 95%;
+    height: 4rem;
+    /* left: 50%;
+    transform: translateX(-50%); */
+    position: absolute;
     bottom: 0;
-    padding: 1rem 2rem;
+    inset: auto 2rem 0 2rem;
+    /* padding: 1rem 10rem; */
 }
 
-main .btnbx input {
+main section>.btnbx input {
     width: fit-content;
-    background-color: var(--Marine_blue);
+    /* background-color: var(--Marine_blue); */
     color: var(--Alabaster);
     padding: .5rem 1rem;
     right: 0;
     bottom: 0;
     cursor: pointer;
+    
 }
 
-main .btnbx input:first-child {
+main section>.btnbx input:first-child {
     background-color: transparent;
     border: none;
     color: var(--Cool_gray);
     font-weight: 500;
     left: 0;
     padding: 0;
+
 }
 
-main .btnbx input:last-child {
+main section>.btnbx input:last-child {
     font-weight: 500;
     right: 0;
     border-radius: 5px;
