@@ -70,16 +70,11 @@ let nextBtn = document.querySelectorAll(".btnbx .next");
 let backBtn = document.querySelectorAll(".btnbx .back");
 let formBx = document.getElementById("formbx");
 
-
-nextBtn.forEach(container => {
+nextBtn.forEach((container) => {
   container.addEventListener("click", function () {
-    formBx.style.translate = -100 + "%";
+    formBx.style.marginLeft = -100 + "%";
+  });
 });
-})
-
-
-     
-
 
 // }
 

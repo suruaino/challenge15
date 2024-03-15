@@ -39,10 +39,9 @@ body {
     font-size: 16px;
     font-family: "Ubuntu", sans-serif;
     font-weight: 300;
-    font-style: normal;
+    color: var(--Cool_gray);
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     height: 100vh;
 
@@ -50,11 +49,11 @@ body {
 
 .main_wrapper {
     height: 100%;
-    width: 400%;
+    width: 100%;
     max-width: 60rem;
     /* overflow-x: hidden; */
     background-color: transparent;
-    /* border:  1px solid green; */
+    border:  1px solid green;
     border-radius: 10px;
     /* position: relative; */
 }
@@ -71,8 +70,9 @@ main form .formbx{
 }
 section {
     min-width: 100%;
+    height: 100%;
     position: relative;
-    /* margin-left: 40rem; */
+    border: 1px solid red;
 }
 section:nth-child(1) .btnbx{
     width: 100%;
@@ -84,8 +84,8 @@ section:nth-child(1) .btnbx button{
     color: var(--Alabaster);
     font-size: 1em;
     font-weight: 500;
-    margin-top: 4rem;
-    padding: .5rem 2rem;
+    margin-top: 3.3rem;
+    padding: .5rem 1.2rem;
     border-radius: 5px;
 }
 section:not(section:nth-child(1)) .btnbx{
@@ -194,11 +194,16 @@ main .personal_info {
     height: fit-content;
     background-color: var(--Alabaster);
     border-radius: 10px;
-    border: 1px solid red;
+
 }
 
+main .personal_info header h2{
+    color: var(--Marine_blue);
+    font-weight: 700;
+}
 main .personal_info label {
-    font-weight: bold;
+    font-weight: 600;
+    color: var(--Marine_blue);
 }
 
 main .personal_info input {
