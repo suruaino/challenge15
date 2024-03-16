@@ -69,286 +69,284 @@
       <!-- Sidebar end -->
     </aside>
 
-    <main class="flex flex-col md:flex-row px-4">
-      <form action="" id="form" class="">
-        <div id="formbx" class="formbx flex gap-8">
-          <section class="personal_info w-full md:px-16 flex flex-col items-center gap-8">
+    <form action="" id="form" class="flex px-4">
+      <div id="formbx" class="formbx flex gap-8">
+        <section class="personal_info w-full md:px-16 flex flex-col items-center gap-8">
 
-            <div class="content w-full px-5 py-5 flex flex-col gap-3">
-              <header class="w-full flex flex-col gap-2">
-                <h2 class="text-2xl font-bold">Personal info</h2>
-                <p class="">Please provide your name, email address, and phone number.</p>
-              </header>
+          <div class="contentbx w-full px-5 py-7 flex flex-col gap-3">
+            <header class="w-full flex flex-col gap-2">
+              <h2 class="text-2xl font-bold">Personal info</h2>
+              <p class="">Please provide your name, email address, and phone number.</p>
+            </header>
 
-              <div>
-                <label for="name">Name</label>
-                <input type="text" id="name" placeholder="e.g. Stephen King">
-              </div>
-
-              <div>
-                <label for="email">Email Address</label>
-                <input type="text" id="email" placeholder="e.g. stephenking@lorem.com">
-              </div>
-
-              <div>
-                <label for="phone">Phone Number</label>
-                <input type="text" id="phone" placeholder="e.g. +1234567890">
-              </div>
-
+            <div>
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="e.g. Stephen King">
             </div>
 
-
-            <div class="btnbx">
-              <!-- <input type="button" value="Go Back"> -->
-              <button class="next">Next Step</button>
-
+            <div>
+              <label for="email">Email Address</label>
+              <input type="text" id="email" placeholder="e.g. stephenking@lorem.com">
             </div>
-          </section>
 
-          <section id="plan" class="select_plan md:px-16 flex flex-col items-center gap-6">
+            <div>
+              <label for="phone">Phone Number</label>
+              <input type="text" id="phone" placeholder="e.g. +1234567890">
+            </div>
 
-            <div class="content  py-6 w-full flex flex-col gap-4">
-              <header class="w-full px-5 flex flex-col gap-2">
-                <h2 class="text-2xl font-bold">Select your plan</h2>
-                <p class="">You have the option of monthly or yearly billing.</p>
-              </header>
-              <div class="content_container px-5 ">
-                <article id="plan_monthly" class=" flex flex-col gap-3">
+          </div>
 
 
-                  <!-- <div id="planbx" class="planbx flex flex-col md:flex-row"> -->
-                  <div class="select_box arcade flex md:flex-col gap-4 px-4 py-3 relative">
-                    <input id="arcade" type="radio" value="$9/mo" name="radio_plan" class=" absolute">
-                    <!-- <div class="arcade_contentbx"> -->
-                    <img src="assets/images/icon-arcade.svg" alt="">
-                    <div class="content">
-                      <h4 class="font-bold">Arcade</h4>
-                      <p>$9/mo</p>
-                    </div>
-                    <!-- </div> -->
+          <div class="btnbx">
+            <!-- <input type="button" value="Go Back"> -->
+            <button class="next">Next Step</button>
+
+          </div>
+        </section>
+
+        <section id="plan" class="select_plan w-full md:px-16 flex flex-col items-center ">
+
+          <div class="contentbx pb-8 w-full flex flex-col gap-5 shadow-lg">
+            <header class="w-full px-5 pt-7 flex flex-col gap-2">
+              <h2 class="text-2xl font-bold">Select your plan</h2>
+              <p class="">You have the option of monthly or yearly billing.</p>
+            </header>
+            <div class="content">
+              <article id="plan_monthly" class="px-5 flex flex-col gap-3">
+
+
+                <!-- <div id="planbx" class="planbx flex flex-col md:flex-row"> -->
+                <div class="select_box arcade flex md:flex-col gap-4 px-4 py-4 relative">
+                  <input id="arcade" type="radio" value="$9/mo" name="radio_plan" class=" absolute">
+                  <!-- <div class="arcade_contentbx"> -->
+                  <img src="assets/images/icon-arcade.svg" alt="">
+                  <div class="content">
+                    <h4 class="font-bold">Arcade</h4>
+                    <p>$9/mo</p>
                   </div>
-
-                  <div class="select_box advance flex md:flex-col gap-4 px-4 py-3 relative">
-                    <input id="advance" type="radio" value="$12/mo" name="radio_plan" class=" absolute">
-                    <img src="assets/images/icon-advanced.svg" alt="">
-                    <div class="content">
-                      <h4 class="font-bold">Advance</h4>
-                      <p>$12/mo</p>
-                    </div>
-                  </div>
-
-                  <div class="select_box pro flex md:flex-col gap-4 px-4 py-3 relative">
-                    <input id="pro" type="radio" value="$15/mo" name="radio_plan" class=" absolute">
-                    <img src="assets/images/icon-pro.svg" alt="">
-                    <div class="content">
-                      <h4 class="font-bold">Pro</h4>
-                      <p>$15/mo</p>
-                    </div>
-                  </div>
-
                   <!-- </div> -->
-
-                </article>
-
-                <article id="plan_yearly" class="flex flex-col gap-3 hidden">
-
-                  <!-- <div class="planbx flex flex-col md:flex-row gap-4"> -->
-                  <div class="select_box arcade flex md:flex-col gap-4 px-4 py-3 relative">
-                    <input type="radio" value="$90/yr" name="radio_plan" class=" absolute">
-                    <img src="assets/images/icon-arcade.svg" alt="">
-                    <div class="content">
-                      <h4 class="font-bold">Arcade</h4>
-                      <p>$90/yr</p>
-                    </div>
-                  </div>
-
-                  <div class="select_box Advance flex md:flex-col gap-4 px-4 py-3 relative">
-                    <input type="radio" value="$120/yr" name="radio_plan" class=" absolute">
-                    <img src="assets/images/icon-advanced.svg" alt="">
-                    <div class="content">
-                      <h4 class="font-bold">Advance</h4>
-                      <p>$120/yr</p>
-                    </div>
-                  </div>
-
-                  <div class="select_box pro flex md:flex-col gap-4 px-4 py-3 relative">
-                    <input type="radio" value="$150/yr" name="radio_plan" class=" absolute">
-                    <img src="assets/images/icon-pro.svg" alt="">
-                    <div class="content">
-                      <h4 class="font-bold">Pro</h4>
-                      <p>$150/yr</p>
-                    </div>
-                  </div>
-
-                  <!-- </div> -->
-                </article>
-
-
-                <div class="togglebx py-3 font-medium flex justify-center items-center gap-8">
-                  <p id="monthly" class="font-bold">Monthly</p>
-                  <div class="toggle_container flex justify-center items-center relative">
-                    <input id="toggle_input" type="checkbox" class="">
-                    <span id="toggle_span" class=""></span>
-                  </div>
-                  <p id="yearly" class="font-bold">Yearly</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="btnbx">
-              <button class="back">Go back</button>
-              <button class="next">Next Step</button>
-
-            </div>
-          </section>
-
-          <section class="add_ons md:px-16 flex flex-col items-center gap-6">
-            <div class="content  py-6 w-full flex flex-col gap-4">
-              <header class="w-full px-5 flex flex-col gap-2">
-                <h2 class="text-2xl font-bold">Pick add-ons</h2>
-                <p class="">Add-ons help enhance your gaming experience.</p>
-              </header>
-
-              <div class="add_ons_content px-5">
-                <article id="add_monthly" class="w-full flex flex-col gap-4">
-
-                  <div class="add_monthlybx w-full flex flex-col gap-4">
-                    <div class="add_container online_service flex justify-between items-center gap-6 px-4 py-3">
-                      <div class="left flex gap-6">
-                        <input type="checkbox" value="+$1/mo" class="add_inputs w-5">
-                        <div class="content">
-                          <h4 class="font-bold">Online service</h4>
-                          <p>Access to multiplayer games</p>
-                        </div>
-                      </div>
-                      <p>+$1/mo</p>
-                    </div>
-
-                    <div class="add_container large_storage flex justify-between items-center gap-6 px-4 py-3">
-                      <div class="left flex gap-6">
-                        <input type="checkbox" value="+$2/mo" class="add_inputs w-5">
-                        <div class="content">
-                          <h4 class="font-bold">Large storage</h4>
-                          <p>Extra 1TB of cloud save</p>
-                        </div>
-                      </div>
-                      <p>+$2/mo</p>
-                    </div>
-
-                    <div class="add_container online_service flex justify-between items-center gap-6 px-4 py-3">
-                      <div class="left flex gap-6">
-                        <input type="checkbox" value="+$2/mo" class="add_inputs w-5">
-                        <div class="content">
-                          <h4 class="font-bold">Customizable profile</h4>
-                          <p>Custom theme on your profile</p>
-                        </div>
-                      </div>
-                      <p>+$2/mo</p>
-                    </div>
-                  </div>
-
-                </article>
-
-
-                <article id="add_yearly" class="flex flex-col gap-4">
-                  <!--Remember to add flex and remove hidden when toggled-->
-
-                  <div class="planbx flex flex-col gap-4">
-                    <div class="add_container online_service flex justify-between items-center gap-6 px-4 py-3">
-                      <div class="left flex gap-6">
-                        <input type="checkbox" value="+$10/yr" class="add_inputs w-5">
-                        <div class="content">
-                          <h4 class="font-bold">Online service</h4>
-                          <p>Access to multiplayer games</p>
-                        </div>
-                      </div>
-                      <p>+$10/yr</p>
-                    </div>
-
-                    <div class="add_container large_storage flex justify-between items-center gap-6 px-4 py-3">
-                      <div class="left flex gap-6">
-                        <input type="checkbox" value="+$20/yr" class="add_inputs w-5">
-                        <div class="content">
-                          <h4 class="font-bold">Large storage</h4>
-                          <p>Extra 1TB of cloud save</p>
-                        </div>
-                      </div>
-                      <p>+$20/yr</p>
-                    </div>
-
-                    <div class="add_container online_service flex justify-between items-center gap-6 px-4 py-3">
-                      <div class="left flex gap-6">
-                        <input type="checkbox" value="+$20/yr" class="add_inputs w-5">
-                        <div class="content">
-                          <h4 class="font-bold">Customizable profile</h4>
-                          <p>Custom theme on your profile</p>
-                        </div>
-                      </div>
-                      <p>+$20/yr</p>
-                    </div>
-                  </div>
-
-                </article>
-              </div>
-            </div>
-            <div class="btnbx">
-              <button class="back">Go back</button>
-              <button class="next">Next Step</button>
-
-            </div>
-          </section>
-
-
-          <section class="finishing_up px-20 py-6 shadow-lg">
-            <article id="summary_screen" class="flex flex-col gap-4">
-
-              <h2 class="text-3xl font-bold">Finishing up</h2>
-              <p id="screen" class=" text-xl">Double-check everything looks OK before confirming.</p>
-
-              <div class="finishing_content">
-                <div class="finishing_planbx flex justify-between border-b-2">
-                  <div class="selected_planbx">
-                    <div id="selected_plan" class="font-bold"></div>
-                    <div class="link_to_plan underline text-gray-400"><a href="#plan">Change</a></div>
-                  </div>
-                  <div id="finish_plan" class="font-bold"></div>
                 </div>
 
-                <div class="finishing_addpx flex justify-between">
-                  <div class="selected_addbx">
-                    <div id="selected_add" class="font-bold"></div>
+                <div class="select_box advance flex md:flex-col gap-4 px-4 py-4 relative">
+                  <input id="advance" type="radio" value="$12/mo" name="radio_plan" class=" absolute">
+                  <img src="assets/images/icon-advanced.svg" alt="">
+                  <div class="content">
+                    <h4 class="font-bold">Advance</h4>
+                    <p>$12/mo</p>
                   </div>
-                  <div id="finish_add" class="font-bold"></div>
                 </div>
 
+                <div class="select_box pro flex md:flex-col gap-4 px-4 py-4 relative">
+                  <input id="pro" type="radio" value="$15/mo" name="radio_plan" class=" absolute">
+                  <img src="assets/images/icon-pro.svg" alt="">
+                  <div class="content">
+                    <h4 class="font-bold">Pro</h4>
+                    <p>$15/mo</p>
+                  </div>
+                </div>
+
+                <!-- </div> -->
+
+              </article>
+
+              <article id="plan_yearly" class="flex flex-col gap-3 hidden">
+
+                <!-- <div class="planbx flex flex-col md:flex-row gap-4"> -->
+                <div class="select_box arcade flex md:flex-col gap-4 px-4 py-3 relative">
+                  <input type="radio" value="$90/yr" name="radio_plan" class=" absolute">
+                  <img src="assets/images/icon-arcade.svg" alt="">
+                  <div class="content">
+                    <h4 class="font-bold">Arcade</h4>
+                    <p>$90/yr</p>
+                  </div>
+                </div>
+
+                <div class="select_box Advance flex md:flex-col gap-4 px-4 py-3 relative">
+                  <input type="radio" value="$120/yr" name="radio_plan" class=" absolute">
+                  <img src="assets/images/icon-advanced.svg" alt="">
+                  <div class="content">
+                    <h4 class="font-bold">Advance</h4>
+                    <p>$120/yr</p>
+                  </div>
+                </div>
+
+                <div class="select_box pro flex md:flex-col gap-4 px-4 py-3 relative">
+                  <input type="radio" value="$150/yr" name="radio_plan" class=" absolute">
+                  <img src="assets/images/icon-pro.svg" alt="">
+                  <div class="content">
+                    <h4 class="font-bold">Pro</h4>
+                    <p>$150/yr</p>
+                  </div>
+                </div>
+
+                <!-- </div> -->
+              </article>
+
+
+              <div class="togglebx py-3 mx-4 font-medium flex justify-center items-center gap-4">
+                <p id="monthly" class="font-bold">Monthly</p>
+                <div class="toggle_container flex justify-center items-center relative">
+                  <input id="toggle_input" type="checkbox" class="">
+                  <span id="toggle_span" class=""></span>
+                </div>
+                <p id="yearly" class="font-bold">Yearly</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="btnbx">
+            <button class="back">Go back</button>
+            <button class="next">Next Step</button>
+
+          </div>
+        </section>
+
+        <section class="add_ons w-full md:px-16 flex flex-col items-center">
+          <div class="contentbx  pb-8 w-full flex flex-col gap-5 shadow-lg">
+            <header class="w-full px-5 flex flex-col gap-3">
+              <h2 class="text-2xl font-bold">Pick add-ons</h2>
+              <p class="">Add-ons help enhance your gaming experience.</p>
+            </header>
+
+            <div class="add_ons_contentbx px-5">
+              <article id="add_monthly" class="w-full flex flex-col gap-3">
+
+                <!-- <div class="add_monthlybx w-full flex flex-col gap-4"> -->
+                <div class="add_container online_service flex justify-between items-center gap-2 px-4">
+                  <div class="left flex gap-4">
+                    <input type="checkbox" value="+$1/mo" class="add_inputs w-5">
+                    <div class="content">
+                      <h4 class="font-bold">Online service</h4>
+                      <p class="">Access to multiplayer games</p>
+                    </div>
+                  </div>
+                  <p>+$1/mo</p>
+                </div>
+
+                <div class="add_container large_storage flex justify-between items-center gap-2 px-4">
+                  <div class="left flex gap-4">
+                    <input type="checkbox" value="+$2/mo" class="add_inputs w-5">
+                    <div class="content">
+                      <h4 class="font-bold">Large storage</h4>
+                      <p>Extra 1TB of cloud save</p>
+                    </div>
+                  </div>
+                  <p>+$2/mo</p>
+                </div>
+
+                <div class="add_container online_service flex justify-between items-center gap-0 px-4">
+                  <div class="left flex gap-4">
+                    <input type="checkbox" value="+$2/mo" class="add_inputs w-5">
+                    <div class="content">
+                      <h4 class="font-bold">Customizable profile</h4>
+                      <p>Custom theme on your profile</p>
+                    </div>
+                  </div>
+                  <p>+$2/mo</p>
+                </div>
+                <!-- </div> -->
+
+              </article>
+
+
+              <article id="add_yearly" class="flex flex-col gap-4">
+                <!--Remember to add flex and remove hidden when toggled-->
+
+                <!-- <div class="planbx flex flex-col gap-4"> -->
+                <div class="add_container online_service flex justify-between items-center gap-6 px-4 py-3">
+                  <div class="left flex gap-6">
+                    <input type="checkbox" value="+$10/yr" class="add_inputs w-5">
+                    <div class="content">
+                      <h4 class="font-bold">Online service</h4>
+                      <p>Access to multiplayer games</p>
+                    </div>
+                  </div>
+                  <p>+$10/yr</p>
+                </div>
+
+                <div class="add_container large_storage flex justify-between items-center gap-6 px-4 py-3">
+                  <div class="left flex gap-6">
+                    <input type="checkbox" value="+$20/yr" class="add_inputs w-5">
+                    <div class="content">
+                      <h4 class="font-bold">Large storage</h4>
+                      <p>Extra 1TB of cloud save</p>
+                    </div>
+                  </div>
+                  <p>+$20/yr</p>
+                </div>
+
+                <div class="add_container online_service flex justify-between items-center gap-6 px-4 py-3">
+                  <div class="left flex gap-6">
+                    <input type="checkbox" value="+$20/yr" class="add_inputs w-5">
+                    <div class="content">
+                      <h4 class="font-bold">Customizable profile</h4>
+                      <p>Custom theme on your profile</p>
+                    </div>
+                  </div>
+                  <p>+$20/yr</p>
+                </div>
+                <!-- </div> -->
+
+              </article>
+            </div>
+          </div>
+          <div class="btnbx">
+            <button class="back">Go back</button>
+            <button class="next">Next Step</button>
+
+          </div>
+        </section>
+
+
+        <section class="finishing_up px-20 py-6 shadow-lg">
+          <article id="summary_screen" class="flex flex-col gap-4">
+
+            <h2 class="text-3xl font-bold">Finishing up</h2>
+            <p id="screen" class=" text-xl">Double-check everything looks OK before confirming.</p>
+
+            <div class="finishing_content">
+              <div class="finishing_planbx flex justify-between border-b-2">
+                <div class="selected_planbx">
+                  <div id="selected_plan" class="font-bold"></div>
+                  <div class="link_to_plan underline text-gray-400"><a href="#plan">Change</a></div>
+                </div>
+                <div id="finish_plan" class="font-bold"></div>
               </div>
 
-              <div class="totalbx font-bold text-gray-400 flex justify-between px-4">
-                <p>Total(per month)</p>
-                <div id="total" class="text-xl text-blue-600"></div>
+              <div class="finishing_addpx flex justify-between">
+                <div class="selected_addbx">
+                  <div id="selected_add" class="font-bold"></div>
+                </div>
+                <div id="finish_add" class="font-bold"></div>
               </div>
-
-            </article>
-            <div class="btnbx">
-              <button class="back">Go back</button>
-              <button class="next">Next Step</button>
 
             </div>
-          </section>
 
-          <dialog class="finishing_up px-20 py-20 shadow-lg flex flex-col justify-center items-center gap-4 hidden">
-            <img src="assets/images/icon-thank-you.svg" alt="">
-            <h2 class="text-3xl font-bold">Thank you!</h2>
-            <p class=" text-xl text-center">
-              Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need
-              support, please feel free to email us at support@loremgaming.com.
-            </p>
-          </dialog>
+            <div class="totalbx font-bold text-gray-400 flex justify-between px-4">
+              <p>Total(per month)</p>
+              <div id="total" class="text-xl text-blue-600"></div>
+            </div>
 
-        </div>
+          </article>
+          <div class="btnbx">
+            <button class="back">Go back</button>
+            <button class="next">Next Step</button>
 
-      </form>
-    </main>
+          </div>
+        </section>
+
+        <dialog class="finishing_up px-20 py-20 shadow-lg flex flex-col justify-center items-center gap-4 hidden">
+          <img src="assets/images/icon-thank-you.svg" alt="">
+          <h2 class="text-3xl font-bold">Thank you!</h2>
+          <p class=" text-xl text-center">
+            Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need
+            support, please feel free to email us at support@loremgaming.com.
+          </p>
+        </dialog>
+
+      </div>
+
+    </form>
   </div>
 
 

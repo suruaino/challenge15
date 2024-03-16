@@ -44,7 +44,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height: 100%;
 
 }
 
@@ -54,64 +54,73 @@ body {
     height: 100%;
     background-color: transparent;
     /* border:  1px solid green; */
-    border-radius: 10px;
+    /* border-radius: 10px; */
     /* position: relative; */
 }
 
-main form {
+form {
     /* border:  4px solid orange; */
-    background-color: orange;
+    /* background-color: orange; */
+    /* background-color: var(--Magnolia); */
     width: 100%;
-    max-height: 33rem;
+    height: 95.5vh;
+    margin-top: 6.3rem;
     overflow-x: scroll;
     position: relative;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     /* border-left: 4px solid yellow; */
 }
 
-main form .formbx{
-    background-color: var(--Magnolia);
-    background-color: blue;
-    background-color: green;
-    background-color: transparent;
+form .formbx{
+    /* background-color: var(--Magnolia); */
+    /* background-color: blue;
+    background-color: green; */
+    /* background-color: transparent; */
     width: 100%;
-    max-height: 100%;
+    min-height: 100%;
     border-radius: 10px;
   
     
 }
 section {
-    /* background-color: var(--Magnolia); */
-    background-color: red; 
+    background-color: var(--Magnolia);
+    /* background-color: red;  */
     min-width: 100%;
     height: 100%;
     border-radius: 10px;
+    position: relative;
+    /* border: 1px solid yellow; */
     
 }
 section:nth-child(1) .btnbx{
     background-color: var(--Alabaster);
     width: 100%;
-    height: 4rem;
+    height: 4.2rem;
     display: flex;
     justify-content: end;
     align-items: center;
+    position: absolute;
+    bottom: 0;
 }
 section:nth-child(1) .btnbx button{
     background-color: var(--Marine_blue);
     color: var(--Alabaster);
-    font-size: 1em;
+    font-size: .9rem;
     font-weight: 500;
-    margin-top: 3.3rem;
-    padding: .5rem 1.2rem;
+    padding: .5rem 1rem;
     border-radius: 5px;
 }
 section:not(section:nth-child(1)) .btnbx{
     background-color: var(--Alabaster);
     width: 100%;
     height: 4rem;
+    padding: 0 1rem;
+    margin-top: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: absolute;
+    bottom: 0;
 }
 
 section:not(section:nth-child(1)) .btnbx button:first-child{
@@ -134,7 +143,7 @@ section:not(section:nth-child(1)) .btnbx button:last-child{
 aside {
     background: url(assets/images/bg-sidebar-desktop.svg);
     background-repeat: no-repeat;
-    background-position: 80% 86.5%;
+    background-position: 80% 85%;
     background-size: 110%;
     display: flex;
     justify-content: center;
@@ -202,14 +211,7 @@ aside>div span:last-child h4 {
     }
 }
 
-main {
-    display: flex;
-    width: 100%;
-    /* height: fit-content; */
-    margin-top: 5.6rem;
-}
-
-main .personal_info {
+.personal_info {
 
     /* background-color: var(--Alabaster); */
     
@@ -217,69 +219,75 @@ main .personal_info {
 
 }
 
-main .personal_info .content{
+.personal_info .contentbx{
     background-color: var(--Alabaster);
     isolation: isolate;
     border-radius: 10px;
 }
-main .personal_info header h2,
-main .personal_info label,
-main .select_plan h2,
-main .add_ons header h2,
-main .add_ons .content h4,
-main .select_plan .select_box .content h4{
+
+.personal_info header h2,
+.personal_info label,
+.select_plan h2,
+.add_ons header h2,
+.add_ons .contentbx h4,
+.select_plan .select_box .content h4{
     color: var(--Marine_blue);
     font-weight: 700;
 }
 
-
-main .personal_info input {
+.personal_info .contentbx > div label{
+    font-size: .8rem;
+}
+.personal_info input {
     height: 2.3rem;
     width: 100%;
-    padding: 0 10px;
+    padding: 0 16px;
     border: 1px solid var(--Cool_gray);
     border-radius: 5px;
     
 }
 
-main .select_plan {
+.select_plan {
     width: 100%;
-    height: fit-content;
+   
     background-color: var(--Magnolia);
     /* background-color: red; */
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
-main .select_plan .content{
+.select_plan .contentbx{
     background-color: var(--Alabaster);
+    /* height: 100%; */
+    /* border: 1px solid greenyellow; */
     border-radius: 10px;
+    margin-bottom: -20rem;
 }
-main .select_plan .content_container{
+.select_plan .content{
     background-color: var(--Alabaster);
     border-radius: 10px;
-    height: fit-content;
+    /* height: 100%; */
     /* border: 1px solid red; */
 }
-main .select_plan .planbx{
+.select_plan .planbx{
     gap: .7rem;
 }
-main .select_plan>p {
+.select_plan>p {
     color: var(--Cool_gray);
 }
 
-main .select_plan .select_box {
+.select_plan .select_box {
     border: 1px solid var(--Light_gray);
     border-radius: 5px;
     cursor: pointer;
     transition: 0.5s;
 }
 
-main .select_plan .select_box .content{
+.select_plan .select_box .content{
     display: flex;
     flex-direction: column;
 
 }
-main .select_plan .select_box:hover {
+.select_plan .select_box:hover {
     background-color: var(--Magnolia);
     border: 1px solid black;
 }
@@ -288,13 +296,13 @@ main .select_plan .select_box:hover {
     padding: 0.6rem 1rem;
 }  */
 
-main .select_plan .select_box .content p {
+.select_plan .select_box .contentbx p {
     font-weight: 400;
     line-height: 1.3rem;
     color: var(--Cool_gray);
 }
 
-main .select_plan .select_box > input {
+.select_plan .select_box > input {
     height: 3rem;
     width: 100%;
     padding: 0 10px;
@@ -304,14 +312,14 @@ main .select_plan .select_box > input {
     opacity: 0;
 }
 
-main .select_plan .togglebx {
-    width: 100%;
+.select_plan .togglebx {
+    max-width: 100%;
     background-color: rgba(44, 85, 97, 0.01);
     border-radius: 10px;
-    margin-top: 1.5rem;
+    margin-top: 1.45rem;
 }
 
-main .select_plan .togglebx .toggle_container {
+.select_plan .togglebx .toggle_container {
     background-color: var(--Marine_blue);
     width: 2.3rem;
     height: .8rem;
@@ -321,7 +329,7 @@ main .select_plan .togglebx .toggle_container {
 
 }
 
-main .select_plan .togglebx .toggle_container > #toggle_span {
+.select_plan .togglebx .toggle_container > #toggle_span {
     width: .8rem;
     height: .8rem;
     background-color: aliceblue;
@@ -332,7 +340,7 @@ main .select_plan .togglebx .toggle_container > #toggle_span {
     /* transition: 1s; */
 }
 
-main .select_plan .togglebx .toggle_container > input {
+.select_plan .togglebx .toggle_container > input {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -340,29 +348,40 @@ main .select_plan .togglebx .toggle_container > input {
     cursor: pointer;
     z-index: 10;
 }
-main .select_plan .togglebx .toggle_container > input:checked + #toggle_span{
+.select_plan .togglebx .toggle_container > input:checked + #toggle_span{
     right: 0;
     left: auto;
 }
 
-main .add_ons {
+.add_ons {
     width: 95%;
     min-height: 30.5rem;
-    background-color: var(--Alabaster);
+    background-color: var(--Magnolia);
     /* background-color: red; */
     border-radius: 10px;
     /* z-index: 3; */
 }
 
-main .add_ons #add_yearly{
+.add_ons .contentbx{
+    background-color: var(--Alabaster);
+}
+.add_ons .add_ons_contentbx{
+    background-color: var(--Alabaster);
+}
+.add_ons #add_yearly{
     display: none;
 }
-main .add_ons .add_container {
+.add_ons .add_container {
     border: 1px solid var(--Cool_gray);
     border-radius: 5px;
+    padding: .6rem 1rem;
 }
 
-main .finishing_up {
+.add_ons .add_container p{
+    font-size: 0.85rem;
+    line-height: 1.25rem;
+}
+.finishing_up {
     width: 95%;
     height: fit-content;
     background-color: var(--Alabaster);
@@ -371,7 +390,7 @@ main .finishing_up {
     z-index: 3;
 }
 
-main .finishing_up .finishing_content{
+.finishing_up .finishing_content{
     background-color: rgba(44, 85, 97, 0.01);
     border-radius: 10px;
     padding: 1rem;
@@ -381,7 +400,7 @@ main .finishing_up .finishing_content{
         justify-content: center;
     }
 
-    main form {
+    form {
         /* border:  4px solid orange; */
         width: 70%;
     }
@@ -395,17 +414,13 @@ main .finishing_up .finishing_content{
 
     }
 
-    main {
-        background-color: transparent;
-    }
-
-    main .personal_info {
+    .personal_info {
         height: auto;
         /* border: 1px solid yellow; */
 
     }
 
-    main .personal_info input {
+    .personal_info input {
         height: 2.8rem;
         width: 100%;
         padding: 0 10px;
@@ -414,34 +429,34 @@ main .finishing_up .finishing_content{
         
     }
 
-    main .select_plan {
+    .select_plan {
         height: auto;
         /* border: 1px solid red; */
         /* padding: auto 8rem; */
 
     }
 
-    main .select_plan .planbx {
+    .select_plan .planbx {
         height: 10rem;
         /* border: 1px solid green; */
         gap: .8rem
     }
 
-    main .select_plan .planbx .select_box {
+    .select_plan .planbx .select_box {
         min-width: calc(95% / 3);
         /* max-width: 6.5rem; */
     }
 
-    main .select_plan .planbx .select_box img {
+    .select_plan .planbx .select_box img {
         width: 2rem;
     }
 
-    main .select_plan .togglebx {
+    .select_plan .togglebx {
         min-width: 100%;
         /* background-color: red; */
     }
 
-    main .add_ons {
+    .add_ons {
         background-color: var(--Alabaster);
     }
 }
