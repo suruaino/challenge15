@@ -36,6 +36,7 @@
 
 body {
     background-color: var(--Magnolia);
+    height: 100%;
     font-size: 16px;
     font-family: "Ubuntu", sans-serif;
     font-weight: 300;
@@ -48,10 +49,9 @@ body {
 }
 
 .main_wrapper {
-    height: 100%;
     width: 100%;
     max-width: 60rem;
-    /* overflow-x: hidden; */
+    height: 100%;
     background-color: transparent;
     border:  1px solid green;
     border-radius: 10px;
@@ -60,24 +60,39 @@ body {
 
 main form {
     /* border:  4px solid orange; */
-    width: 70%;
+    background-color: orange;
+    width: 100%;
+    max-height: 33rem;
     overflow-x: scroll;
     position: relative;
+    border-radius: 10px;
 }
 
 main form .formbx{
-    width: auto;
+    background-color: var(--Magnolia);
+    background-color: green;
+    background-color: transparent;
+    width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+  
+    
 }
 section {
+    /* background-color: var(--Magnolia); */
+    background-color: red; 
     min-width: 100%;
     height: 100%;
-    position: relative;
-    border: 1px solid red;
+    border-radius: 10px;
+    
 }
 section:nth-child(1) .btnbx{
+    /* background-color: var(--Alabaster); */
     width: 100%;
+    height: 5rem;
     display: flex;
     justify-content: end;
+    align-items: center;
 }
 section:nth-child(1) .btnbx button{
     background-color: var(--Marine_blue);
@@ -114,14 +129,14 @@ section:not(section:nth-child(1)) .btnbx button:last-child{
 aside {
     background: url(assets/images/bg-sidebar-desktop.svg);
     background-repeat: no-repeat;
-    background-position: 0 88.3%;
-    background-size: cover;
-    height: 34%;
+    background-position: 80% 86.5%;
+    background-size: 110%;
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
     padding: 2rem 1.5rem;
-    bottom: 100%;
+    position: absolute;
+    inset: 0 0 75% 0;
 }
 
 aside>div {
@@ -185,29 +200,32 @@ aside>div span:last-child h4 {
 main {
     display: flex;
     width: 100%;
-    height: 100%;
-
+    /* height: fit-content; */
+    margin-top: 5.6rem;
 }
 
 main .personal_info {
-    /* width: 100%; */
-    height: fit-content;
-    background-color: var(--Alabaster);
-    border-radius: 10px;
+
+    /* background-color: var(--Alabaster); */
+    
+    
 
 }
 
-main .personal_info header h2{
+main .personal_info .content{
+    background-color: var(--Alabaster);
+    isolation: isolate;
+    border-radius: 10px;
+}
+main .personal_info header h2,
+main .personal_info label{
     color: var(--Marine_blue);
     font-weight: 700;
 }
-main .personal_info label {
-    font-weight: 600;
-    color: var(--Marine_blue);
-}
+
 
 main .personal_info input {
-    height: 2.8rem;
+    height: 2.3rem;
     width: 100%;
     padding: 0 10px;
     border: 1px solid var(--Cool_gray);
@@ -333,7 +351,10 @@ main .finishing_up .finishing_content{
     body {
         justify-content: center;
     }
-
+    main form {
+        /* border:  4px solid orange; */
+        width: 70%;
+    }
     .main_wrapper {
         height: 75%;
         width: fit-content;
@@ -353,11 +374,14 @@ main .finishing_up .finishing_content{
 
     }
 
-    /* main .personal_info .btnbx input {
-        width: 10rem;
-        background-color: var(--Marine_blue);
-        color: var(--Alabaster);
-    } */
+    main .personal_info input {
+        height: 2.8rem;
+        width: 100%;
+        padding: 0 10px;
+        border: 1px solid var(--Cool_gray);
+        border-radius: 5px;
+        
+    }
 
     main .select_plan {
         height: auto;
