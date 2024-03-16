@@ -53,7 +53,7 @@ body {
     max-width: 60rem;
     height: 100%;
     background-color: transparent;
-    border:  1px solid green;
+    /* border:  1px solid green; */
     border-radius: 10px;
     /* position: relative; */
 }
@@ -66,10 +66,12 @@ main form {
     overflow-x: scroll;
     position: relative;
     border-radius: 10px;
+    /* border-left: 4px solid yellow; */
 }
 
 main form .formbx{
     background-color: var(--Magnolia);
+    background-color: blue;
     background-color: green;
     background-color: transparent;
     width: 100%;
@@ -87,9 +89,9 @@ section {
     
 }
 section:nth-child(1) .btnbx{
-    /* background-color: var(--Alabaster); */
+    background-color: var(--Alabaster);
     width: 100%;
-    height: 5rem;
+    height: 4rem;
     display: flex;
     justify-content: end;
     align-items: center;
@@ -104,6 +106,9 @@ section:nth-child(1) .btnbx button{
     border-radius: 5px;
 }
 section:not(section:nth-child(1)) .btnbx{
+    background-color: var(--Alabaster);
+    width: 100%;
+    height: 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -120,9 +125,9 @@ section:not(section:nth-child(1)) .btnbx button:first-child{
 section:not(section:nth-child(1)) .btnbx button:last-child{
     background-color: var(--Marine_blue);
     color: var(--Alabaster);
-    font-size: 1em;
+    font-size: .85rem;
     font-weight: 500;
-    padding: .5rem 2rem;
+    padding: .5rem 1rem;
     border-radius: 5px;
 }
 
@@ -218,7 +223,11 @@ main .personal_info .content{
     border-radius: 10px;
 }
 main .personal_info header h2,
-main .personal_info label{
+main .personal_info label,
+main .select_plan h2,
+main .add_ons header h2,
+main .add_ons .content h4,
+main .select_plan .select_box .content h4{
     color: var(--Marine_blue);
     font-weight: 700;
 }
@@ -234,13 +243,26 @@ main .personal_info input {
 }
 
 main .select_plan {
-    width: 95%;
+    width: 100%;
     height: fit-content;
-    background-color: var(--Alabaster);
+    background-color: var(--Magnolia);
     /* background-color: red; */
     border-radius: 10px;
 }
 
+main .select_plan .content{
+    background-color: var(--Alabaster);
+    border-radius: 10px;
+}
+main .select_plan .content_container{
+    background-color: var(--Alabaster);
+    border-radius: 10px;
+    height: fit-content;
+    /* border: 1px solid red; */
+}
+main .select_plan .planbx{
+    gap: .7rem;
+}
 main .select_plan>p {
     color: var(--Cool_gray);
 }
@@ -252,17 +274,23 @@ main .select_plan .select_box {
     transition: 0.5s;
 }
 
+main .select_plan .select_box .content{
+    display: flex;
+    flex-direction: column;
+
+}
 main .select_plan .select_box:hover {
     background-color: var(--Magnolia);
     border: 1px solid black;
 }
-.arcade_contentbx {
+/* .arcade_content {
     width: 100%;
-   
-} 
+    padding: 0.6rem 1rem;
+}  */
 
 main .select_plan .select_box .content p {
     font-weight: 400;
+    line-height: 1.3rem;
     color: var(--Cool_gray);
 }
 
@@ -280,21 +308,22 @@ main .select_plan .togglebx {
     width: 100%;
     background-color: rgba(44, 85, 97, 0.01);
     border-radius: 10px;
+    margin-top: 1.5rem;
 }
 
 main .select_plan .togglebx .toggle_container {
     background-color: var(--Marine_blue);
-    width: 2.5rem;
-    height: 1rem;
-    padding: 10px 16px;
+    width: 2.3rem;
+    height: .8rem;
+    padding: 8px 16px;
     border: 2px solid var(--Marine_blue);
     border-radius: 20px;
 
 }
 
 main .select_plan .togglebx .toggle_container > #toggle_span {
-    width: 1rem;
-    height: 1rem;
+    width: .8rem;
+    height: .8rem;
     background-color: aliceblue;
     border-radius: 50%;
     position: absolute;
@@ -351,10 +380,12 @@ main .finishing_up .finishing_content{
     body {
         justify-content: center;
     }
+
     main form {
         /* border:  4px solid orange; */
         width: 70%;
     }
+
     .main_wrapper {
         height: 75%;
         width: fit-content;
