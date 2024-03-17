@@ -140,6 +140,9 @@ section:not(section:nth-child(1)) .btnbx button:last-child{
     border-radius: 5px;
 }
 
+#summary .btnbx button:last-child{
+    background-color:  var(--Purplish_blue);
+}
 aside {
     background: url(assets/images/bg-sidebar-desktop.svg);
     background-repeat: no-repeat;
@@ -230,7 +233,11 @@ aside>div span:last-child h4 {
 .select_plan h2,
 .add_ons header h2,
 .add_ons .contentbx h4,
-.select_plan .select_box .content h4{
+.select_plan .select_box .content h4,
+.finishing_up header h2,
+.finishing_up #selected_plan,
+.finishing_up #finish_add,
+.finishing_up #finish_plan{
     color: var(--Marine_blue);
     font-weight: 700;
 }
@@ -354,8 +361,8 @@ aside>div span:last-child h4 {
 }
 
 .add_ons {
-    width: 95%;
-    min-height: 30.5rem;
+    width: 100%;
+    /* min-height: 30.5rem; */
     background-color: var(--Magnolia);
     /* background-color: red; */
     border-radius: 10px;
@@ -364,9 +371,13 @@ aside>div span:last-child h4 {
 
 .add_ons .contentbx{
     background-color: var(--Alabaster);
+    border-radius: 10px;
 }
+
 .add_ons .add_ons_contentbx{
-    background-color: var(--Alabaster);
+    /* background-color: var(--Alabaster); */
+    display: flex;
+    flex-direction: column;
 }
 .add_ons #add_yearly{
     display: none;
@@ -382,18 +393,21 @@ aside>div span:last-child h4 {
     line-height: 1.25rem;
 }
 .finishing_up {
-    width: 95%;
-    height: fit-content;
+    width: 100%;
+    /* height: fit-content; */
     background-color: var(--Alabaster);
-    /* background-color: red; */
-    border-radius: 10px;
-    z-index: 3;
+   
 }
 
-.finishing_up .finishing_content{
-    background-color: rgba(44, 85, 97, 0.01);
+.finishing_up .contentbx{
+    /* border: 1px solid red; */
     border-radius: 10px;
-    padding: 1rem;
+}
+.finishing_up .finishing_content{
+    /* background-color: rgba(44, 85, 97, 0.01);
+    border-radius: 10px;
+    padding: 1rem; */
+    width: 100%;
 }
 @media only screen and (min-width: 768px) {
     body {

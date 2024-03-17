@@ -1,80 +1,80 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//   //   let summaryScreen = document.getElementById("screen");
-//   //   let toggleBar = document.getElementById("toggle");
-//   let finishPlan = document.getElementById("finish_plan");
-//   let finishAdd = document.getElementById("finish_add");
-//   let selectedPlan = document.getElementById("selected_plan");
-//   let selectedAdd = document.getElementById("selected_add");
-//   let total = document.getElementById("total");
+document.addEventListener("DOMContentLoaded", function () {
+  //   let summaryScreen = document.getElementById("screen");
+  //   let toggleBar = document.getElementById("toggle");
+  let finishPlan = document.getElementById("finish_plan");
+  let finishAdd = document.getElementById("finish_add");
+  let selectedPlan = document.getElementById("selected_plan");
+  let selectedAdd = document.getElementById("selected_add");
+  let total = document.getElementById("total");
 
-//   let planBx = document.querySelectorAll(".select_box");
+  let planBx = document.querySelectorAll(".select_box");
 
-//   planBx.forEach((container, index) => {
-//     const radio = container.querySelector('input[type="radio"]');
-//     const planOutput = container.querySelector(
-//       ".select_box .content h4"
-//     ).innerText;
-//     container.addEventListener("click", () => {
-//       radio.checked = true;
-//       finishPlan.innerText = ` ${radio.value}`;
-//       selectedPlan.innerText = `${planOutput}`;
-//       container.style.border = this ? "1px solid #02295a" : "1px solid red";
-//       container.style.backgroundColor = "#f0f6ff";
-//     });
-//   });
+  planBx.forEach((container, index) => {
+    const radio = container.querySelector('input[type="radio"]');
+    const planOutput = container.querySelector(
+      ".select_box .content h4"
+    ).innerText;
+    container.addEventListener("click", () => {
+      radio.checked = true;
+      finishPlan.innerText = ` ${radio.value}`;
+      selectedPlan.innerText = `${planOutput}`;
+      container.style.border = this ? "1px solid #02295a" : "1px solid red";
+      container.style.backgroundColor = "#f0f6ff";
+    });
+  });
 
-//   let addBx = document.querySelectorAll(".left");
-//   //   let selectedAddValue = [];
-//   addBx.forEach((container, index) => {
-//     const check = container.querySelector('input[type="checkbox"]');
-//     let addOutput = container.querySelector(
-//       ".add_container .left .content h4"
-//     ).innerText;
+  let addBx = document.querySelectorAll(".left");
+  //   let selectedAddValue = [];
+  addBx.forEach((container, index) => {
+    const check = container.querySelector('input[type="checkbox"]');
+    let addOutput = container.querySelector(
+      ".add_container .left .content h4"
+    ).innerText;
 
-//     container.addEventListener("click", () => {
-//       check.checked = true;
-//       finishAdd.innerText = `${check.value}`;
-//       selectedAdd.innerText = `${addOutput}`;
-//     });
-//   });
+    container.addEventListener("click", () => {
+      check.checked = true;
+      finishAdd.innerText = `${check.value}`;
+      selectedAdd.innerText = `${addOutput}`;
+    });
+  });
 
-//   function calcTotal() {
-//     let planValue = parseFloat(finishPlan.innerText.trim().substring(1)) || 0;
-//     let addValue = parseFloat(finishAdd.innerText.trim().substring(1)) || 0;
-//     return `$ ${planValue} + ${addValue}`;
-//   }
-//   total.innerText = calcTotal();
+  function calcTotal() {
+    let planValue = parseFloat(finishPlan.innerText.trim().substring(1)) || 0;
+    let addValue = parseFloat(finishAdd.innerText.trim().substring(1)) || 0;
+    return `$ ${planValue} + ${addValue}`;
+  }
+  total.innerText = calcTotal();
 
-//   // summaryScreen.innerText = "Weldon bro, This is your summary page!";
-//   let monthly = document.getElementById("monthly");
-//   let yearly = document.getElementById("yearly");
-//   let monthlyPlan = document.getElementById("plan_monthly");
-//   let yearlyPlan = document.getElementById("plan_yearly");
-//   let monthlyAdd = document.getElementById("add_monthly");
-//   let yearlyAdd = document.getElementById("add_yearly");
-//   let checkInput = document.getElementById("toggle_input");
+  // summaryScreen.innerText = "Weldon bro, This is your summary page!";
+  let monthly = document.getElementById("monthly");
+  let yearly = document.getElementById("yearly");
+  let monthlyPlan = document.getElementById("plan_monthly");
+  let yearlyPlan = document.getElementById("plan_yearly");
+  let monthlyAdd = document.getElementById("add_monthly");
+  let yearlyAdd = document.getElementById("add_yearly");
+  let checkInput = document.getElementById("toggle_input");
 
-//   checkInput.addEventListener("change", function () {
-//     monthly.style.color = this.checked ? "#9699ab" : "#02295a";
-//     yearly.style.color = this.checked ? "#02295a" : "#9699ab";
-//     monthlyPlan.style.display = this.checked ? "none" : "flex";
-//     yearlyPlan.style.display = this.checked ? "flex" : "none";
-//     monthlyAdd.style.display = this.checked ? "none" : "flex";
-//     yearlyAdd.style.display = this.checked ? "flex" : "none";
-//   });
-// });
+  checkInput.addEventListener("change", function () {
+    monthly.style.color = this.checked ? "#9699ab" : "#02295a";
+    yearly.style.color = this.checked ? "#02295a" : "#9699ab";
+    monthlyPlan.style.display = this.checked ? "none" : "flex";
+    yearlyPlan.style.display = this.checked ? "flex" : "none";
+    monthlyAdd.style.display = this.checked ? "none" : "flex";
+    yearlyAdd.style.display = this.checked ? "flex" : "none";
+  });
+});
 
-// /*===== Navigative BTN algorithm =====*/
-// let btnBox = document.getElementById("btnbx");
-// let nextBtn = document.querySelectorAll(".btnbx .next");
-// let backBtn = document.querySelectorAll(".btnbx .back");
-// let formBx = document.getElementById("formbx");
+/*===== Navigative BTN algorithm =====*/
+let btnBox = document.getElementById("btnbx");
+let nextBtn = document.querySelectorAll(".btnbx .next");
+let backBtn = document.querySelectorAll(".btnbx .back");
+let formBx = document.getElementById("formbx");
 
-// nextBtn.forEach((container) => {
-//   container.addEventListener("click", function () {
-//     formBx.style.marginLeft = -100 + "%";
-//   });
-// });
+nextBtn.forEach((container) => {
+  container.addEventListener("click", function () {
+    formBx.style.marginLeft = -100 + "%";
+  });
+});
 
 
 
