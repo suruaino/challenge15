@@ -53,29 +53,17 @@ body {
     max-width: 60rem;
     height: 100%;
     background-color: transparent;
-    /* border:  1px solid green; */
-    /* border-radius: 10px; */
-    /* position: relative; */
 }
 
 form {
-    /* border:  4px solid orange; */
-    /* background-color: orange; */
-    /* background-color: var(--Magnolia); */
     width: 100%;
     height: 95.5vh;
     margin-top: 6.3rem;
     overflow-x: scroll;
     position: relative;
-    /* border-radius: 10px; */
-    /* border-left: 4px solid yellow; */
 }
 
 form .formbx{
-    /* background-color: var(--Magnolia); */
-    /* background-color: blue;
-    background-color: green; */
-    /* background-color: transparent; */
     width: 100%;
     min-height: 100%;
     border-radius: 10px;
@@ -84,12 +72,10 @@ form .formbx{
 }
 section {
     background-color: var(--Magnolia);
-    /* background-color: red;  */
     min-width: 100%;
     height: 100%;
     border-radius: 10px;
     position: relative;
-    /* border: 1px solid yellow; */
     
 }
 section:nth-child(1) .btnbx{
@@ -204,8 +190,6 @@ aside>div span:last-child h4 {
         justify-content: start;
         gap: 12px;
         padding: 2rem 1.5rem;
-        /* position: static; */
-        /* border: none; */
         border-radius: 10px;
     }
 
@@ -214,30 +198,15 @@ aside>div span:last-child h4 {
     }
 }
 
-.personal_info {
-
-    /* background-color: var(--Alabaster); */
-    
-    
-
-}
-
 .personal_info .contentbx{
     background-color: var(--Alabaster);
     isolation: isolate;
     border-radius: 10px;
 }
-
-.personal_info header h2,
-.personal_info label,
-.select_plan h2,
-.add_ons header h2,
-.add_ons .contentbx h4,
-.select_plan .select_box .content h4,
-.finishing_up header h2,
-.finishing_up #selected_plan,
-.finishing_up #finish_add,
-.finishing_up #finish_plan{
+.personal_info :is(header h2, label),
+.select_plan :is(h2, .select_box .content h4),
+.add_ons :is(header h2, .contentbx h4),
+.finishing_up :is(header h2, #selected_plan, #finish_add, #finish_plan){ 
     color: var(--Marine_blue);
     font-weight: 700;
 }
@@ -256,28 +225,24 @@ aside>div span:last-child h4 {
 
 .select_plan {
     width: 100%;
-   
     background-color: var(--Magnolia);
-    /* background-color: red; */
-    /* border-radius: 10px; */
 }
 
 .select_plan .contentbx{
     background-color: var(--Alabaster);
-    /* height: 100%; */
-    /* border: 1px solid greenyellow; */
     border-radius: 10px;
     margin-bottom: -20rem;
 }
+
 .select_plan .content{
     background-color: var(--Alabaster);
     border-radius: 10px;
-    /* height: 100%; */
-    /* border: 1px solid red; */
 }
+
 .select_plan .planbx{
     gap: .7rem;
 }
+
 .select_plan>p {
     color: var(--Cool_gray);
 }
@@ -298,10 +263,6 @@ aside>div span:last-child h4 {
     background-color: var(--Magnolia);
     border: 1px solid black;
 }
-/* .arcade_content {
-    width: 100%;
-    padding: 0.6rem 1rem;
-}  */
 
 .select_plan .select_box .contentbx p {
     font-weight: 400;
@@ -344,7 +305,6 @@ aside>div span:last-child h4 {
     position: absolute;
     left: 0;
     right: auto;
-    /* transition: 1s; */
 }
 
 .select_plan .togglebx .toggle_container > input {
@@ -362,11 +322,8 @@ aside>div span:last-child h4 {
 
 .add_ons {
     width: 100%;
-    /* min-height: 30.5rem; */
     background-color: var(--Magnolia);
-    /* background-color: red; */
     border-radius: 10px;
-    /* z-index: 3; */
 }
 
 .add_ons .contentbx{
@@ -375,7 +332,6 @@ aside>div span:last-child h4 {
 }
 
 .add_ons .add_ons_contentbx{
-    /* background-color: var(--Alabaster); */
     display: flex;
     flex-direction: column;
 }
@@ -394,19 +350,17 @@ aside>div span:last-child h4 {
 }
 .finishing_up {
     width: 100%;
-    /* height: fit-content; */
-    background-color: var(--Alabaster);
+    background-color: transparent;
    
 }
 
 .finishing_up .contentbx{
-    /* border: 1px solid red; */
+    width: calc(100% - 1rem);
+    background-color: var(--Alabaster);
     border-radius: 10px;
+    margin-right: 1rem;
 }
 .finishing_up .finishing_content{
-    /* background-color: rgba(44, 85, 97, 0.01);
-    border-radius: 10px;
-    padding: 1rem; */
     width: 100%;
 }
 @media only screen and (min-width: 768px) {
@@ -415,7 +369,6 @@ aside>div span:last-child h4 {
     }
 
     form {
-        /* border:  4px solid orange; */
         width: 70%;
     }
 
@@ -430,7 +383,6 @@ aside>div span:last-child h4 {
 
     .personal_info {
         height: auto;
-        /* border: 1px solid yellow; */
 
     }
 
@@ -445,20 +397,16 @@ aside>div span:last-child h4 {
 
     .select_plan {
         height: auto;
-        /* border: 1px solid red; */
-        /* padding: auto 8rem; */
 
     }
 
     .select_plan .planbx {
         height: 10rem;
-        /* border: 1px solid green; */
         gap: .8rem
     }
 
     .select_plan .planbx .select_box {
         min-width: calc(95% / 3);
-        /* max-width: 6.5rem; */
     }
 
     .select_plan .planbx .select_box img {
@@ -467,7 +415,6 @@ aside>div span:last-child h4 {
 
     .select_plan .togglebx {
         min-width: 100%;
-        /* background-color: red; */
     }
 
     .add_ons {
