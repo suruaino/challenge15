@@ -18,7 +18,7 @@
     --Cool_gray: #9699ab;
     --Cool_gray: hsl(231, 11%, 63%);
     --Light_gray: hsl(229, 24%, 87%);
-    /* --Magnolia: #f0f6ff; */
+    --Magnolia: #f0f6ff83;
     --Magnolia: hsl(217, 100%, 97%);
     --Alabaster: hsl(231, 100%, 99%);
     --White: hsl(0, 0%, 100%);
@@ -345,6 +345,7 @@ aside>div span:last-child h4 {
 }
 .finishing_up .finishing_content{
     width: 100%;
+    background-color: #f0f6ff50;
 }
 @media only screen and (min-width: 768px) {
     body {
