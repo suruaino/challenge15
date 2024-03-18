@@ -80,13 +80,16 @@ section {
 }
 section:nth-child(1) .btnbx{
     background-color: var(--Alabaster);
-    width: 100%;
+    /* width: 100%; */
+    width: calc(100% - 5rem);
     height: 4.2rem;
     display: flex;
     justify-content: end;
     align-items: center;
     position: absolute;
     bottom: 0;
+    /* left:2rem;
+    right:2rem; */
 }
 section:nth-child(1) .btnbx button{
     background-color: var(--Marine_blue);
@@ -98,7 +101,8 @@ section:nth-child(1) .btnbx button{
 }
 section:not(section:nth-child(1)) .btnbx{
     background-color: var(--Alabaster);
-    width: 100%;
+    /* width: 100%; */
+    width: calc(100% - 5rem);
     height: 4rem;
     padding: 0 1rem;
     margin-top: 100%;
@@ -177,28 +181,9 @@ aside>div span:last-child h4 {
     font-weight: bold;
 }
 
-@media only screen and (min-width: 768px) {
-    aside {
-        background: url(assets/images/bg-sidebar-desktop.svg);
-        background-repeat: no-repeat;
-        min-width: 15rem;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        gap: 12px;
-        padding: 2rem 1.5rem;
-        border-radius: 10px;
-    }
-
-    aside>div span:last-child {
-        display: block;
-    }
-}
-
 .personal_info .contentbx{
     background-color: var(--Alabaster);
-    isolation: isolate;
+    /* isolation: isolate; */
     border-radius: 10px;
 }
 .personal_info :is(header h2, label),
@@ -232,14 +217,14 @@ aside>div span:last-child h4 {
     margin-bottom: -20rem;
 }
 
-.select_plan .content{
+.select_plan .contentbx .content{
     background-color: var(--Alabaster);
     border-radius: 10px;
 }
 
-.select_plan .planbx{
+/* .select_plan .planbx{
     gap: .7rem;
-}
+} */
 
 .select_plan>p {
     color: var(--Cool_gray);
@@ -363,39 +348,76 @@ aside>div span:last-child h4 {
 }
 @media only screen and (min-width: 768px) {
     body {
-        height: 100%;
+        height: 100vh;
         justify-content: center;
         align-items: center;
-        /* padding: 2rem 4rem; */
+        padding: 2rem 4rem;
     }
-
-    form {
-        width: 70%;
-        /* display: flex;
-        justify-content: center;
-        align-items: center; */
-    }
-    /* form {
-        width: 100%;
-        height: 95.5vh;
-        margin-top: 6.3rem;
-        overflow-x: scroll;
-        position: relative;
-    } */
     .main_wrapper {
         height: 75%;
         width: fit-content;
         background-color: var(--Alabaster);
+        /* background-color: orange; */
         padding: 1rem;
         border-radius: 10px;
 
     }
-
-    .personal_info {
-        height: auto;
-
+    aside {
+        background: url(assets/images/bg-sidebar-desktop.svg);
+        background-repeat: no-repeat;
+        min-width: 15rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        gap: 12px;
+        padding: 2rem 1.5rem;
+        border-radius: 10px;
+        position: static;
     }
 
+    aside>div span:last-child {
+        display: block;
+    }
+    form {
+        width: 100%;
+        height: 100%;
+        /* background-color: red; */
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        /* overflow: hidden; */
+        margin-top: 0;
+        overflow-x: scroll;
+        /* overflow-y: hidden; */
+        padding: 0;
+        margin: 0;
+    }
+    form .formbx{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        /* background-color: green; */
+        padding: 0;
+        margin: 0;
+    }
+    section {
+        background-color: var(--Alabaster);
+        min-width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        position: relative;
+        
+    }
+    article{
+        background-color: var(--Alabaster);
+    }
+    .personal_info{
+        /* background-color: yellow; */
+        height: 100%;
+        margin: 0;
+        position: relative;
+    }
     .personal_info input {
         height: 2.8rem;
         width: 100%;
@@ -406,28 +428,53 @@ aside>div span:last-child h4 {
     }
 
     .select_plan {
-        height: auto;
-
+        background-color: var(--Alabaster);
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
     }
 
-    .select_plan .planbx {
+    .select_plan .contentbx{
+        background-color: var(--Alabaster);
+        border-radius: 10px;
+        margin-bottom: 0;
+    }
+
+    /* .select_plan .contentbx .content{
+        padding: 0;
+    } */
+
+    /* .select_plan .planbx {
         height: 10rem;
         gap: .8rem
+    } */
+
+    .select_plan :is(#plan_monthly, #plan_yearly) .select_box {
+        /* width: calc((100% - (0.75rem * 3)) / 3); */
+        width: calc((100% - (1.25rem * 3)) / 3);
     }
 
-    .select_plan .planbx .select_box {
-        min-width: calc(95% / 3);
-    }
-
-    .select_plan .planbx .select_box img {
+    .select_plan :is(#plan_monthly, #plan_yearly) .select_box img {
         width: 2rem;
     }
 
     .select_plan .togglebx {
         min-width: 100%;
+        /* width: calc(100% - 10rem); */
+
+
+  
     }
 
     .add_ons {
         background-color: var(--Alabaster);
+        padding: 0;
+        margin: 0;
+    }
+    .finishing_up {
+        padding: 0;
+        margin: 0;
+       
     }
 }

@@ -30,7 +30,7 @@
 
 <body>
 
-  <div class="main_wrapper flex flex-col md:flex-row md:gap-6">
+  <div class="main_wrapper flex flex-col md:flex-row md:gap-6 md:shadow-xl">
     <aside class="">
       <!-- Sidebar start -->
 
@@ -71,9 +71,9 @@
 
     <form action="" id="form" class="flex">
       <div id="formbx" class="formbx px-4 flex gap-8">
-        <section class="personal_info w-full md:px-16 flex flex-col items-center gap-8">
+        <section class="personal_info w-full md:px-10 flex flex-col items-center gap-8 border-2 border-red-400">
 
-          <div class="contentbx w-full px-5 py-7 flex flex-col gap-3">
+          <div class="contentbx w-full px-5 md:px-0 py-7 flex flex-col gap-3">
             <header class="w-full flex flex-col gap-2">
               <h2 class="text-2xl font-bold">Personal info</h2>
               <p class="">Please provide your name, email address, and phone number.</p>
@@ -104,15 +104,15 @@
           </div>
         </section>
 
-        <section id="plan" class="select_plan w-full md:px-16 flex flex-col items-center ">
+        <section id="plan" class="select_plan w-full md:px-10 flex flex-col items-center border-2 border-red-400">
 
-          <div class="contentbx pb-8 w-full flex flex-col gap-5 shadow-lg">
-            <header class="w-full px-5 pt-8 flex flex-col gap-2">
+          <div class="contentbx pb-8 md:pb-0 w-full flex flex-col gap-5 shadow-lg md:shadow-none border-2 border-blue-400">
+            <header class="w-full px-5 md:px-0 pt-8 md:pt-0 flex flex-col gap-2">
               <h2 class="text-2xl font-bold">Select your plan</h2>
               <p class="">You have the option of monthly or yearly billing.</p>
             </header>
-            <div class="content">
-              <article id="plan_monthly" class="px-5 flex flex-col gap-3">
+            <div class="content md:w-full border-2 border-green-400">
+              <article id="plan_monthly" class="md:w-full px-5 md:px-0 flex flex-col md:flex-row md:justify-between gap-3">
 
 
                 <!-- <div id="planbx" class="planbx flex flex-col md:flex-row"> -->
@@ -149,10 +149,10 @@
 
               </article>
 
-              <article id="plan_yearly" class="flex flex-col gap-3 hidden">
+              <article id="plan_yearly" class="md:w-full px-5 md:px-0 flex flex-col md:flex-row md:justify-between gap-3 hidden">
 
                 <!-- <div class="planbx flex flex-col md:flex-row gap-4"> -->
-                <div class="select_box arcade flex md:flex-col gap-4 px-4 py-3 relative">
+                <div class="select_box arcade flex md:flex-col gap-4 px-4 py-4 relative">
                   <input type="radio" value="$90/yr" name="radio_plan" class=" absolute">
                   <img src="assets/images/icon-arcade.svg" alt="">
                   <div class="content">
@@ -161,7 +161,7 @@
                   </div>
                 </div>
 
-                <div class="select_box Advance flex md:flex-col gap-4 px-4 py-3 relative">
+                <div class="select_box Advance flex md:flex-col gap-4 px-4 py-4 relative">
                   <input type="radio" value="$120/yr" name="radio_plan" class=" absolute">
                   <img src="assets/images/icon-advanced.svg" alt="">
                   <div class="content">
@@ -170,7 +170,7 @@
                   </div>
                 </div>
 
-                <div class="select_box pro flex md:flex-col gap-4 px-4 py-3 relative">
+                <div class="select_box pro flex md:flex-col gap-4 px-4 py-4 relative">
                   <input type="radio" value="$150/yr" name="radio_plan" class=" absolute">
                   <img src="assets/images/icon-pro.svg" alt="">
                   <div class="content">
@@ -183,7 +183,7 @@
               </article>
 
 
-              <div class="togglebx py-3 mx-4 font-medium flex justify-center items-center gap-4">
+              <div class="togglebx py-3 mx-4 md:mx-0 font-medium flex justify-center items-center gap-4">
                 <p id="monthly" class="font-bold">Monthly</p>
                 <div class="toggle_container flex justify-center items-center relative">
                   <input id="toggle_input" type="checkbox" class="">
@@ -201,14 +201,14 @@
           </div>
         </section>
 
-        <section class="add_ons w-full md:px-16 flex flex-col items-center">
-          <div class="contentbx  pb-8 w-full flex flex-col gap-0 shadow-lg">
-            <header class="w-full px-5 pt-7 flex flex-col gap-2">
+        <section class="add_ons w-full md:px-16 flex flex-col items-center border-2 border-red-400">
+          <div class="contentbx  pb-8 md:pb-0 w-full flex flex-col gap-0 shadow-lg border-2 border-blue-400">
+            <header class="w-full px-5 md:px-0 pt-7 flex flex-col gap-2">
               <h2 class="text-2xl font-bold">Pick add-ons</h2>
               <p class="">Add-ons help enhance your gaming experience.</p>
             </header>
 
-            <div class="add_ons_content px-5">
+            <div class="add_ons_content px-5 md:px-0 border-2 border-green-400">
               <article id="add_monthly" class="w-full flex flex-col gap-3">
 
                 <!-- <div class="add_monthlybx w-full flex flex-col gap-4"> -->
@@ -298,13 +298,13 @@
         </section>
 
 
-        <section id="summary" class="finishing_up w-full md:px-16 flex flex-col items-center">
-          <div id="summary_screen" class="contentbx  pb-8 w-full flex flex-col gap-7 shadow-lg">
-            <header class="w-full px-5 pt-7 flex flex-col gap-2">
+        <section id="summary" class="finishing_up w-full md:px-16 flex flex-col items-center border-2 border-red-400">
+          <div id="summary_screen" class="contentbx  pb-8 w-full flex flex-col gap-7 shadow-lg border-2 border-blue-400">
+            <header class="w-full px-5 md:px-0 pt-7 flex flex-col gap-2">
               <h2 class="text-2xl font-bold">Finishing up</h2>
               <p id="screen" class="">Double-check everything looks OK before confirming.</p>
             </header>
-            <div class="finishing_content px-7 flex flex-col gap-4">
+            <div class="finishing_content px-7 md:px-0 flex flex-col gap-4 border-2 border-green-400">
               <div class="finishing_planbx flex justify-between border-b-2">
                 <div class="selected_planbx">
                   <div id="selected_plan" class="font-normal"></div>
