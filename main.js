@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let finishAdd = document.getElementById("finish_add");
   let selectedPlan = document.getElementById("selected_plan");
   let selectedAdd = document.getElementById("selected_add");
+  let selectedAddList = document.getElementById("selected_add_list");
   let total = document.getElementById("total");
 
   let planBx = document.querySelectorAll(".select_box");
