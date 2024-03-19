@@ -32,7 +32,6 @@
 
   <div class="main_wrapper flex flex-col md:flex-row lg:gap-6 md:shadow-xl">
     <aside class="">
-      <!-- Sidebar start -->
 
       <div class="one">
         <span>1</span>
@@ -66,12 +65,11 @@
         </span>
       </div>
 
-      <!-- Sidebar end -->
     </aside>
 
     <form action="" id="form" class="flex">
       <div id="formbx" class="formbx px-4 flex gap-8">
-        <section class="personal_info w-full md:px-20 flex flex-col items-center gap-8 border-2 border-red-400">
+        <section class="personal_info w-full md:px-20 flex flex-col items-center gap-8 ">
 
           <div class="contentbx w-full px-5 md:px-0 py-7 flex flex-col gap-3">
             <header class="w-full flex flex-col gap-2">
@@ -98,33 +96,28 @@
 
 
           <div class="btnbx">
-            <!-- <input type="button" value="Go Back"> -->
             <button class="next">Next Step</button>
 
           </div>
         </section>
 
-        <section id="plan" class="select_plan w-full md:px-20 flex flex-col items-center border-2 border-red-400">
+        <section id="plan" class="select_plan w-full md:px-20 flex flex-col items-center ">
 
-          <div class="contentbx pb-8 md:pb-0 w-full flex flex-col gap-5 md:gap-10 shadow-lg md:shadow-none border-2 border-blue-400">
+          <div class="contentbx pb-8 md:pb-0 w-full flex flex-col gap-5 md:gap-10 shadow-lg md:shadow-none ">
             <header class="w-full px-5 md:px-0 pt-8 md:pt-10 md:pb-2 flex flex-col gap-2">
               <h2 class="text-2xl md:text-4xl font-bold">Select your plan</h2>
               <p class="">You have the option of monthly or yearly billing.</p>
             </header>
-            <div class="content md:w-full border-2 border-green-400">
+            <div class="content md:w-full">
               <article id="plan_monthly" class="md:w-full px-5 md:px-0 flex flex-col md:flex-row md:justify-between gap-3">
 
-
-                <!-- <div id="planbx" class="planbx flex flex-col md:flex-row"> -->
                 <div class="select_box arcade flex md:flex-col gap-4 md:gap-10 px-4 py-4 relative">
                   <input id="arcade" type="radio" value="$9/mo" name="radio_plan" class=" absolute">
-                  <!-- <div class="arcade_contentbx"> -->
                   <img src="assets/images/icon-arcade.svg" alt="">
                   <div class="content">
                     <h4 class="font-bold">Arcade</h4>
                     <p>$9/mo</p>
                   </div>
-                  <!-- </div> -->
                 </div>
 
                 <div class="select_box advance flex md:flex-col gap-4 md:gap-10 px-4 py-4 relative">
@@ -145,13 +138,11 @@
                   </div>
                 </div>
 
-                <!-- </div> -->
 
               </article>
 
               <article id="plan_yearly" class="md:w-full px-5 md:px-0 flex flex-col md:flex-row md:justify-between gap-3 hidden">
 
-                <!-- <div class="planbx flex flex-col md:flex-row gap-4"> -->
                 <div class="select_box arcade flex md:flex-col gap-4 md:gap-10 px-4 py-4 relative">
                   <input type="radio" value="$90/yr" name="radio_plan" class=" absolute">
                   <img src="assets/images/icon-arcade.svg" alt="">
@@ -179,7 +170,6 @@
                   </div>
                 </div>
 
-                <!-- </div> -->
               </article>
 
 
@@ -201,17 +191,16 @@
           </div>
         </section>
 
-        <section class="add_ons w-full md:px-16 flex flex-col items-center border-2 border-red-400">
-          <div class="contentbx pb-8 md:pb-0 w-full flex flex-col gap-5 md:gap-10 shadow-lg md:shadow-none border-2 border-blue-400">
+        <section class="add_ons w-full md:px-16 flex flex-col items-center ">
+          <div class="contentbx pb-8 md:pb-0 w-full flex flex-col gap-5 md:gap-10 shadow-lg md:shadow-none ">
             <header class="w-full px-5 md:px-0 pt-8 md:pt-10 md:pb-2 flex flex-col gap-2">
               <h2 class="text-2xl md:text-4xl font-bold">Pick add-ons</h2>
               <p class="">Add-ons help enhance your gaming experience.</p>
             </header>
 
-            <div class="add_ons_content px-5 md:px-0 border-2 border-green-400">
+            <div class="add_ons_content px-5 md:px-0">
               <article id="add_monthly" class="w-full flex flex-col gap-3 md:gap-5">
 
-                <!-- <div class="add_monthlybx w-full flex flex-col gap-4"> -->
                 <div class="add_container online_service md:py-4 flex justify-between items-center gap-2 px-4">
                   <div class="left flex gap-4">
                     <input type="checkbox" value="+$1/mo" class="add_inputs w-5">
@@ -244,15 +233,12 @@
                   </div>
                   <p>+$2/mo</p>
                 </div>
-                <!-- </div> -->
 
               </article>
 
 
               <article id="add_yearly" class="flex flex-col gap-4">
-                <!--Remember to add flex and remove hidden when toggled-->
 
-                <!-- <div class="planbx flex flex-col gap-4"> -->
                 <div class="add_container online_service flex justify-between items-center gap-6 px-4 py-3">
                   <div class="left flex gap-6">
                     <input type="checkbox" value="+$10/yr" class="add_inputs w-5">
@@ -285,7 +271,6 @@
                   </div>
                   <p>+$20/yr</p>
                 </div>
-                <!-- </div> -->
 
               </article>
             </div>
@@ -298,13 +283,13 @@
         </section>
 
 
-        <section id="summary" class="finishing_up w-full md:px-16 flex flex-col items-center border-2 border-red-400">
-          <div id="summary_screen" class="contentbx pb-8 md:px-0 w-full flex flex-col gap-7 shadow-lg border-2 border-blue-400">
+        <section id="summary" class="finishing_up w-full md:px-16 flex flex-col items-center ">
+          <div id="summary_screen" class="contentbx pb-8 md:px-0 w-full flex flex-col gap-7">
             <header class="w-full px-5 md:px-0 pt-8 md:pt-10 md:pb-2 flex flex-col gap-2">
               <h2 class="text-2xl md:text-4xl font-bold">Finishing up</h2>
               <p id="screen" class="">Double-check everything looks OK before confirming.</p>
             </header>
-            <div class="finishing_content px-7 md:px-4 md:py-4 flex flex-col gap-4 border-2 border-green-400">
+            <div class="finishing_content px-7 md:px-4 md:py-4 flex flex-col gap-4">
               <div class="finishing_planbx md:py-4 flex justify-between border-b-2">
                 <div class="selected_planbx">
                   <div id="selected_plan" class="font-normal"></div>
@@ -323,7 +308,7 @@
              
         
             </div>
-            <div class="totalbx font-normal text-gray-400 flex justify-between">
+            <div class="totalbx font-normal text-gray-400 px-7 md:px-4 flex justify-between">
               <p>Total(per month)</p>
               <div id="total" class="text-xl text-blue-600 font-medium"></div>
             </div>
@@ -355,7 +340,7 @@
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Suru Emmanuel</a>.
+    Coded by <a href="#" class="font-bold">Suru Emmanuel</a>.
   </div>
 
 
