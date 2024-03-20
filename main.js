@@ -34,8 +34,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     container.addEventListener("click", () => {
       check.checked = true;
-      finishAdd.innerText = `${check.value}`;
-      selectedAdd.innerText = `${addOutput}`;
+      let liLeft = document.createElement("li");
+      liLeft.innerHTML = `<span id="${addOutput.split(' ')[0].toLowerCase()}" class="font-bold"> ${addOutput} </span>
+                          <span> ${check.value} </span>`;
+    //   liLeft.innerText = `${addOutput}`;
+    selectedAddList.style.width = "100%";
+      selectedAddList.appendChild(liLeft);
+      liLeft.style.width = "100%";
+      liLeft.style.display = "flex";
+      liLeft.style.justifyContent = 'space-between';
+      
+        // finishAdd.innerText = `${check.value}`;
+        // selectedAdd.innerText = `${addOutput}`;
     });
   });
 
@@ -76,12 +86,6 @@ nextBtn.forEach((container) => {
     formBx.style.marginLeft = -100 + "%";
   });
 });
-
-
-
-
-
-
 
 // }
 
