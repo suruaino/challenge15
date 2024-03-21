@@ -46,29 +46,79 @@ document.addEventListener("DOMContentLoaded", function () {
       liLeft.style.justifyContent = "space-between";
 
       // Calculatin the sum of the selected add!
-      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    //   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
-      let addSum = 0;
+    //   let addSum = 0;
 
-      checkboxes.forEach((checkbox) => {
-        if (checkbox.checked) {
-          const value = parseFloat(checkbox.value.replace(/[^\d.-]/g, ""));
+    //   checkboxes.forEach((checkbox) => {
+    //     if (checkbox.checked) {
+    //       const value = parseFloat(checkbox.value.replace(/[^\d.-]/g, ""));
 
-          addSum += value;
-        }
-      });
+    //       addSum += value;
+    //     }
+    //   });
 
-      // Log the sum to the console
-      console.log(addSum);
+    //   // Log the sum to the console
+    //   console.log(addSum);
     });
   });
 
-  function calcTotal() {
-    let planValue = parseFloat(finishPlan.innerText.trim().substring(1)) || 0;
-    let addValue = parseFloat(finishAdd.innerText.trim().substring(1)) || 0;
-    return `$ ${planValue} + ${addValue}`;
+//   function calcTotal() {
+//     // let planValue = parseFloat(finishPlan.innerText.trim().substring(1));
+//     // let addValue = parseFloat(finishAdd.innerText.trim().substring(1)) || 0;
+
+//     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+//       let addSum = 0;
+
+//       checkboxes.forEach((checkbox) => {
+//         if (checkbox.checked) {
+//           const value = parseFloat(checkbox.value.replace(/[^\d.-]/g, ""));
+
+//           addSum += value;
+//         }
+//       })
+//       return addSum;
+//     // return `$ ${planValue} + ${addSum}`;
+//   }
+//   total.innerText = calcTotal();
+
+
+function calcTotal() {
+    // Get the selected radio button value
+    let planValue = 0;
+    document.querySelectorAll('input[name="radio_plan"]').forEach((radio) => {
+      if (radio.checked) {
+        planValue = parseFloat(radio.value.replace(/[^\d.-]/g, ""));
+      }
+    });
+  
+    // Get the sum of the checked checkbox values
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    let addSum = 0;
+    checkboxes.forEach((checkbox) => {
+      if (checkbox.checked) {
+        const value = parseFloat(checkbox.value.replace(/[^\d.-]/g, ""));
+        addSum += value;
+      }
+    });
+  
+    // Return the total value
+    return planValue + addSum;
   }
-  total.innerText = calcTotal();
+  
+  function updateTotal() {
+    total.innerText = calcTotal();
+  }
+  
+  // Update total whenever a checkbox or radio button is clicked
+  document.querySelectorAll('input[type="checkbox"], input[name="radio_plan"]').forEach((input) => {
+    input.addEventListener('change', updateTotal);
+  });
+  
+  // Initial calculation
+  updateTotal();
+  
 
   // summaryScreen.innerText = "Weldon bro, This is your summary page!";
   let monthly = document.getElementById("monthly");
