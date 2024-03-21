@@ -45,6 +45,21 @@ document.addEventListener("DOMContentLoaded", function () {
       liLeft.style.display = "flex";
       liLeft.style.justifyContent = "space-between";
 
+      // Calculatin the sum of the selected add!
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+      let addSum = 0;
+
+      checkboxes.forEach((checkbox) => {
+        if (checkbox.checked) {
+          const value = parseFloat(checkbox.value.replace(/[^\d.-]/g, ""));
+
+          addSum += value;
+        }
+      });
+
+      // Log the sum to the console
+      console.log(addSum);
     });
   });
 
