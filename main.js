@@ -5,64 +5,89 @@ document.addEventListener("DOMContentLoaded", function () {
   let selectedAdd = document.getElementById("selected_add");
   let selectedAddList = document.getElementById("selected_add_list");
   let total = document.getElementById("total");
- 
 
+//   let currentlyCheckedRadio = null;
   let planBx = document.querySelectorAll(".select_box");
-  let currentlyCheckedRadio = null;
-
 
   planBx.forEach((container, index) => {
-    const radio = container.querySelector('.select_box input[type="radio"]');
+    const radio = container.querySelector('input[type="radio"]');
     const planOutput = container.querySelector(
       ".select_box .content h4"
     ).innerText;
-    // container.addEventListener("click", () => {
-    //   radio.checked = true;
-    //   finishPlan.innerText = ` ${radio.value}`;
-    //   selectedPlan.innerText = `${planOutput}`;
-    //   container.style.border = this ? "1px solid #02295a" : "1px solid red";
-    //   container.style.backgroundColor = "#f0f6ff";
-    // });
-
     container.addEventListener("click", () => {
-        if (currentlyCheckedRadio !== radio) {
-          if (currentlyCheckedRadio) {
-            const prevContainer = currentlyCheckedRadio.closest(".select_box");
-            prevContainer.style.border = "1px solid red";
-            prevContainer.style.backgroundColor = "";
-          }
-    
-          radio.checked = true;
-          finishPlan.innerText = ` ${radio.value}`;
-          selectedPlan.innerText = `${planOutput}`;
-          container.style.border = "1px solid #02295a";
-          container.style.backgroundColor = "#f0f6ff";
-    
-          currentlyCheckedRadio = radio;
-        }
-      });
+      radio.checked = true;
+      finishPlan.innerText = ` ${radio.value}`;
+      selectedPlan.innerText = `${planOutput}`;
+      container.style.border = this ? "1px solid #02295a" : "1px solid red";
+      container.style.backgroundColor = "#f0f6ff";
+    });
+
+
+    // container.addEventListener("click", () => {
+    //   if (currentlyCheckedRadio !== radio) {
+    //     if (currentlyCheckedRadio) {
+    //       const prevContainer = currentlyCheckedRadio.closest(".select_box");
+    //       prevContainer.style.border = "1px solid red";
+    //       prevContainer.style.backgroundColor = "";
+    //     }
+
+    //     radio.checked = true;
+    //     finishPlan.innerText = ` ${radio.value}`;
+    //     selectedPlan.innerText = `${planOutput}`;
+    //     container.style.border = "1px solid #02295a";
+    //     container.style.backgroundColor = "#f0f6ff";
+
+    //     currentlyCheckedRadio = radio;
+    //   }
+    // });
   });
 
   let addBx = document.querySelectorAll(".left");
 
-  addBx.forEach((container, index) => {
-    const check = container.querySelector('input[type="checkbox"]');
-    let addOutput = container.querySelector(
-      ".add_container .left .content h4"
-    ).innerText;
+//   addBx.forEach((container, index) => {
+//     const check = container.querySelector('input[type="checkbox"]');
+//     let addOutput = container.querySelector(
+//       ".add_container .left .content h4"
+//     ).innerText;
 
+//     container.addEventListener("click", () => {
+//       check.checked = true;
+//       let liLeft = document.createElement("li");
+//       liLeft.innerHTML = `<span id="${addOutput
+//         .split(" ")[0]
+//         .toLowerCase()}"> ${addOutput} </span>
+//                           <span> ${check.value} </span>`;
+//       selectedAddList.style.width = "100%";
+//       selectedAddList.appendChild(liLeft);
+//       liLeft.style.width = "100%";
+//       liLeft.style.display = "flex";
+//       liLeft.style.justifyContent = "space-between";
+//     });
+//   });
+
+addBx.forEach((container, index) => {
+    const check = container.querySelector('input[type="checkbox"]');
+    let addOutput = container.querySelector(".content h4").innerText;
+  
     container.addEventListener("click", () => {
-      check.checked = true;
-      let liLeft = document.createElement("li");
-      liLeft.innerHTML = `<span id="${addOutput
-        .split(" ")[0]
-        .toLowerCase()}"> ${addOutput} </span>
-                          <span> ${check.value} </span>`;
-      selectedAddList.style.width = "100%";
-      selectedAddList.appendChild(liLeft);
-      liLeft.style.width = "100%";
-      liLeft.style.display = "flex";
-      liLeft.style.justifyContent = "space-between";
+      check.checked = !check.checked; // Toggle the checked state
+      if (check.checked) {
+        let liLeft = document.createElement("li");
+        liLeft.innerHTML = `<span id="${addOutput.split(" ")[0].toLowerCase()}"> ${addOutput} </span>
+                            <span> ${check.value} </span>`;
+        selectedAddList.style.width = "100%";
+        selectedAddList.appendChild(liLeft);
+        liLeft.style.width = "100%";
+        liLeft.style.display = "flex";
+        liLeft.style.justifyContent = "space-between";
+      } else {
+        // Remove the item from selectedAddList if unchecked
+        const itemId = addOutput.split(" ")[0].toLowerCase();
+        const itemToRemove = document.getElementById(itemId);
+        if (itemToRemove) {
+          itemToRemove.parentElement.remove();
+        }
+      }
     });
   });
 

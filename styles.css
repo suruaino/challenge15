@@ -15,8 +15,9 @@
     --Strawberry_red: hsl(354, 84%, 57%);
 
     /*### Neutral colors*/
-    --Cool_gray: #9699ab;
+    /* --Cool_gray: #9699ab; */
     --Cool_gray: hsl(231, 11%, 63%);
+    /* --Light_gray: #d6d9e6 */
     --Light_gray: hsl(229, 24%, 87%);
     --Magnolia: #f0f6ff83;
     --Magnolia: hsl(217, 100%, 97%);
