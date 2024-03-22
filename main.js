@@ -1,27 +1,46 @@
 document.addEventListener("DOMContentLoaded", function () {
-  //   let summaryScreen = document.getElementById("screen");
-  //   let toggleBar = document.getElementById("toggle");
   let finishPlan = document.getElementById("finish_plan");
   let finishAdd = document.getElementById("finish_add");
   let selectedPlan = document.getElementById("selected_plan");
   let selectedAdd = document.getElementById("selected_add");
   let selectedAddList = document.getElementById("selected_add_list");
   let total = document.getElementById("total");
+ 
 
   let planBx = document.querySelectorAll(".select_box");
+  let currentlyCheckedRadio = null;
+
 
   planBx.forEach((container, index) => {
-    const radio = container.querySelector('input[type="radio"]');
+    const radio = container.querySelector('.select_box input[type="radio"]');
     const planOutput = container.querySelector(
       ".select_box .content h4"
     ).innerText;
+    // container.addEventListener("click", () => {
+    //   radio.checked = true;
+    //   finishPlan.innerText = ` ${radio.value}`;
+    //   selectedPlan.innerText = `${planOutput}`;
+    //   container.style.border = this ? "1px solid #02295a" : "1px solid red";
+    //   container.style.backgroundColor = "#f0f6ff";
+    // });
+
     container.addEventListener("click", () => {
-      radio.checked = true;
-      finishPlan.innerText = ` ${radio.value}`;
-      selectedPlan.innerText = `${planOutput}`;
-      container.style.border = this ? "1px solid #02295a" : "1px solid red";
-      container.style.backgroundColor = "#f0f6ff";
-    });
+        if (currentlyCheckedRadio !== radio) {
+          if (currentlyCheckedRadio) {
+            const prevContainer = currentlyCheckedRadio.closest(".select_box");
+            prevContainer.style.border = "1px solid red";
+            prevContainer.style.backgroundColor = "";
+          }
+    
+          radio.checked = true;
+          finishPlan.innerText = ` ${radio.value}`;
+          selectedPlan.innerText = `${planOutput}`;
+          container.style.border = "1px solid #02295a";
+          container.style.backgroundColor = "#f0f6ff";
+    
+          currentlyCheckedRadio = radio;
+        }
+      });
   });
 
   let addBx = document.querySelectorAll(".left");
@@ -44,47 +63,10 @@ document.addEventListener("DOMContentLoaded", function () {
       liLeft.style.width = "100%";
       liLeft.style.display = "flex";
       liLeft.style.justifyContent = "space-between";
-
-      // Calculatin the sum of the selected add!
-    //   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-
-    //   let addSum = 0;
-
-    //   checkboxes.forEach((checkbox) => {
-    //     if (checkbox.checked) {
-    //       const value = parseFloat(checkbox.value.replace(/[^\d.-]/g, ""));
-
-    //       addSum += value;
-    //     }
-    //   });
-
-    //   // Log the sum to the console
-    //   console.log(addSum);
     });
   });
 
-//   function calcTotal() {
-//     // let planValue = parseFloat(finishPlan.innerText.trim().substring(1));
-//     // let addValue = parseFloat(finishAdd.innerText.trim().substring(1)) || 0;
-
-//     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-
-//       let addSum = 0;
-
-//       checkboxes.forEach((checkbox) => {
-//         if (checkbox.checked) {
-//           const value = parseFloat(checkbox.value.replace(/[^\d.-]/g, ""));
-
-//           addSum += value;
-//         }
-//       })
-//       return addSum;
-//     // return `$ ${planValue} + ${addSum}`;
-//   }
-//   total.innerText = calcTotal();
-
-
-function calcTotal() {
+  function calcTotal() {
     // Get the selected radio button value
     let planValue = 0;
     document.querySelectorAll('input[name="radio_plan"]').forEach((radio) => {
@@ -92,9 +74,11 @@ function calcTotal() {
         planValue = parseFloat(radio.value.replace(/[^\d.-]/g, ""));
       }
     });
-  
+
     // Get the sum of the checked checkbox values
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll(
+      '.left input[type="checkbox"]'
+    );
     let addSum = 0;
     checkboxes.forEach((checkbox) => {
       if (checkbox.checked) {
@@ -102,23 +86,24 @@ function calcTotal() {
         addSum += value;
       }
     });
-  
+
     // Return the total value
-    return planValue + addSum;
+    return "$" + ((planValue || 0) + (addSum || 0));
   }
-  
+
   function updateTotal() {
     total.innerText = calcTotal();
   }
-  
+
   // Update total whenever a checkbox or radio button is clicked
-  document.querySelectorAll('input[type="checkbox"], input[name="radio_plan"]').forEach((input) => {
-    input.addEventListener('change', updateTotal);
-  });
-  
+  document
+    .querySelectorAll('input[type="checkbox"], input[name="radio_plan"]')
+    .forEach((input) => {
+      input.addEventListener("change", updateTotal);
+    });
+
   // Initial calculation
   updateTotal();
-  
 
   // summaryScreen.innerText = "Weldon bro, This is your summary page!";
   let monthly = document.getElementById("monthly");

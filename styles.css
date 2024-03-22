@@ -214,7 +214,7 @@ aside>div span:last-child h4 {
 }
 
 .select_plan .contentbx .content{
-    background-color: var(--Alabaster);
+    /* background-color: var(--Alabaster); */
     border-radius: 10px;
 }
 
@@ -252,7 +252,7 @@ aside>div span:last-child h4 {
     border: 1px solid var(--Cool_gray);
     border-radius: 5px;
     cursor: pointer;
-    opacity: 0;
+    opacity: 1;
 }
 
 .select_plan .togglebx {
