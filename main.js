@@ -10,86 +10,91 @@ document.addEventListener("DOMContentLoaded", function () {
   let planBx = document.querySelectorAll(".select_box");
 
   planBx.forEach((container, index) => {
+    let currentlyCheckedRadio = null;
     const radio = container.querySelector('input[type="radio"]');
     const planOutput = container.querySelector(
+    
       ".select_box .content h4"
     ).innerText;
-    container.addEventListener("click", () => {
-      radio.checked = true;
-      finishPlan.innerText = ` ${radio.value}`;
-      selectedPlan.innerText = `${planOutput}`;
-      container.style.border = this ? "1px solid #02295a" : "1px solid red";
-      container.style.backgroundColor = "#f0f6ff";
-    });
-
-
+    
     // container.addEventListener("click", () => {
-    //   if (currentlyCheckedRadio !== radio) {
-    //     if (currentlyCheckedRadio) {
-    //       const prevContainer = currentlyCheckedRadio.closest(".select_box");
-    //       prevContainer.style.border = "1px solid red";
-    //       prevContainer.style.backgroundColor = "";
-    //     }
-
-    //     radio.checked = true;
-    //     finishPlan.innerText = ` ${radio.value}`;
-    //     selectedPlan.innerText = `${planOutput}`;
-    //     container.style.border = "1px solid #02295a";
-    //     container.style.backgroundColor = "#f0f6ff";
-
-    //     currentlyCheckedRadio = radio;
-    //   }
+    //   radio.checked = true;
+    //   finishPlan.innerText = ` ${radio.value}`;
+    //   selectedPlan.innerText = `${planOutput}`;
+    //   container.style.border = this ? "1px solid #02295a" : "1px solid red";
+    //   container.style.backgroundColor = "#f0f6ff";
     // });
+
+
+    container.addEventListener("click", () => {
+      if (currentlyCheckedRadio !== radio) {
+        if (currentlyCheckedRadio) {
+          const prevContainer = currentlyCheckedRadio.closest(".select_box");
+          prevContainer.style.border = "1px solid red";
+          prevContainer.style.backgroundColor = "red";
+
+        }
+
+        radio.checked = true;
+        finishPlan.innerText = ` ${radio.value}`;
+        selectedPlan.innerText = `${planOutput}`;
+        container.style.border = "1px solid #02295a";
+        container.style.backgroundColor = "#f0f6ff";
+
+        currentlyCheckedRadio = radio;
+        console.log(finishPlan.innerText)
+      }
+    });
   });
 
   let addBx = document.querySelectorAll(".left");
 
-//   addBx.forEach((container, index) => {
-//     const check = container.querySelector('input[type="checkbox"]');
-//     let addOutput = container.querySelector(
-//       ".add_container .left .content h4"
-//     ).innerText;
-
-//     container.addEventListener("click", () => {
-//       check.checked = true;
-//       let liLeft = document.createElement("li");
-//       liLeft.innerHTML = `<span id="${addOutput
-//         .split(" ")[0]
-//         .toLowerCase()}"> ${addOutput} </span>
-//                           <span> ${check.value} </span>`;
-//       selectedAddList.style.width = "100%";
-//       selectedAddList.appendChild(liLeft);
-//       liLeft.style.width = "100%";
-//       liLeft.style.display = "flex";
-//       liLeft.style.justifyContent = "space-between";
-//     });
-//   });
-
-addBx.forEach((container, index) => {
+  addBx.forEach((container, index) => {
     const check = container.querySelector('input[type="checkbox"]');
-    let addOutput = container.querySelector(".content h4").innerText;
-  
+    let addOutput = container.querySelector(
+      ".add_container .left .content h4"
+    ).innerText;
+
     container.addEventListener("click", () => {
-      check.checked = !check.checked; // Toggle the checked state
-      if (check.checked) {
-        let liLeft = document.createElement("li");
-        liLeft.innerHTML = `<span id="${addOutput.split(" ")[0].toLowerCase()}"> ${addOutput} </span>
-                            <span> ${check.value} </span>`;
-        selectedAddList.style.width = "100%";
-        selectedAddList.appendChild(liLeft);
-        liLeft.style.width = "100%";
-        liLeft.style.display = "flex";
-        liLeft.style.justifyContent = "space-between";
-      } else {
-        // Remove the item from selectedAddList if unchecked
-        const itemId = addOutput.split(" ")[0].toLowerCase();
-        const itemToRemove = document.getElementById(itemId);
-        if (itemToRemove) {
-          itemToRemove.parentElement.remove();
-        }
-      }
+      check.checked = true;
+      let liLeft = document.createElement("li");
+      liLeft.innerHTML = `<span id="${addOutput
+        .split(" ")[0]
+        .toLowerCase()}"> ${addOutput} </span>
+                          <span> ${check.value} </span>`;
+      selectedAddList.style.width = "100%";
+      selectedAddList.appendChild(liLeft);
+      liLeft.style.width = "100%";
+      liLeft.style.display = "flex";
+      liLeft.style.justifyContent = "space-between";
     });
   });
+
+// addBx.forEach((container, index) => {
+//     const check = container.querySelector('input[type="checkbox"]');
+//     let addOutput = container.querySelector(".content h4").innerText;
+  
+//     container.addEventListener("click", () => {
+//       check.checked = !check.checked; // Toggle the checked state
+//       if (check.checked) {
+//         let liLeft = document.createElement("li");
+//         liLeft.innerHTML = `<span id="${addOutput.split(" ")[0].toLowerCase()}"> ${addOutput} </span>
+//                             <span> ${check.value} </span>`;
+//         selectedAddList.style.width = "100%";
+//         selectedAddList.appendChild(liLeft);
+//         liLeft.style.width = "100%";
+//         liLeft.style.display = "flex";
+//         liLeft.style.justifyContent = "space-between";
+//       } else {
+//         // Remove the item from selectedAddList if unchecked
+//         const itemId = addOutput.split(" ")[0].toLowerCase();
+//         const itemToRemove = document.getElementById(itemId);
+//         if (itemToRemove) {
+//           itemToRemove.parentElement.remove();
+//         }
+//       }
+//     });
+//   });
 
   function calcTotal() {
     // Get the selected radio button value
