@@ -16,14 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
       ".select_box .content h4"
     ).innerText;
 
-    // container.addEventListener("click", () => {
-    //   radio.checked = true;
-    //   finishPlan.innerText = ` ${radio.value}`;
-    //   selectedPlan.innerText = `${planOutput}`;
-    //   container.style.border = this ? "1px solid #02295a" : "1px solid red";
-    //   container.style.backgroundColor = "#f0f6ff";
-    // });
-
     container.addEventListener("click", () => {
       if (currentlyCheckedRadio !== radio) {
         if (currentlyCheckedRadio) {
@@ -67,33 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // addBx.forEach((container, index) => {
-  //     const check = container.querySelector('input[type="checkbox"]');
-  //     let addOutput = container.querySelector(".content h4").innerText;
-
-  //     container.addEventListener("click", () => {
-  //       check.checked = !check.checked; // Toggle the checked state
-  //       if (check.checked) {
-  //         let liLeft = document.createElement("li");
-  //         liLeft.innerHTML = `<span id="${addOutput.split(" ")[0].toLowerCase()}"> ${addOutput} </span>
-  //                             <span> ${check.value} </span>`;
-  //         selectedAddList.style.width = "100%";
-  //         selectedAddList.appendChild(liLeft);
-  //         liLeft.style.width = "100%";
-  //         liLeft.style.display = "flex";
-  //         liLeft.style.justifyContent = "space-between";
-  //       } else {
-  //         // Remove the item from selectedAddList if unchecked
-  //         const itemId = addOutput.split(" ")[0].toLowerCase();
-  //         const itemToRemove = document.getElementById(itemId);
-  //         if (itemToRemove) {
-  //           itemToRemove.parentElement.remove();
-  //         }
-  //       }
-  //     });
-  //   });
-
-  function calcTotal() {
+   function calcTotal() {
     // Get the selected radio button value
     let planValue = 0;
     document.querySelectorAll('input[name="radio_plan"]').forEach((radio) => {
@@ -157,8 +123,14 @@ let nextBtn = document.querySelectorAll(".btnbx .next");
 let backBtn = document.querySelectorAll(".btnbx .back");
 let formBx = document.getElementById("formbx");
 
-nextBtn.forEach((container) => {
-  container.addEventListener("click", function () {
-    formBx.style.marginLeft = -100 + "%";
-  });
+nextBtn.forEach(() => {
+  addEventListener("click", () => {
+    formBx.style.transform = translateX(-105 + "%");
+  })
 });
+
+// backBtn.forEach(() => {
+//   addEventListener("click", () => {
+//     formBx.style.marginRight = -100 + "%";
+//   })
+// });

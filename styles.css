@@ -68,7 +68,7 @@ form .formbx{
     width: 100%;
     min-height: 100%;
     border-radius: 10px;
-  
+    transition: .3s;
     
 }
 section {
@@ -179,7 +179,11 @@ aside>div span:last-child h4 {
     color: var(--Alabaster);
     font-weight: bold;
 }
-
+/* .personal_info{
+    display: block;
+    opacity: 0;
+    visibility: visible;
+} */
 .personal_info .contentbx{
     background-color: var(--Alabaster);
     border-radius: 10px;
