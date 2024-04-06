@@ -118,19 +118,48 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /*===== Navigative BTN algorithm =====*/
-let btnBox = document.getElementById("btnbx");
-let nextBtn = document.querySelectorAll(".btnbx .next");
-let backBtn = document.querySelectorAll(".btnbx .back");
+// let slides = document.getElementsByTagName("section");
+const slides = Array.from(document.querySelectorAll("section"));
+
+let totalSlides = slides.length;
+console.log(slides);
+let nextBtn = document.querySelector(".next");
+let backBtn = document.querySelector(".back");
 let formBx = document.getElementById("formbx");
 
-nextBtn.forEach(() => {
-  addEventListener("click", () => {
-    formBx.style.transform = translateX(-105 + "%");
-  })
-});
-
-// backBtn.forEach(() => {
-//   addEventListener("click", () => {
-//     formBx.style.marginRight = -100 + "%";
-//   })
+console.log(nextBtn);
+// nextBtn.forEach(() => {
+  // nextBtn.addEventListener("click", () => {
+  //   // formBx.style.transform = translateX(-105 + "%");
+  //   formBx.style.marginLeft = -5 + "%";
+  // })
 // });
+
+
+
+
+let currentSlide = 0;
+
+
+  nextBtn.addEventListener("click", () => {
+    if (currentSlide < totalSlides - 1) {
+      currentSlide++;
+      const translateValue = -currentSlide * 105;
+      slides.forEach((slide) => {
+        // slide.style.transform = `translateX(${translateValue}%)`;
+        formBx.style.marginLeft = (-currentSlide * 5) + "%";
+      });
+    }
+  });
+
+  backBtn.addEventListener("click", () => {
+    if (currentSlide > 0) {
+      currentSlide--;
+      const translateValue = -currentSlide * 105;
+      slides.forEach((slide) => {
+        // slide.style.transform = `translateX(${translateValue}%)`;
+        formBx.style.marginLeft = (-currentSlide * 5) + "%";
+      });
+    }
+
+  });
