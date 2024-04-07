@@ -158,6 +158,44 @@ document.addEventListener("DOMContentLoaded", function () {
 // });
 
 
+// const slides = Array.from(document.querySelectorAll("section"));
+// let totalSlides = slides.length;
+// console.log(totalSlides)
+// const formbx = document.querySelector(".formbx");
+// const nextBtn = document.getElementById("nextBtn");
+// const prevBtn = document.getElementById("prevBtn");
+// const submitBtn = document.querySelector("#submit");
+
+// let currentSlide = 0;
+
+// nextBtn.addEventListener("click", () => {
+//   if (currentSlide < totalSlides - 1) {
+//     currentSlide++;
+//      const translateValue = -currentSlide * 100;
+//     formbx.style.transform = `translateX(${translateValue}%)`;
+//     prevBtn.style.visibility = "visible";
+//     submitBtn.style.display = "none";
+//   }
+//   if (currentSlide >= totalSlides - 1) {
+//     submitBtn.style.display = "block";
+//     nextBtn.style.display = "none";
+//   }
+// });
+
+// prevBtn.addEventListener("click", () => {
+//   if (currentSlide > 0) {
+//     currentSlide--;
+//     const translateValue = -currentSlide * 100;
+//     formbx.style.transform = `translateX(${translateValue}%)`;
+//     nextBtn.style.display = "block";
+//     submitBtn.style.display = "none";
+//   }
+//   if (currentSlide <= 0) {
+//     prevBtn.style.visibility = "hidden";
+//   }
+// });
+
+
 const slides = Array.from(document.querySelectorAll("section"));
 let totalSlides = slides.length;
 const formbx = document.querySelector(".formbx");
@@ -173,8 +211,8 @@ nextBtn.addEventListener("click", () => {
     const translateValue = -currentSlide * 100;
     formbx.style.transform = `translateX(${translateValue}%)`;
     prevBtn.style.visibility = "visible";
-    submitBtn.style.display = "none";
   }
+
   if (currentSlide >= totalSlides - 1) {
     submitBtn.style.display = "block";
     nextBtn.style.display = "none";
@@ -189,7 +227,12 @@ prevBtn.addEventListener("click", () => {
     nextBtn.style.display = "block";
     submitBtn.style.display = "none";
   }
+
   if (currentSlide <= 0) {
     prevBtn.style.visibility = "hidden";
   }
 });
+
+// Initial button states
+prevBtn.style.visibility = "hidden";
+submitBtn.style.display = "none";
