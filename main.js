@@ -119,64 +119,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /*===== Navigative BTN algorithm =====*/
 
-// console.log(slides);
-// let nextBtn = document.querySelector(".next");
-// let backBtn = document.querySelector(".back");
-// let formBx = document.getElementById("formbx");
-
-// console.log(nextBtn);
-// // nextBtn.forEach(() => {
-//   // nextBtn.addEventListener("click", () => {
-//   //   // formBx.style.transform = translateX(-105 + "%");
-//   //   formBx.style.marginLeft = -5 + "%";
-//   // })
-// // });
-
-
-
-
-// let currentSlide = 0;
-
-
-//   nextBtn.addEventListener("click", () => {
-//     if (currentSlide < totalSlides - 1) {
-//       currentSlide++;
-//       const translateValue = -currentSlide * 100;
-//       // formBx.style.transform = `translateX(${translateValue}%)`;
-//       // slides.forEach((slide) => {
-//       //   slide.style.transform = `translateX(${translateValue}%)`;
-//       //   console.log(slide)
-        
-//       // });
-//     }
-//   });
-
-//   backBtn.addEventListener("click", () => {
-//     if (currentSlide > 0) {
-//       currentSlide--;
-//       const translateValue = -currentSlide * 105;
-//       slides.forEach((slide) => {
-//         // slide.style.transform = `translateX(${translateValue}%)`;
-
-//       });
-//     }
-
-//   });
-
 // const slides = Array.from(document.querySelectorAll("section"));
 // let totalSlides = slides.length;
 // const formbx = document.querySelector(".formbx");
 // const nextBtn = document.getElementById("nextBtn");
 // const prevBtn = document.getElementById("prevBtn");
+// const submitBtn = document.querySelector("#submit");
 
 // let currentSlide = 0;
 
 // nextBtn.addEventListener("click", () => {
 //   if (currentSlide < totalSlides - 1) {
 //     currentSlide++;
-//     const translateValue = -currentSlide * 5;
+//     const translateValue = -currentSlide * 100;
 //     formbx.style.transform = `translateX(${translateValue}%)`;
+//     prevBtn.style.visibility ="visible";
 //   }
+//   if (currentSlide >= totalSlides - 1){
+//     submitBtn.style.display = "block";
+//     nextBtn.style.display ="none";
+//   }
+
+//   console.log(currentSlide)
 // });
 
 // prevBtn.addEventListener("click", () => {
@@ -184,29 +148,48 @@ document.addEventListener("DOMContentLoaded", function () {
 //     currentSlide--;
 //     const translateValue = -currentSlide * 100;
 //     formbx.style.transform = `translateX(${translateValue}%)`;
+//     nextBtn.style.display ="block";
+//     prevBtn.style.visibility ="visible";
+//     submitBtn.style.display = "none";
+// }
+// if (currentSlide <= 0){
+//   prevBtn.style.visibility ="hidden";
 // }
 // });
 
 
-const sections = document.querySelectorAll("section");
+const slides = Array.from(document.querySelectorAll("section"));
+let totalSlides = slides.length;
 const formbx = document.querySelector(".formbx");
 const nextBtn = document.getElementById("nextBtn");
 const prevBtn = document.getElementById("prevBtn");
+const submitBtn = document.querySelector("#submit");
 
 let currentSlide = 0;
 
 nextBtn.addEventListener("click", () => {
-  if (currentSlide < sections.length - 1) {
-    sections[currentSlide].style.display = "none";
+  if (currentSlide < totalSlides - 1) {
     currentSlide++;
-    sections[currentSlide].style.display = "block";
+    const translateValue = -currentSlide * 100;
+    formbx.style.transform = `translateX(${translateValue}%)`;
+    prevBtn.style.visibility = "visible";
+    submitBtn.style.display = "none";
+  }
+  if (currentSlide >= totalSlides - 1) {
+    submitBtn.style.display = "block";
+    nextBtn.style.display = "none";
   }
 });
 
 prevBtn.addEventListener("click", () => {
   if (currentSlide > 0) {
-    sections[currentSlide].style.display = "none";
     currentSlide--;
-    sections[currentSlide].style.display = "block";
+    const translateValue = -currentSlide * 100;
+    formbx.style.transform = `translateX(${translateValue}%)`;
+    nextBtn.style.display = "block";
+    submitBtn.style.display = "none";
+  }
+  if (currentSlide <= 0) {
+    prevBtn.style.visibility = "hidden";
   }
 });

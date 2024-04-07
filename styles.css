@@ -60,7 +60,7 @@ form {
     width: 100%;
     height: 95.5vh;
     margin-top: 6.3rem;
-    overflow-x: hidden;
+    overflow-x: scroll;
     position: relative;
 }
 
@@ -79,10 +79,9 @@ section {
     position: relative;
     
 }
-section:nth-child(1) .btnbx{
+/* section:nth-child(1) .btnbx{
     background-color: var(--Alabaster);
     width: 100%;
-    /* width: calc(100% - 5rem); */
     height: 4.2rem;
     display: flex;
     justify-content: end;
@@ -101,7 +100,6 @@ section:nth-child(1) .btnbx button{
 section:not(section:nth-child(1)) .btnbx{
     background-color: var(--Alabaster);
     width: 100%;
-    /* width: calc(100% - 5rem); */
     height: 4rem;
     padding: 0 1rem;
     margin-top: 100%;
@@ -127,9 +125,34 @@ section:not(section:nth-child(1)) .btnbx button:last-child{
     font-weight: 500;
     padding: .5rem 1rem;
     border-radius: 5px;
-}
+} */
 
-#summary .btnbx button:last-child{
+form .btnbx {
+    background-color: var(--Alabaster);
+    color: var(--Alabaster);
+    font-size: .85rem;
+    font-weight: 500;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+form .btnbx button{
+    padding: .2rem 1rem;
+    border-radius: 5px;
+}
+form .btnbx button:first-child{
+    background-color: var(--Cool_gray); 
+}
+form .btnbx button:nth-child(2){
+    background-color: var(--Marine_blue); 
+}
+form .btnbx button[type="submit"]{
     background-color:  var(--Purplish_blue);
 }
 aside {
