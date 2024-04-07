@@ -118,48 +118,95 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /*===== Navigative BTN algorithm =====*/
-// let slides = document.getElementsByTagName("section");
-const slides = Array.from(document.querySelectorAll("section"));
 
-let totalSlides = slides.length;
-console.log(slides);
-let nextBtn = document.querySelector(".next");
-let backBtn = document.querySelector(".back");
-let formBx = document.getElementById("formbx");
+// console.log(slides);
+// let nextBtn = document.querySelector(".next");
+// let backBtn = document.querySelector(".back");
+// let formBx = document.getElementById("formbx");
 
-console.log(nextBtn);
-// nextBtn.forEach(() => {
-  // nextBtn.addEventListener("click", () => {
-  //   // formBx.style.transform = translateX(-105 + "%");
-  //   formBx.style.marginLeft = -5 + "%";
-  // })
+// console.log(nextBtn);
+// // nextBtn.forEach(() => {
+//   // nextBtn.addEventListener("click", () => {
+//   //   // formBx.style.transform = translateX(-105 + "%");
+//   //   formBx.style.marginLeft = -5 + "%";
+//   // })
+// // });
+
+
+
+
+// let currentSlide = 0;
+
+
+//   nextBtn.addEventListener("click", () => {
+//     if (currentSlide < totalSlides - 1) {
+//       currentSlide++;
+//       const translateValue = -currentSlide * 100;
+//       // formBx.style.transform = `translateX(${translateValue}%)`;
+//       // slides.forEach((slide) => {
+//       //   slide.style.transform = `translateX(${translateValue}%)`;
+//       //   console.log(slide)
+        
+//       // });
+//     }
+//   });
+
+//   backBtn.addEventListener("click", () => {
+//     if (currentSlide > 0) {
+//       currentSlide--;
+//       const translateValue = -currentSlide * 105;
+//       slides.forEach((slide) => {
+//         // slide.style.transform = `translateX(${translateValue}%)`;
+
+//       });
+//     }
+
+//   });
+
+// const slides = Array.from(document.querySelectorAll("section"));
+// let totalSlides = slides.length;
+// const formbx = document.querySelector(".formbx");
+// const nextBtn = document.getElementById("nextBtn");
+// const prevBtn = document.getElementById("prevBtn");
+
+// let currentSlide = 0;
+
+// nextBtn.addEventListener("click", () => {
+//   if (currentSlide < totalSlides - 1) {
+//     currentSlide++;
+//     const translateValue = -currentSlide * 5;
+//     formbx.style.transform = `translateX(${translateValue}%)`;
+//   }
+// });
+
+// prevBtn.addEventListener("click", () => {
+//   if (currentSlide > 0) {
+//     currentSlide--;
+//     const translateValue = -currentSlide * 100;
+//     formbx.style.transform = `translateX(${translateValue}%)`;
+// }
 // });
 
 
-
+const sections = document.querySelectorAll("section");
+const formbx = document.querySelector(".formbx");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
 
 let currentSlide = 0;
 
+nextBtn.addEventListener("click", () => {
+  if (currentSlide < sections.length - 1) {
+    sections[currentSlide].style.display = "none";
+    currentSlide++;
+    sections[currentSlide].style.display = "block";
+  }
+});
 
-  nextBtn.addEventListener("click", () => {
-    if (currentSlide < totalSlides - 1) {
-      currentSlide++;
-      const translateValue = -currentSlide * 105;
-      slides.forEach((slide) => {
-        // slide.style.transform = `translateX(${translateValue}%)`;
-        formBx.style.marginLeft = (-currentSlide * 5) + "%";
-      });
-    }
-  });
-
-  backBtn.addEventListener("click", () => {
-    if (currentSlide > 0) {
-      currentSlide--;
-      const translateValue = -currentSlide * 105;
-      slides.forEach((slide) => {
-        // slide.style.transform = `translateX(${translateValue}%)`;
-        formBx.style.marginLeft = (-currentSlide * 5) + "%";
-      });
-    }
-
-  });
+prevBtn.addEventListener("click", () => {
+  if (currentSlide > 0) {
+    sections[currentSlide].style.display = "none";
+    currentSlide--;
+    sections[currentSlide].style.display = "block";
+  }
+});
