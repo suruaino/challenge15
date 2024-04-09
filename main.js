@@ -3,8 +3,18 @@ document.addEventListener("DOMContentLoaded", function () {
   let finishAdd = document.getElementById("finish_add");
   let selectedPlan = document.getElementById("selected_plan");
   let selectedAdd = document.getElementById("selected_add");
+  let voteOfThanks = document.querySelector(".Vote_of_thanks");
   let selectedAddList = document.getElementById("selected_add_list");
   let total = document.getElementById("total");
+
+  const form = document.querySelector('form');
+  form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  voteOfThanks.style.display = "flex";
+
+  // location.reload();
+  
+  });
 
   //   let currentlyCheckedRadio = null;
   let planBx = document.querySelectorAll(".select_box");
@@ -118,10 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /*===== Navigative BTN algorithm =====*/  
   const slides = Array.from(document.querySelectorAll("section"));
-  // slides.forEach((slide) => {
-  //   slide.style.transform = "translateX(0%)";
-
-  // });
+ 
   let totalSlides = slides.length;
   console.log(totalSlides);
   const nextBtn = document.getElementById("nextBtn");
@@ -143,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
       
       prevBtn.style.visibility = "visible";
       submitBtn.style.display = "none";
-      const translateValue = -currentSlide * 103;
+      const translateValue = (-currentSlide) * 105;
       slides.forEach((slide) => {
         slide.style.transform = `translateX(${translateValue}%)`;
         indicatorBtns[currentSlide].style.backgroundColor = "#bfe2fd"
@@ -181,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
     if (currentSlide > 0) {
       currentSlide--;
-      const translateValue = -currentSlide * 103;
+      const translateValue = -currentSlide * 105;
       slides.forEach((slide) => {
         slide.style.transform = `translateX(${translateValue}%)`;
       });
