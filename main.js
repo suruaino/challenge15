@@ -118,6 +118,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /*===== Navigative BTN algorithm =====*/  
   const slides = Array.from(document.querySelectorAll("section"));
+  // slides.forEach((slide) => {
+  //   slide.style.transform = "translateX(0%)";
+
+  // });
   let totalSlides = slides.length;
   console.log(totalSlides);
   const nextBtn = document.getElementById("nextBtn");
@@ -126,58 +130,58 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const indicatorBtns = Array.from(document.querySelectorAll(".indicator"));
   indicatorBtns[0].style.color = "black"
-  console.log(indicatorBtns)
 
-  
   let currentSlide = 0;
   if (currentSlide <= 0) {
     prevBtn.style.visibility = "hidden";
   }
 
-  
-
-  nextBtn.addEventListener("click", () => {
+  nextBtn.addEventListener("click", (event) => {
+    event.preventDefault();
     if (currentSlide < totalSlides - 1) {
       currentSlide++;
-      const translateValue = -currentSlide * 100;
+      
+      prevBtn.style.visibility = "visible";
+      submitBtn.style.display = "none";
+      const translateValue = -currentSlide * 103;
       slides.forEach((slide) => {
         slide.style.transform = `translateX(${translateValue}%)`;
         indicatorBtns[currentSlide].style.backgroundColor = "#bfe2fd"
-       
-        // indicatorBtns[0].style.color = "black";
+
       });
       if(currentSlide === 0){
         indicatorBtns[currentSlide].style.color = "black";
       }
-      indicatorBtns.forEach( indicatorBtn  => {
-        indicatorBtn.style.backgroundColor = "transparent";
-        indicatorBtn.style.color = "white";
-        indicatorBtns[0].style.backgroundColor = "#bfe2fd"
-        if(currentSlide){
-          indicatorBtns[currentSlide].style.backgroundColor = "#bfe2fd";
-          indicatorBtns[0].style.backgroundColor = "transparent";
-          indicatorBtns[currentSlide].style.color = "black";
-        }
-      })
+      if (currentSlide >= totalSlides - 1) {
+        submitBtn.style.display = "block";
+        nextBtn.style.display = "none";
+      }
+    }
     
-        // console.log(indicatorBtn)
-      // });
 
-
-      prevBtn.style.visibility = "visible";
-      submitBtn.style.display = "none";
-    }
-    if (currentSlide >= totalSlides - 1) {
-      submitBtn.style.display = "block";
-      nextBtn.style.display = "none";
-    }
+    indicatorBtns.forEach( indicatorBtn  => {
+      indicatorBtn.style.backgroundColor = "transparent";
+      indicatorBtn.style.color = "white";
+      indicatorBtns[0].style.backgroundColor = "#bfe2fd"
+      if(currentSlide){
+        indicatorBtns[currentSlide].style.backgroundColor = "#bfe2fd";
+        indicatorBtns[0].style.backgroundColor = "transparent";
+        indicatorBtns[currentSlide].style.color = "black";
+      }
+    })
     console.log(currentSlide);
+    // nextBtn.addEventListener("click", (event) => {
+    //   event.preventDefault(); // Prevent default form submission behavior
+    //   // Rest of your code...
+    // });
+    
   });
   
-  prevBtn.addEventListener("click", () => {
+  prevBtn.addEventListener("click", (event) => {
+    event.preventDefault();
     if (currentSlide > 0) {
       currentSlide--;
-      const translateValue = -currentSlide * 100;
+      const translateValue = -currentSlide * 103;
       slides.forEach((slide) => {
         slide.style.transform = `translateX(${translateValue}%)`;
       });
@@ -188,7 +192,6 @@ document.addEventListener("DOMContentLoaded", function () {
       prevBtn.style.visibility = "hidden";
     }
 
-  
     indicatorBtns.forEach( indicatorBtn  => {
       indicatorBtn.style.backgroundColor = "transparent";
       indicatorBtn.style.color = "white";
@@ -205,5 +208,4 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(currentSlide);
   });
   
-
 });
