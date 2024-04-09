@@ -377,6 +377,49 @@ aside>div span:last-child h4 {
     background-color: #f0f6ff50;
     border-radius: 10px;
 }
+.Vote_of_thanks{
+    width: 100%;
+    height: 25rem;
+    background-color: #000000f7;
+    background-color: var(--Magnolia);
+    margin-top: 4rem;
+    padding: 0 1rem;
+    /* border-radius: 10px; */
+
+}
+.Vote_of_thanks .contentbx{
+    width: 100%;
+    height: 100%;
+    background-color: var(--Alabaster);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: auto 0;
+    margin-top: -4rem;
+    padding: 0 1.5rem;
+    border-radius: 10px;
+}
+.Vote_of_thanks .contentbx h2{
+    color: var(--Marine_blue);
+}
+.Vote_of_thanks .contentbx p{
+    color: var(--Cool_gray);
+    font-weight: 400;
+}
+.Vote_of_thanks .contentbx img{
+    width: 3rem;
+}
+.Vote_of_thanks .contentbx button{
+    background-color: var(--Marine_blue);
+    color: var(--Alabaster);
+    font-weight: 450;
+    padding: .2rem 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    cursor: pointer;
+}
 @media only screen and (min-width: 768px) {
     body {
         height: 100vh;

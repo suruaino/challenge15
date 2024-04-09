@@ -11,7 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener('submit', (event) => {
   event.preventDefault();
   voteOfThanks.style.display = "flex";
-
+  const closeBtn = document.querySelector(".close_btn");
+  closeBtn.addEventListener("click", () => {
+    voteOfThanks.style.display = "none";
+    location.reload();
+  })
   // location.reload();
   
   });
@@ -131,6 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
  
   let totalSlides = slides.length;
   console.log(totalSlides);
+  const btnBx = document.querySelector(".btnbx");
   const nextBtn = document.getElementById("nextBtn");
   const prevBtn = document.getElementById("prevBtn");
   const submitBtn = document.querySelector("#submit");
@@ -215,4 +220,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(currentSlide);
   });
   
+  submitBtn.addEventListener("click", () => {
+    btnBx.style.display = "none";
+  })
 });
