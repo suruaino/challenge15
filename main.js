@@ -125,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const submitBtn = document.querySelector("#submit");
 
   const indicatorBtns = Array.from(document.querySelectorAll(".indicator"));
+  indicatorBtns[0].style.color = "black"
   console.log(indicatorBtns)
 
   
@@ -132,18 +133,35 @@ document.addEventListener("DOMContentLoaded", function () {
   if (currentSlide <= 0) {
     prevBtn.style.visibility = "hidden";
   }
+
+  
+
   nextBtn.addEventListener("click", () => {
     if (currentSlide < totalSlides - 1) {
       currentSlide++;
       const translateValue = -currentSlide * 100;
       slides.forEach((slide) => {
         slide.style.transform = `translateX(${translateValue}%)`;
+        indicatorBtns[currentSlide].style.backgroundColor = "#bfe2fd"
+       
+        // indicatorBtns[0].style.color = "black";
       });
-
-      indicatorBtns.forEach((indicatorBtn) => {
-        indicatorBtns[currentSlide].style.backgroundColor = "red";
-        console.log(indicatorBtn)
-      });
+      if(currentSlide === 0){
+        indicatorBtns[currentSlide].style.color = "black";
+      }
+      indicatorBtns.forEach( indicatorBtn  => {
+        indicatorBtn.style.backgroundColor = "transparent";
+        indicatorBtn.style.color = "white";
+        indicatorBtns[0].style.backgroundColor = "#bfe2fd"
+        if(currentSlide){
+          indicatorBtns[currentSlide].style.backgroundColor = "#bfe2fd";
+          indicatorBtns[0].style.backgroundColor = "transparent";
+          indicatorBtns[currentSlide].style.color = "black";
+        }
+      })
+    
+        // console.log(indicatorBtn)
+      // });
 
 
       prevBtn.style.visibility = "visible";
@@ -169,6 +187,21 @@ document.addEventListener("DOMContentLoaded", function () {
     if (currentSlide === 0) {
       prevBtn.style.visibility = "hidden";
     }
+
+  
+    indicatorBtns.forEach( indicatorBtn  => {
+      indicatorBtn.style.backgroundColor = "transparent";
+      indicatorBtn.style.color = "white";
+      indicatorBtns[0].style.backgroundColor = "#bfe2fd"
+      if(currentSlide === 0){
+      indicatorBtns[0].style.color = "black";
+      }
+      if(currentSlide){
+        indicatorBtns[currentSlide].style.backgroundColor = "#bfe2fd";
+        indicatorBtns[0].style.backgroundColor = "transparent";
+        indicatorBtns[currentSlide].style.color = "black";
+      }
+    })
     console.log(currentSlide);
   });
   
