@@ -379,17 +379,21 @@ aside>div span:last-child h4 {
 }
 .Vote_of_thanks{
     width: 100%;
-    height: 25rem;
+    height: 100%;
     background-color: #000000f7;
     background-color: var(--Magnolia);
     margin-top: 4rem;
     padding: 0 1rem;
+    position: absolute;
+    inset: 0;
+    border: 4px solid green;
+    isolation: isolate;
     /* border-radius: 10px; */
 
 }
 .Vote_of_thanks .contentbx{
     width: 100%;
-    height: 100%;
+    height: 25rem;
     background-color: var(--Alabaster);
     display: flex;
     flex-direction: column;
@@ -547,6 +551,18 @@ aside>div span:last-child h4 {
         /* width: calc(100% - 1rem); */
         width: 100%;
         margin-right: 0;
+    }
+    .Vote_of_thanks{
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+    .Vote_of_thanks .contentbx{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding-inline: 4rem;
+        border-radius: 0;
     }
 }
 

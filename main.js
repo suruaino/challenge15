@@ -1,23 +1,34 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+  console.log("Page has succesfully loaded")
   let finishPlan = document.getElementById("finish_plan");
   let finishAdd = document.getElementById("finish_add");
+  const plan = document.querySelector("#plan");
+  let change = document.querySelector("#change");
   let selectedPlan = document.getElementById("selected_plan");
   let selectedAdd = document.getElementById("selected_add");
   let voteOfThanks = document.querySelector(".Vote_of_thanks");
   let selectedAddList = document.getElementById("selected_add_list");
   let total = document.getElementById("total");
 
-  const form = document.querySelector('form');
-  form.addEventListener('submit', (event) => {
-  event.preventDefault();
-  voteOfThanks.style.display = "flex";
-  const closeBtn = document.querySelector(".close_btn");
-  closeBtn.addEventListener("click", () => {
-    voteOfThanks.style.display = "none";
-    location.reload();
-  })
-  // location.reload();
-  
+  change.addEventListener("click", () => {
+    // let change = document.querySelector("#change");
+    slides.forEach((slide) => {
+      slide.style.transform = "translateX(100%)";
+    });
+
+    console.log("change is clicked")
+  });
+  const form = document.querySelector("form");
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    voteOfThanks.style.display = "flex";
+    const closeBtn = document.querySelector(".close_btn");
+    closeBtn.addEventListener("click", () => {
+      voteOfThanks.style.display = "none";
+      location.reload();
+    });
+    // location.reload();
   });
 
   //   let currentlyCheckedRadio = null;
@@ -130,9 +141,10 @@ document.addEventListener("DOMContentLoaded", function () {
     yearlyAdd.style.display = this.checked ? "flex" : "none";
   });
 
-  /*===== Navigative BTN algorithm =====*/  
+  /*===== Navigative BTN algorithm =====*/
+  // const formBx = document.querySelector(".formbx");
   const slides = Array.from(document.querySelectorAll("section"));
- 
+
   let totalSlides = slides.length;
   console.log(totalSlides);
   const btnBx = document.querySelector(".btnbx");
@@ -141,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const submitBtn = document.querySelector("#submit");
 
   const indicatorBtns = Array.from(document.querySelectorAll(".indicator"));
-  indicatorBtns[0].style.color = "black"
+  indicatorBtns[0].style.color = "black";
 
   let currentSlide = 0;
   if (currentSlide <= 0) {
@@ -152,16 +164,15 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
     if (currentSlide < totalSlides - 1) {
       currentSlide++;
-      
+
       prevBtn.style.visibility = "visible";
       submitBtn.style.display = "none";
-      const translateValue = (-currentSlide) * 105;
+      const translateValue = -currentSlide * 105;
       slides.forEach((slide) => {
         slide.style.transform = `translateX(${translateValue}%)`;
-        indicatorBtns[currentSlide].style.backgroundColor = "#bfe2fd"
-
+        indicatorBtns[currentSlide].style.backgroundColor = "#bfe2fd";
       });
-      if(currentSlide === 0){
+      if (currentSlide === 0) {
         indicatorBtns[currentSlide].style.color = "black";
       }
       if (currentSlide >= totalSlides - 1) {
@@ -169,26 +180,24 @@ document.addEventListener("DOMContentLoaded", function () {
         nextBtn.style.display = "none";
       }
     }
-    
 
-    indicatorBtns.forEach( indicatorBtn  => {
+    indicatorBtns.forEach((indicatorBtn) => {
       indicatorBtn.style.backgroundColor = "transparent";
       indicatorBtn.style.color = "white";
-      indicatorBtns[0].style.backgroundColor = "#bfe2fd"
-      if(currentSlide){
+      indicatorBtns[0].style.backgroundColor = "#bfe2fd";
+      if (currentSlide) {
         indicatorBtns[currentSlide].style.backgroundColor = "#bfe2fd";
         indicatorBtns[0].style.backgroundColor = "transparent";
         indicatorBtns[currentSlide].style.color = "black";
       }
-    })
+    });
     console.log(currentSlide);
     // nextBtn.addEventListener("click", (event) => {
     //   event.preventDefault(); // Prevent default form submission behavior
     //   // Rest of your code...
     // });
-    
   });
-  
+
   prevBtn.addEventListener("click", (event) => {
     event.preventDefault();
     if (currentSlide > 0) {
@@ -203,24 +212,36 @@ document.addEventListener("DOMContentLoaded", function () {
     if (currentSlide === 0) {
       prevBtn.style.visibility = "hidden";
     }
-
-    indicatorBtns.forEach( indicatorBtn  => {
+    // if(currentSlide ){
+    //   change.addEventListener("click", () => {
+    //     const translateValue = -currentSlide - 3 * 105;
+    //     // slides.forEach((slide) => {
+    //     //   slide.style.transform = `translateX(${translateValue}%)`;
+    //     // });
+    
+    //     console.log("change is clicked");
+    //   });
+    // }
+    indicatorBtns.forEach((indicatorBtn) => {
       indicatorBtn.style.backgroundColor = "transparent";
       indicatorBtn.style.color = "white";
-      indicatorBtns[0].style.backgroundColor = "#bfe2fd"
-      if(currentSlide === 0){
-      indicatorBtns[0].style.color = "black";
+      indicatorBtns[0].style.backgroundColor = "#bfe2fd";
+      if (currentSlide === 0) {
+        indicatorBtns[0].style.color = "black";
       }
-      if(currentSlide){
+      if (currentSlide) {
         indicatorBtns[currentSlide].style.backgroundColor = "#bfe2fd";
         indicatorBtns[0].style.backgroundColor = "transparent";
         indicatorBtns[currentSlide].style.color = "black";
       }
-    })
+    });
     console.log(currentSlide);
   });
-  
+
   submitBtn.addEventListener("click", () => {
+    slides.forEach((slide) => {
+      slide.style.display = "none";
+    });
     btnBx.style.display = "none";
-  })
+  });
 });
