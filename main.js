@@ -11,14 +11,15 @@ document.addEventListener("DOMContentLoaded", function () {
   let selectedAddList = document.getElementById("selected_add_list");
   let total = document.getElementById("total");
 
-  change.addEventListener("click", () => {
-    // let change = document.querySelector("#change");
-    slides.forEach((slide) => {
-      slide.style.transform = "translateX(100%)";
-    });
 
-    console.log("change is clicked")
-  });
+  // change.addEventListener("click", () => {
+  //   // let change = document.querySelector("#change");
+  //   slides.forEach((slide) => {
+  //     slide.style.transform = "translateX(100%)";
+  //   });
+
+  //   console.log("change is clicked")
+  // });
   const form = document.querySelector("form");
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -160,6 +161,16 @@ document.addEventListener("DOMContentLoaded", function () {
     prevBtn.style.visibility = "hidden";
   }
 
+  if(currentSlide === 3){
+    change.addEventListener("click", () => {
+      const translateValue = -currentSlide - 3 * 105;
+      slides.forEach((slide) => {
+        slide.style.transform = `translateX(${translateValue}%)`;
+      });
+  
+      console.log("change is clicked");
+    });
+  }
   nextBtn.addEventListener("click", (event) => {
     event.preventDefault();
     if (currentSlide < totalSlides - 1) {
