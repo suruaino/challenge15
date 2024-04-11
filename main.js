@@ -97,91 +97,37 @@ document.addEventListener("DOMContentLoaded", function () {
   //   });
   // });
 
-
   addBx.forEach((container, index) => {
     const check = container.querySelector('input[type="checkbox"]');
-    let addOutput = container.querySelector(".add_container .left .content h4").innerText;
+    let addOutput = container.querySelector(
+      ".add_container .left .content h4"
+    ).innerText;
 
     check.addEventListener("clicked", () => {
-        if (check.checked) {
-            let liLeft = document.createElement("li");
-            liLeft.innerHTML = `<span id="${addOutput.split(" ")[0].toLowerCase()}"> ${addOutput} </span>
+      check.checked = true;
+      if (check.checked) {
+        let liLeft = document.createElement("li");
+        liLeft.innerHTML = `<span id="${addOutput
+          .split(" ")[0]
+          .toLowerCase()}"> ${addOutput} </span>
                                  <span> ${check.value} </span>`;
-            selectedAddList.style.width = "100%";
-            selectedAddList.appendChild(liLeft);
-            liLeft.style.width = "100%";
-            liLeft.style.display = "flex";
-            liLeft.style.justifyContent = "space-between";
-        }
+        selectedAddList.style.width = "100%";
+        selectedAddList.appendChild(liLeft);
+        liLeft.style.width = "100%";
+        liLeft.style.display = "flex";
+        liLeft.style.justifyContent = "space-between";
+      }
+      // else {
+      //           check.checked = false;
+      //           // Remove the corresponding item from the selectedAddList
+      //           let selectedItemId = addOutput.split(" ")[0].toLowerCase();
+      //           let itemToRemove = selectedAddList.querySelector(`#${selectedItemId}`);
+      //           if (itemToRemove) {
+      //             selectedAddList.remove(itemToRemove);
+      //           }
+      //         }
     });
-});
-
-
-
-
-
-
-
-  //   addBx.forEach((container, index) => {
-  //     const check = container.querySelector('input[type="checkbox"]');
-  //     let addOutput = container.querySelector(
-  //       ".add_container .left .content h4"
-  //     ).innerText;
-
-  //     container.addEventListener("click", () => {
-  //       check.checked = !check.checked; // Toggle the checked state
-  //       if (check.checked) {
-  //         let liLeft = document.createElement("li");
-  //         liLeft.innerHTML = `<span id="${addOutput
-  //           .split(" ")[0]
-  //           .toLowerCase()}"> ${addOutput} </span>
-  //                             <span> ${check.value} </span>`;
-  //         selectedAddList.style.width = "100%";
-  //         selectedAddList.appendChild(liLeft);
-  //         liLeft.style.width = "100%";
-  //         liLeft.style.display = "flex";
-  //         liLeft.style.justifyContent = "space-between";
-  //       } else {
-  //         let selectedItemId = addOutput.split(" ")[0].toLowerCase();
-  //         let itemToRemove = selectedAddList.querySelector(`#${selectedItemId}`);
-  //         if (itemToRemove) {
-  //           itemToRemove.remove(); // Use remove() method directly
-  //         }
-  //       }
-  //     });
-  // });
-
-  //   addBx.forEach((container, index) => {
-  //     const check = container.querySelector('input[type="checkbox"]');
-  //     let addOutput = container.querySelector(
-  //       ".add_container .left .content h4"
-  //     ).innerText;
-
-  //     container.addEventListener("click", () => {
-  //       if (check.checked) {
-  //         check.checked = false;
-  //         // Remove the corresponding item from the selectedAddList
-  //         let selectedItemId = addOutput.split(" ")[0].toLowerCase();
-  //         let itemToRemove = selectedAddList.querySelector(`#${selectedItemId}`);
-  //         if (itemToRemove) {
-  //           selectedAddList.remove(itemToRemove);
-  //         }
-  //       } else {
-  //         check.checked = true;
-  //         let liLeft = document.createElement("li");
-  //         liLeft.innerHTML = `<span id="${addOutput
-  //           .split(" ")[0]
-  //           .toLowerCase()}"> ${addOutput} </span>
-  //                             <span> ${check.value} </span>`;
-  //         selectedAddList.style.width = "100%";
-  //         selectedAddList.appendChild(liLeft);
-  //         liLeft.style.width = "100%";
-  //         liLeft.style.display = "flex";
-  //         liLeft.style.justifyContent = "space-between";
-  //         console.log(liLeft);
-  //       }
-  //     });
-  // });
+  });
 
   function calcTotal() {
     // Get the selected radio button value
@@ -211,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateTotal() {
     total.innerText = calcTotal();
-    console.log(calcTotal())
+    console.log(calcTotal());
   }
 
   // Update total whenever a checkbox or radio button is clicked
