@@ -144,7 +144,6 @@ form .btnbx {
     font-size: .85rem;
     font-weight: 500;
     padding: .5rem 1rem;
-    border-radius: 5px;
     position: fixed;
     bottom: 1rem;
     left: 0;
@@ -404,6 +403,7 @@ aside>div span:last-child h4 {
     margin-top: -4rem;
     padding: 0 1.5rem;
     border-radius: 10px;
+    z-index: 100;
 }
 .Vote_of_thanks .contentbx h2{
     color: var(--Marine_blue);

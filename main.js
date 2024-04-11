@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-  console.log("Page has succesfully loaded")
+  console.log("Page has succesfully loaded");
   let finishPlan = document.getElementById("finish_plan");
   let finishAdd = document.getElementById("finish_add");
   const plan = document.querySelector("#plan");
@@ -10,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let voteOfThanks = document.querySelector(".Vote_of_thanks");
   let selectedAddList = document.getElementById("selected_add_list");
   let total = document.getElementById("total");
-
 
   // change.addEventListener("click", () => {
   //   // let change = document.querySelector("#change");
@@ -62,7 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  let addBx = document.querySelectorAll(".left");
+  // let addBx = document.querySelectorAll(".left");
+  let addBx = document.querySelectorAll(".add_container");
 
   addBx.forEach((container, index) => {
     const check = container.querySelector('input[type="checkbox"]');
@@ -71,8 +70,10 @@ document.addEventListener("DOMContentLoaded", function () {
     ).innerText;
 
     container.addEventListener("click", () => {
+      console.log("container is clicked");
       check.checked = true;
-      let liLeft = document.createElement("li");
+      if(check.checked){
+        let liLeft = document.createElement("li");
       liLeft.innerHTML = `<span id="${addOutput
         .split(" ")[0]
         .toLowerCase()}"> ${addOutput} </span>
@@ -82,8 +83,80 @@ document.addEventListener("DOMContentLoaded", function () {
       liLeft.style.width = "100%";
       liLeft.style.display = "flex";
       liLeft.style.justifyContent = "space-between";
+      }
+      // let liLeft = document.createElement("li");
+      // liLeft.innerHTML = `<span id="${addOutput
+      //   .split(" ")[0]
+      //   .toLowerCase()}"> ${addOutput} </span>
+      //                     <span> ${check.value} </span>`;
+      // selectedAddList.style.width = "100%";
+      // selectedAddList.appendChild(liLeft);
+      // liLeft.style.width = "100%";
+      // liLeft.style.display = "flex";
+      // liLeft.style.justifyContent = "space-between";
     });
   });
+
+  //   addBx.forEach((container, index) => {
+  //     const check = container.querySelector('input[type="checkbox"]');
+  //     let addOutput = container.querySelector(
+  //       ".add_container .left .content h4"
+  //     ).innerText;
+
+  //     container.addEventListener("click", () => {
+  //       check.checked = !check.checked; // Toggle the checked state
+  //       if (check.checked) {
+  //         let liLeft = document.createElement("li");
+  //         liLeft.innerHTML = `<span id="${addOutput
+  //           .split(" ")[0]
+  //           .toLowerCase()}"> ${addOutput} </span>
+  //                             <span> ${check.value} </span>`;
+  //         selectedAddList.style.width = "100%";
+  //         selectedAddList.appendChild(liLeft);
+  //         liLeft.style.width = "100%";
+  //         liLeft.style.display = "flex";
+  //         liLeft.style.justifyContent = "space-between";
+  //       } else {
+  //         let selectedItemId = addOutput.split(" ")[0].toLowerCase();
+  //         let itemToRemove = selectedAddList.querySelector(`#${selectedItemId}`);
+  //         if (itemToRemove) {
+  //           itemToRemove.remove(); // Use remove() method directly
+  //         }
+  //       }
+  //     });
+  // });
+
+  //   addBx.forEach((container, index) => {
+  //     const check = container.querySelector('input[type="checkbox"]');
+  //     let addOutput = container.querySelector(
+  //       ".add_container .left .content h4"
+  //     ).innerText;
+
+  //     container.addEventListener("click", () => {
+  //       if (check.checked) {
+  //         check.checked = false;
+  //         // Remove the corresponding item from the selectedAddList
+  //         let selectedItemId = addOutput.split(" ")[0].toLowerCase();
+  //         let itemToRemove = selectedAddList.querySelector(`#${selectedItemId}`);
+  //         if (itemToRemove) {
+  //           selectedAddList.remove(itemToRemove);
+  //         }
+  //       } else {
+  //         check.checked = true;
+  //         let liLeft = document.createElement("li");
+  //         liLeft.innerHTML = `<span id="${addOutput
+  //           .split(" ")[0]
+  //           .toLowerCase()}"> ${addOutput} </span>
+  //                             <span> ${check.value} </span>`;
+  //         selectedAddList.style.width = "100%";
+  //         selectedAddList.appendChild(liLeft);
+  //         liLeft.style.width = "100%";
+  //         liLeft.style.display = "flex";
+  //         liLeft.style.justifyContent = "space-between";
+  //         console.log(liLeft);
+  //       }
+  //     });
+  // });
 
   function calcTotal() {
     // Get the selected radio button value
@@ -108,10 +181,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Return the total value
     return "$" + ((planValue || 0) + (addSum || 0));
+    // console.log("$" + ((planValue || 0) + (addSum || 0)));
   }
 
   function updateTotal() {
     total.innerText = calcTotal();
+    console.log(calcTotal())
   }
 
   // Update total whenever a checkbox or radio button is clicked
@@ -161,13 +236,13 @@ document.addEventListener("DOMContentLoaded", function () {
     prevBtn.style.visibility = "hidden";
   }
 
-  if(currentSlide === 3){
+  if (currentSlide === 3) {
     change.addEventListener("click", () => {
       const translateValue = -currentSlide - 3 * 105;
       slides.forEach((slide) => {
         slide.style.transform = `translateX(${translateValue}%)`;
       });
-  
+
       console.log("change is clicked");
     });
   }
@@ -229,7 +304,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //     // slides.forEach((slide) => {
     //     //   slide.style.transform = `translateX(${translateValue}%)`;
     //     // });
-    
+
     //     console.log("change is clicked");
     //   });
     // }
