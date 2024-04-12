@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ).innerText;
     check.checked;
     check.addEventListener("change", () => {
+      let selectedItemId = addOutput.split(" ")[0].toLowerCase();
       let itemToRemove = selectedAddList.querySelector(`#${selectedItemId}`);
       if (check.checked) {
         container.style.border = "1px solid #473dff";
@@ -74,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
                               check.value
                             } </span>`;
         selectedAddList.appendChild(liLeft);
-        document.querySelector("#selected_add").appendChild(selectedAddList);
+        document.querySelector("#selected_add").appendChild(liLeft.innerHTML);
         liLeft.querySelector("span:last-child").style.color = "#473dff";
         selectedAddList.style.width = "100%";
         liLeft.style.width = "100%";
@@ -84,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
           let selectedAddList = document.getElementById("selected_add_list");
         container.style.border = "1px solid #9699ab";
         selectableCheckValue.style.color ="#9699ab";
-        let selectedItemId = addOutput.split(" ")[0].toLowerCase();
+        
        
         // let liLeft = document.createElement("li");
         if (itemToRemove) {
