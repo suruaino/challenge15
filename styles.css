@@ -53,7 +53,7 @@ body {
 
 .main_wrapper {
     width: 100%;
-    /* max-width: 60rem; */
+    max-width: 75%;
     height: 100%;
     background-color: transparent;
     overflow-x: scroll;
@@ -155,12 +155,24 @@ form .btnbx {
 form .btnbx button{
     padding: .2rem 1rem;
     border-radius: 5px;
+    transition: .2s;
+}
+form .btnbx button:active{
+    scale: 1.1;
 }
 form .btnbx button:first-child{
     background-color: var(--Cool_gray); 
 }
+form .btnbx button:first-child:hover{
+    background-color: transparent;
+    color: var(--Marine_blue);
+    font-weight: bold;
+}
 form .btnbx button:nth-child(2){
     background-color: var(--Marine_blue); 
+}
+form .btnbx button:nth-child(2):hover{
+    background-color: var(--Purplish_blue); 
 }
 form .btnbx button[type="submit"]{
     background-color:  var(--Purplish_blue);
@@ -236,11 +248,13 @@ aside>div span:last-child h4 {
     height: 2.3rem;
     width: 100%;
     padding: 0 16px;
-    border: 1px solid var(--Cool_gray);
+    border: 1px solid var(--Light_gray);
     border-radius: 5px;
     
 }
-
+.personal_info input:hover{
+    border: 1px solid var(--Marine_blue);
+}
 /* .select_plan {
     width: 100%;
 } */
@@ -266,15 +280,13 @@ aside>div span:last-child h4 {
     cursor: pointer;
     transition: 0.5s;
 }
-
 .select_plan .select_box .content{
     display: flex;
     flex-direction: column;
 
 }
 .select_plan .select_box:hover {
-    background-color: var(--Magnolia);
-    border: 1px solid black;
+    border: 1px solid var(--Marine_blue);
 }
 
 .select_plan .select_box .contentbx p {
@@ -355,7 +367,9 @@ aside>div span:last-child h4 {
     border-radius: 5px;
     padding: .6rem 1rem;
 }
-
+.add_ons .add_container .add_inputs{
+    cursor: pointer;
+}
 .add_ons .add_container p{
     font-size: 0.85rem;
     line-height: 1.25rem;
@@ -485,6 +499,25 @@ aside>div span:last-child h4 {
         border-radius: 10px;
         position: relative;
         
+    }
+    form .btnbx {
+         background-color: transparent;
+        /*color: var(--Alabaster);
+        font-size: .85rem;
+        font-weight: 500;
+        padding: .5rem 1rem;
+        position: fixed; */
+        bottom: 4.5rem;
+        left: 40%;
+        right: 15%;
+        /* display: flex;
+        justify-content: space-between;*/
+        width: auto; 
+    }
+    form .btnbx button{
+        /* padding: .2rem 1rem;
+        border-radius: 5px;
+        transition: .2s; */
     }
     article{
         background-color: var(--Alabaster);
