@@ -62,30 +62,30 @@ document.addEventListener("DOMContentLoaded", function () {
     ).innerText;
     check.checked;
     check.addEventListener("change", () => {
+      let itemToRemove = selectedAddList.querySelector(`#${selectedItemId}`);
       if (check.checked) {
-        
+        container.style.border = "1px solid #473dff";
         selectableCheckValue.style.color ="#473dff";
         let liLeft = document.createElement("li");
-        container.style.border = "1px solid #473dff";
-       
-        
         liLeft.innerHTML = `<span id="${addOutput
           .split(" ")[0]
           .toLowerCase()}"> ${addOutput} </span>
                             <span style="color: #473dff;"> ${
                               check.value
                             } </span>`;
+        selectedAddList.appendChild(liLeft);
+        document.querySelector("#selected_add").appendChild(selectedAddList);
         liLeft.querySelector("span:last-child").style.color = "#473dff";
         selectedAddList.style.width = "100%";
-        selectedAddList.appendChild(liLeft);
         liLeft.style.width = "100%";
         liLeft.style.display = "flex";
         liLeft.style.justifyContent = "space-between";
       } else {
+          let selectedAddList = document.getElementById("selected_add_list");
         container.style.border = "1px solid #9699ab";
         selectableCheckValue.style.color ="#9699ab";
         let selectedItemId = addOutput.split(" ")[0].toLowerCase();
-        let itemToRemove = selectedAddList.querySelector(`#${selectedItemId}`);
+       
         // let liLeft = document.createElement("li");
         if (itemToRemove) {
           selectedAddList.remove(itemToRemove);
