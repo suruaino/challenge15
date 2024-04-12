@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let selectedAddList = document.getElementById("selected_add_list");
   let total = document.getElementById("total");
 
-
   const form = document.querySelector("form");
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -57,34 +56,43 @@ document.addEventListener("DOMContentLoaded", function () {
 
   addBx.forEach((container, index) => {
     const check = container.querySelector('input[type="checkbox"]');
+    let selectableCheckValue = container.querySelector(".add_container > p");
     let addOutput = container.querySelector(
-        ".add_container .left .content h4"
+      ".add_container .left .content h4"
     ).innerText;
-    check.checked
+    check.checked;
     check.addEventListener("change", () => {
-     
-        if (check.checked) {
-            let liLeft = document.createElement("li");
-            liLeft.innerHTML = `<span id="${addOutput
-                .split(" ")[0]
-                .toLowerCase()}"> ${addOutput} </span>
-                            <span> ${check.value} </span>`;
-            selectedAddList.style.width = "100%";
-            selectedAddList.appendChild(liLeft);
-            liLeft.style.width = "100%";
-            liLeft.style.display = "flex";
-            liLeft.style.justifyContent = "space-between";
-        } else {
-            let selectedItemId = addOutput.split(" ")[0].toLowerCase();
-            let itemToRemove = selectedAddList.querySelector(`#${selectedItemId}`);
-            // let liLeft = document.createElement("li");
-            if (itemToRemove) {
-                selectedAddList.remove(itemToRemove);
-            }
+      if (check.checked) {
+        
+        selectableCheckValue.style.color ="#473dff";
+        let liLeft = document.createElement("li");
+        container.style.border = "1px solid #473dff";
+       
+        
+        liLeft.innerHTML = `<span id="${addOutput
+          .split(" ")[0]
+          .toLowerCase()}"> ${addOutput} </span>
+                            <span style="color: #473dff;"> ${
+                              check.value
+                            } </span>`;
+        liLeft.querySelector("span:last-child").style.color = "#473dff";
+        selectedAddList.style.width = "100%";
+        selectedAddList.appendChild(liLeft);
+        liLeft.style.width = "100%";
+        liLeft.style.display = "flex";
+        liLeft.style.justifyContent = "space-between";
+      } else {
+        container.style.border = "1px solid #9699ab";
+        selectableCheckValue.style.color ="#9699ab";
+        let selectedItemId = addOutput.split(" ")[0].toLowerCase();
+        let itemToRemove = selectedAddList.querySelector(`#${selectedItemId}`);
+        // let liLeft = document.createElement("li");
+        if (itemToRemove) {
+          selectedAddList.remove(itemToRemove);
         }
+      }
     });
-});
-
+  });
 
   function calcTotal() {
     // Get the selected radio button value
@@ -206,7 +214,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
     console.log(currentSlide);
-  
   });
 
   prevBtn.addEventListener("click", (event) => {

@@ -8,6 +8,7 @@
 
     /*### Primary colors*/
     /* --Marine_blue: #02295a; */
+    /* --Purplish_blue: #473dff; */
     --Marine_blue: hsl(213, 96%, 18%);
     --Purplish_blue: hsl(243, 100%, 62%);
     --Pastel_blue: hsl(228, 100%, 84%);
@@ -389,6 +390,9 @@ aside>div span:last-child h4 {
     width: 100%;
     background-color: #f0f6ff50;
     border-radius: 10px;
+}
+#selected_add_list li span:last-child{
+    color: var(--Purplish_blue);
 }
 .Vote_of_thanks{
     width: 100%;
