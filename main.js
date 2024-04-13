@@ -10,6 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
   let selectedAddList = document.getElementById("selected_add_list");
   let total = document.getElementById("total");
 
+
+
+
   const form = document.querySelector("form");
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -67,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (check.checked) {
         container.style.border = "1px solid #473dff";
         selectableCheckValue.style.color ="#473dff";
+        // selectedAddList.innerHTML = "";
         let liLeft = document.createElement("li");
         liLeft.innerHTML = `<span id="${addOutput
           .split(" ")[0]
@@ -75,7 +79,8 @@ document.addEventListener("DOMContentLoaded", function () {
                               check.value
                             } </span>`;
         selectedAddList.appendChild(liLeft);
-        document.querySelector("#selected_add").appendChild(liLeft.innerHTML);
+        document.querySelector("#selected_add").appendChild(selectedAddList);
+        // document.querySelector("#selected_add").n
         liLeft.querySelector("span:last-child").style.color = "#473dff";
         selectedAddList.style.width = "100%";
         liLeft.style.width = "100%";
@@ -85,9 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
           let selectedAddList = document.getElementById("selected_add_list");
         container.style.border = "1px solid #9699ab";
         selectableCheckValue.style.color ="#9699ab";
-        
-       
-        // let liLeft = document.createElement("li");
+
         if (itemToRemove) {
           selectedAddList.remove(itemToRemove);
         }
@@ -255,3 +258,37 @@ document.addEventListener("DOMContentLoaded", function () {
     btnBx.style.display = "none";
   });
 });
+
+/**==== START FORM VALIDATION ====**/
+const nameError = document.getElementById("name_error");
+const emailError = document.getElementById("email_error");
+const phoneError = document.getElementById("phone_error");
+
+function validation(){
+  const name = document.querySelector("#name").value;
+  const email = document.querySelector("#email").value;
+  const phoneNumber = document.querySelector("#phone").value;
+  if(name.length == ""){
+    nameError.style.display = "block";
+    nameError.innerHTML= `This field is required!`;
+  }
+
+  if(email.match(/^[A-Za-z]\._\-[0-9]*[@]$/)){
+    phoneError.style.display = "block";
+    phoneError.innerHTML= `Invalid Phone Number!`;
+  }
+
+  if(phoneNumber.length < 10 || phoneNumber.length > 10 ){
+    phoneError.style.display = "block";
+    phoneError.innerHTML= `Invalid Phone Number!`;
+  }
+
+  if(!phoneNumber.match(/^[0-9]{10}$/)){
+    phoneError.style.display = "block";
+    phoneError.innerHTML= `Invalid Phone Number!`;
+  }
+  console.log("There was an error")
+}
+
+
+/***==== END FORM VALIDATION ====***/
