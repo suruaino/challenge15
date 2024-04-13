@@ -273,14 +273,20 @@ function validation(){
     nameError.innerHTML= `This field is required!`;
   }
 
-  if(email.match(/^[A-Za-z]\._\-[0-9]*[@]$/)){
-    phoneError.style.display = "block";
-    phoneError.innerHTML= `Invalid Phone Number!`;
+  if(email.length == ""){
+    emailError.style.display = "block";
+    emailError.innerHTML= `This field is required!`;
+    return false;
   }
-
-  if(phoneNumber.length < 10 || phoneNumber.length > 10 ){
-    phoneError.style.display = "block";
-    phoneError.innerHTML= `Invalid Phone Number!`;
+  else if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+    emailError.style.display = "block";
+    emailError.innerHTML= `Invalid email!`;
+  } else {
+    emailError.style.display = "block";
+    emailError.innerHTML= `Email successful!`;
+    emailError.style.color = "green";
+    email.style.border = "1px solid green";
+    return true;
   }
 
   if(!phoneNumber.match(/^[0-9]{10}$/)){
