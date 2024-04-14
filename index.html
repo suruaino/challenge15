@@ -69,7 +69,7 @@
 
     <form action="" id="form" class="flex">
       <div id="formbx" class="formbx px-4 flex gap-8">
-        <section class="personal_info md:px-20 flex flex-col items-center gap-8">
+        <section class="personal_info md:px-20 flex flex-col items-center gap-8 hidden">
 
           <div class="contentbx w-full px-5 md:px-0 py-7 flex flex-col gap-3">
             <header class="w-full flex flex-col gap-2">
@@ -104,17 +104,17 @@
           </div> -->
         </section>
 
-        <section id="plan" class="select_plan w-full md:px-20 flex flex-col items-center ">
+        <section id="plan" class="select_plan md:px-20 flex flex-col items-center hidden">
 
-          <div class="contentbx pb-8 md:pb-0 w-full flex flex-col gap-5 md:gap-10 shadow-lg md:shadow-none ">
-            <header class="w-full px-5 md:px-0 pt-8 md:pt-10 md:pb-2 flex flex-col gap-2">
+          <div class="contentbx pb-7 md:pb-0 w-full flex flex-col gap-5 md:gap-10 shadow-lg md:shadow-none ">
+            <header class="w-full px-5 md:px-0 pt-5 md:pt-10 md:pb-2 flex flex-col gap-2">
               <h2 class="text-2xl md:text-4xl font-bold">Select your plan</h2>
               <p class="">You have the option of monthly or yearly billing.</p>
             </header>
             <div class="content md:w-full">
               <article id="plan_monthly" class="md:w-full px-5 md:px-0 flex flex-col md:flex-row md:justify-between gap-3">
 
-                <div class="select_box arcade flex md:flex-col gap-4 md:gap-10 px-4 py-4 relative">
+                <div class="select_box arcade flex md:flex-col gap-4 md:gap-10 px-4 py-2 md:py-4 relative">
                   <input id="arcade" type="radio" value="$9/mo" name="radio_plan" class=" absolute">
                   <img src="assets/images/icon-arcade.svg" alt="">
                   <div class="content">
@@ -123,7 +123,7 @@
                   </div>
                 </div>
 
-                <div class="select_box advance flex md:flex-col gap-4 md:gap-10 px-4 py-4 relative">
+                <div class="select_box advance flex md:flex-col gap-4 md:gap-10 px-4 py-2 md:py-4 relative">
                   <input id="advance" type="radio" value="$12/mo" name="radio_plan" class=" absolute">
                   <img src="assets/images/icon-advanced.svg" alt="">
                   <div class="content">
@@ -132,7 +132,7 @@
                   </div>
                 </div>
 
-                <div class="select_box pro flex md:flex-col gap-4 md:gap-10 px-4 py-4 relative">
+                <div class="select_box pro flex md:flex-col gap-4 md:gap-10 px-4 py-2 md:py-4 relative">
                   <input id="pro" type="radio" value="$15/mo" name="radio_plan" class=" absolute">
                   <img src="assets/images/icon-pro.svg" alt="">
                   <div class="content">
@@ -146,7 +146,7 @@
 
               <article id="plan_yearly" class="md:w-full px-5 md:px-0 flex flex-col md:flex-row md:justify-between gap-3 hidden">
 
-                <div class="select_box arcade flex md:flex-col gap-4 md:gap-10 px-4 py-4 relative">
+                <div class="select_box arcade flex md:flex-col gap-4 md:gap-10 px-4 py-2 md:py-4 relative">
                   <input type="radio" value="$90/yr" name="radio_plan" class=" absolute">
                   <img src="assets/images/icon-arcade.svg" alt="">
                   <div class="content">
@@ -155,7 +155,7 @@
                   </div>
                 </div>
 
-                <div class="select_box Advance flex md:flex-col gap-4 md:gap-10 px-4 py-4 relative">
+                <div class="select_box Advance flex md:flex-col gap-4 md:gap-10 px-4 py-2 md:py-4 relative">
                   <input type="radio" value="$120/yr" name="radio_plan" class=" absolute">
                   <img src="assets/images/icon-advanced.svg" alt="">
                   <div class="content">
@@ -164,7 +164,7 @@
                   </div>
                 </div>
 
-                <div class="select_box pro flex md:flex-col gap-4 md:gap-10 px-4 py-4 relative">
+                <div class="select_box pro flex md:flex-col gap-4 md:gap-10 px-4 py-2 md:py-4 relative">
                   <input type="radio" value="$150/yr" name="radio_plan" class=" absolute">
                   <img src="assets/images/icon-pro.svg" alt="">
                   <div class="content">
@@ -176,7 +176,7 @@
               </article>
 
 
-              <div class="togglebx py-3 md:py-4 mx-4 md:mx-0 font-medium flex justify-center items-center gap-4">
+              <div class="togglebx py-2 md:py-4 mx-4 md:mx-0 font-medium flex justify-center items-center gap-4">
                 <p id="monthly" class="font-bold">Monthly</p>
                 <div class="toggle_container flex justify-center items-center relative">
                   <input id="toggle_input" type="checkbox" class="">
@@ -194,7 +194,7 @@
           </div> -->
         </section>
 
-        <section class="add_ons w-full md:px-16 flex flex-col items-center ">
+        <section class="add_ons md:px-16 flex flex-col items-center hidden">
           <div class="contentbx pb-8 md:pb-0 w-full flex flex-col gap-5 md:gap-10 shadow-lg md:shadow-none ">
             <header class="w-full px-5 md:px-0 pt-8 md:pt-10 md:pb-2 flex flex-col gap-2">
               <h2 class="text-2xl md:text-4xl font-bold">Pick add-ons</h2>
@@ -286,7 +286,7 @@
         </section>
 
 
-        <section id="summary" class="finishing_up w-full md:px-16 flex flex-col items-center ">
+        <section id="summary" class="finishing_up w-full md:px-16 flex flex-col items-center hidden">
           <div id="summary_screen" class="contentbx pb-8 md:px-0 w-full flex flex-col gap-7">
             <header class="w-full px-5 md:px-0 pt-8 md:pt-10 md:pb-2 flex flex-col gap-2">
               <h2 class="text-2xl md:text-4xl font-bold">Finishing up</h2>

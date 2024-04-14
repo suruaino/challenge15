@@ -169,20 +169,25 @@ document.addEventListener("DOMContentLoaded", function () {
   indicatorBtns[0].style.color = "black";
 
   let currentSlide = 0;
+  slides[currentSlide].style.display = "flex";
   if (currentSlide <= 0) {
     prevBtn.style.visibility = "hidden";
   }
 
-  if (currentSlide === 3) {
+  // if (currentSlide === 3) {
     change.addEventListener("click", () => {
-      const translateValue = -currentSlide - 3 * 105;
-      slides.forEach((slide) => {
-        slide.style.transform = `translateX(${translateValue}%)`;
-      });
+     currentSlide;
+      slides[currentSlide].style.display = "flex";
+      slides[currentSlide + 1].style.display = "none";
+    
+      // const translateValue = -currentSlide - 3 * 105;
+      // slides.forEach((slide) => {
+      //   slide.style.transform = `translateX(${translateValue}%)`;
+      // });
 
       console.log("change is clicked");
     });
-  }
+  // }
   nextBtn.addEventListener("click", (event) => {
     event.preventDefault();
     if (currentSlide < totalSlides - 1) {
@@ -190,11 +195,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
       prevBtn.style.visibility = "visible";
       submitBtn.style.display = "none";
-      const translateValue = -currentSlide * 105;
-      slides.forEach((slide) => {
-        slide.style.transform = `translateX(${translateValue}%)`;
-        indicatorBtns[currentSlide].style.backgroundColor = "#bfe2fd";
-      });
+      slides[currentSlide].style.display = "flex";
+      if(currentSlide > 0){
+        slides[currentSlide - 1].style.display = "none";
+      }
+      // const translateValue = -currentSlide * 105;
+      // slides.forEach((slide) => {
+      //   // slide.style.transform = `translateX(${translateValue}%)`;
+      //   indicatorBtns[currentSlide].style.backgroundColor = "#bfe2fd";
+      // });
       if (currentSlide === 0) {
         indicatorBtns[currentSlide].style.color = "black";
       }
@@ -221,10 +230,15 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
     if (currentSlide > 0) {
       currentSlide--;
-      const translateValue = -currentSlide * 105;
-      slides.forEach((slide) => {
-        slide.style.transform = `translateX(${translateValue}%)`;
-      });
+      
+      slides[currentSlide].style.display = "flex";
+      if(currentSlide < slides.length){
+        slides[currentSlide + 1].style.display = "none";
+      }
+      // const translateValue = -currentSlide * 105;
+      // slides.forEach((slide) => {
+      //   slide.style.transform = `translateX(${translateValue}%)`;
+      // });
       nextBtn.style.display = "block";
       submitBtn.style.display = "none";
     }
@@ -275,7 +289,7 @@ function validation() {
     return false;
   }
 
-  if (email.length == 0) {
+  if (email == "") {
     emailError.style.display = "block";
     emailError.innerHTML = `This field is required!`;
     return false;
@@ -285,24 +299,8 @@ function validation() {
     phoneError.innerHTML = `This field is required!`;
     return false;
   }
-
-  // else if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
-  //   emailError.style.display = "block";
-  //   emailError.innerHTML= `Invalid email!`;
-  // } else {
-  //   emailError.style.display = "block";
-  //   emailError.innerHTML= `Email successful!`;
-  //   emailError.style.color = "green";
-  //   email.style.border = "1px solid green";
-  //   return true;
-  // }
-
-  // if (!/^[0-9]{10}$/.test(phoneNumber.value)) {
-  //   phoneError.style.display = "block";
-  //   phoneError.innerHTML = `Invalid Phone Number!`;
-  // }
-  // console.log("There was an error");
 }
+
 nameInput.addEventListener("input", function () {
   if (!/^[A-Za-z]+\s[A-Za-z]+(\s[A-Za-z]+)?$/.test(nameInput.value)) {
     nameError.style.display = "block";
