@@ -10,9 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let selectedAddList = document.getElementById("selected_add_list");
   let total = document.getElementById("total");
 
-
-
-
   const form = document.querySelector("form");
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -69,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
       let itemToRemove = selectedAddList.querySelector(`#${selectedItemId}`);
       if (check.checked) {
         container.style.border = "1px solid #473dff";
-        selectableCheckValue.style.color ="#473dff";
+        selectableCheckValue.style.color = "#473dff";
         // selectedAddList.innerHTML = "";
         let liLeft = document.createElement("li");
         liLeft.innerHTML = `<span id="${addOutput
@@ -87,9 +84,9 @@ document.addEventListener("DOMContentLoaded", function () {
         liLeft.style.display = "flex";
         liLeft.style.justifyContent = "space-between";
       } else {
-          let selectedAddList = document.getElementById("selected_add_list");
+        let selectedAddList = document.getElementById("selected_add_list");
         container.style.border = "1px solid #9699ab";
-        selectableCheckValue.style.color ="#9699ab";
+        selectableCheckValue.style.color = "#9699ab";
 
         if (itemToRemove) {
           selectedAddList.remove(itemToRemove);
@@ -264,37 +261,93 @@ const nameError = document.getElementById("name_error");
 const emailError = document.getElementById("email_error");
 const phoneError = document.getElementById("phone_error");
 
-function validation(){
+const nameInput = document.querySelector("#name");
+const email = document.querySelector("#email");
+const phoneNumber = document.querySelector("#phone");
+
+function validation() {
   const name = document.querySelector("#name").value;
   const email = document.querySelector("#email").value;
   const phoneNumber = document.querySelector("#phone").value;
-  if(name.length == ""){
+  if (name.length == 0) {
     nameError.style.display = "block";
-    nameError.innerHTML= `This field is required!`;
-  }
-
-  if(email.length == ""){
-    emailError.style.display = "block";
-    emailError.innerHTML= `This field is required!`;
+    nameError.innerHTML = `This field is required!`;
     return false;
   }
-  else if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+
+  if (email.length == 0) {
     emailError.style.display = "block";
-    emailError.innerHTML= `Invalid email!`;
+    emailError.innerHTML = `This field is required!`;
+    return false;
+  }
+  if (phoneNumber.length == 0) {
+    phoneError.style.display = "block";
+    phoneError.innerHTML = `This field is required!`;
+    return false;
+  }
+
+  // else if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+  //   emailError.style.display = "block";
+  //   emailError.innerHTML= `Invalid email!`;
+  // } else {
+  //   emailError.style.display = "block";
+  //   emailError.innerHTML= `Email successful!`;
+  //   emailError.style.color = "green";
+  //   email.style.border = "1px solid green";
+  //   return true;
+  // }
+
+  // if (!/^[0-9]{10}$/.test(phoneNumber.value)) {
+  //   phoneError.style.display = "block";
+  //   phoneError.innerHTML = `Invalid Phone Number!`;
+  // }
+  // console.log("There was an error");
+}
+nameInput.addEventListener("input", function () {
+  if (!/^[A-Za-z]+\s[A-Za-z]+(\s[A-Za-z]+)?$/.test(nameInput.value)) {
+    nameError.style.display = "block";
+    nameError.style.color = "#ed3548";
+    nameInput.style.border = "1px solid #ed3548";
+    nameError.innerHTML = `Please complete your names`;
+  } else if (nameInput.value == "") {
+    nameError.style.display = "block";
+    nameError.innerHTML = `This field is required`;
+  } else {
+    nameError.style.display = "block";
+    nameError.innerHTML = `name Ok`;
+    nameError.style.color = "green";
+    nameInput.style.border = "1px solid green";
+  }
+});
+
+email.addEventListener("input", function () {
+  if (!/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/.test(email.value)) {
+    emailError.style.display = "block";
+    emailError.style.color = "#ed3548";
+    email.style.border = "1px solid #ed3548";
+    emailError.innerHTML = `Invalid email!`;
+  } else if (email.value == "") {
+    emailError.style.display = "block";
+    emailError.innerHTML = `This field is required`;
   } else {
     emailError.style.display = "block";
-    emailError.innerHTML= `Email successful!`;
+    emailError.innerHTML = `email Ok`;
     emailError.style.color = "green";
     email.style.border = "1px solid green";
-    return true;
   }
+});
 
-  if(!phoneNumber.match(/^[0-9]{10}$/)){
+phoneNumber.addEventListener("input", function () {
+  if (!/^[0-9]{10}$/.test(phoneNumber.value)) {
     phoneError.style.display = "block";
-    phoneError.innerHTML= `Invalid Phone Number!`;
+    phoneError.style.color = "#ed3548";
+    phoneNumber.style.border = "1px solid #ed3548";
+    phoneError.innerHTML = `Invalid Phone Number!`;
+  } else {
+    phoneError.style.display = "block";
+    phoneError.innerHTML = `phone Ok`;
+    phoneError.style.color = "green";
+    phone.style.border = "1px solid green";
   }
-  console.log("There was an error")
-}
-
-
+});
 /***==== END FORM VALIDATION ====***/
