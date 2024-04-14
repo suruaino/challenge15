@@ -173,21 +173,40 @@ document.addEventListener("DOMContentLoaded", function () {
   if (currentSlide <= 0) {
     prevBtn.style.visibility = "hidden";
   }
+  /***===== HANDLING THE SUMMARY CHANGE LINK =====***/
+  change.addEventListener("click", () => {
+    currentSlide = 1;
+    slides[currentSlide].style.display = "flex";
+    slides[currentSlide + 2].style.display = "none";
+    indicatorBtns[currentSlide + 1].style.backgroundColor = "#bfe2fd";
+    indicatorBtns[currentSlide + 1].style.color = "#000000";
+    indicatorBtns[currentSlide + 2].style.backgroundColor = "transparent";
+    indicatorBtns[currentSlide + 2].style.color = "white";
+    // indicatorBtns[currentSlide + 3].style.color = "red";
 
-  // if (currentSlide === 3) {
-    change.addEventListener("click", () => {
-     currentSlide;
-      slides[currentSlide].style.display = "flex";
-      slides[currentSlide + 1].style.display = "none";
-    
-      // const translateValue = -currentSlide - 3 * 105;
-      // slides.forEach((slide) => {
-      //   slide.style.transform = `translateX(${translateValue}%)`;
-      // });
-
-      console.log("change is clicked");
+    planBx.forEach((container, index) => {
+      let currentlyCheckedRadio = null;
+      let correctionRadio = container.querySelector('input[type="radio"]');
+      container.addEventListener("click", () => {
+        if (currentlyCheckedRadio !== correctionRadio) {
+          if (correctionRadio) {
+            slides[currentSlide].style.display = "none";
+            slides[currentSlide + 2].style.display = "flex";
+          }
+        }
+        currentSlide = 3;
+      });
     });
-  // }
+
+    // const translateValue = -currentSlide - 3 * 105;
+    // slides.forEach((slide) => {
+    //   slide.style.transform = `translateX(${translateValue}%)`;
+    // });
+
+    console.log("change is clicked");
+  });
+  /***===== SUMMARY CHANGE LINK ARGORITHM ENDS ABOVE=====***/
+
   nextBtn.addEventListener("click", (event) => {
     event.preventDefault();
     if (currentSlide < totalSlides - 1) {
@@ -196,7 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
       prevBtn.style.visibility = "visible";
       submitBtn.style.display = "none";
       slides[currentSlide].style.display = "flex";
-      if(currentSlide > 0){
+      if (currentSlide > 0) {
         slides[currentSlide - 1].style.display = "none";
       }
       // const translateValue = -currentSlide * 105;
@@ -230,9 +249,9 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
     if (currentSlide > 0) {
       currentSlide--;
-      
+
       slides[currentSlide].style.display = "flex";
-      if(currentSlide < slides.length){
+      if (currentSlide < slides.length) {
         slides[currentSlide + 1].style.display = "none";
       }
       // const translateValue = -currentSlide * 105;
