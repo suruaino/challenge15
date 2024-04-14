@@ -24,7 +24,7 @@
     --Cool_gray: hsl(231, 11%, 63%);
     /* --Light_gray: #d6d9e6 */
     --Light_gray: hsl(229, 24%, 87%);
-    --Magnolia: #f0f6ff83;
+    /* --Magnolia: #f0f6ff83; */
     --Magnolia: hsl(217, 100%, 97%);
     --Alabaster: hsl(231, 100%, 99%);
     --White: hsl(0, 0%, 100%);
@@ -62,6 +62,7 @@ body {
     background-color: transparent;
     /* overflow-x: hidden; */
     border:  2px solid limegreen;
+    overflow-y: visible;
 }
 
 form {
@@ -77,18 +78,23 @@ form {
 }
 
 form .formbx{
+    
     width: 100%;
     /* width: fit-content; */
     min-height: 100%;
     border-radius: 10px;
     /* transition: transform 0.5s; */
+    overflow-y: visible;
     border: 2px solid red;
     
 }
-section {
+section, dialog {
     background-color: var(--Magnolia);
     width: 100%;
+    max-width: 95%;
     height: 100%;
+    justify-self: center;
+    /* margin-inline: 1rem; */
     border-radius: 10px;
     position: absolute;
     inset: 0;
@@ -97,7 +103,9 @@ section {
     /* transition: all 0.5s; */
     display: none;
 }
-
+dialog{
+    max-width: 95%;
+}
 form .btnbx {
     background-color: var(--Alabaster);
     color: var(--Alabaster);
@@ -115,10 +123,9 @@ form .btnbx {
 form .btnbx button{
     padding: .4rem 1rem;
     border-radius: 5px;
-    transition: .2s;
 }
 form .btnbx button:active{
-    scale: 1.1;
+    scale: 0.9;
 }
 form .btnbx button:first-child{
     background-color: var(--Cool_gray); 
@@ -191,6 +198,8 @@ aside>div span:last-child h4 {
 .personal_info .contentbx{
     background-color: var(--Alabaster);
     border-radius: 10px;
+
+
 }
 .personal_info :is(header h2, label),
 .select_plan :is(h2, .select_box .content h4),
@@ -363,31 +372,19 @@ aside>div span:last-child h4 {
     color: var(--Purplish_blue);
 }
 .Vote_of_thanks{
-    width: 100%;
-    height: 100%;
-    background-color: #000000f7;
-    background-color: var(--Magnolia);
-    margin-top: 4rem;
-    padding: 0 1rem;
-    position: absolute;
-    inset: 0;
-    border: 4px solid green;
-    /* isolation: isolate; */
-    /* border-radius: 10px; */
+    height: fit-content;
 
 }
 .Vote_of_thanks .contentbx{
     width: 100%;
-    height: 25rem;
+    height: fit-content;
     background-color: var(--Alabaster);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    margin: auto 0;
-    margin-top: -4rem;
-    padding: 0 1.5rem;
+    padding: 4rem 1.5rem 2rem;
     border-radius: 10px;
     z-index: 100;
 }
@@ -476,11 +473,7 @@ aside>div span:last-child h4 {
         right: 0;
         width: auto; 
     }
-    form .btnbx button{
-        /* padding: .2rem 1rem;
-        border-radius: 5px;
-        transition: .2s; */
-    }
+    
     article{
         background-color: var(--Alabaster);
     }

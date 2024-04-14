@@ -178,8 +178,8 @@ document.addEventListener("DOMContentLoaded", function () {
     currentSlide = 1;
     slides[currentSlide].style.display = "flex";
     slides[currentSlide + 2].style.display = "none";
-    indicatorBtns[currentSlide + 1].style.backgroundColor = "#bfe2fd";
-    indicatorBtns[currentSlide + 1].style.color = "#000000";
+    indicatorBtns[currentSlide].style.backgroundColor = "#bfe2fd";
+    indicatorBtns[currentSlide].style.color = "#000000";
     indicatorBtns[currentSlide + 2].style.backgroundColor = "transparent";
     indicatorBtns[currentSlide + 2].style.color = "white";
     // indicatorBtns[currentSlide + 3].style.color = "red";
@@ -192,6 +192,10 @@ document.addEventListener("DOMContentLoaded", function () {
           if (correctionRadio) {
             slides[currentSlide].style.display = "none";
             slides[currentSlide + 2].style.display = "flex";
+            indicatorBtns[currentSlide].style.backgroundColor = "transparent";
+            indicatorBtns[currentSlide].style.color = "white";
+            indicatorBtns[currentSlide + 2].style.backgroundColor = "#bfe2fd";
+            indicatorBtns[currentSlide + 2].style.color = "black";
           }
         }
         currentSlide = 3;
