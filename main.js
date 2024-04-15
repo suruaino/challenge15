@@ -60,19 +60,25 @@ document.addEventListener("DOMContentLoaded", function () {
     let addOutput = container.querySelector(
       ".add_container .left .content h4"
     ).innerText;
+    // let addOutput2 = container.querySelector(".add_container > p").innerText;
     check.checked;
     check.addEventListener("change", () => {
       let selectedItemId = addOutput.split(" ")[0].toLowerCase();
+      // let selectedItemId2 = addOutput.split(" ")[0].toLowerCase() + 2;
       let itemToRemove = selectedAddList.querySelector(`#${selectedItemId}`);
+      // let itemToRemove2 = selectedAddList.querySelector(`#${selectedItemId2}`);
       if (check.checked) {
         container.style.border = "1px solid #473dff";
         selectableCheckValue.style.color = "#473dff";
         // selectedAddList.innerHTML = "";
         let liLeft = document.createElement("li");
+        console.log(liLeft);
         liLeft.innerHTML = `<span id="${addOutput
           .split(" ")[0]
           .toLowerCase()}"> ${addOutput} </span>
-                            <span style="color: #473dff;"> ${
+                            <span id="${addOutput
+                              .split(" ")[0]
+                              .toLowerCase()}2" style="color: #473dff;"> ${
                               check.value
                             } </span>`;
         selectedAddList.appendChild(liLeft);
@@ -90,6 +96,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (itemToRemove) {
           selectedAddList.remove(itemToRemove);
+          itemToRemove.style.display = "none";
+          // liLeft.querySelector("#${addOutput}2").style.display = "none";
+          // itemToRemove2.style.display = "none";
         }
       }
     });
