@@ -61,7 +61,7 @@ body {
     height: 95.5dvh;
     background-color: transparent;
     /* overflow-x: hidden; */
-    border:  2px solid limegreen;
+    /* border:  2px solid limegreen; */
     overflow-y: visible;
 }
 
@@ -74,7 +74,7 @@ form {
     margin-top: 6.3rem;
     overflow-x: hidden;
     position: relative;
-    border: 2px solid brown;
+    /* border: 2px solid brown; */
 }
 
 form .formbx{
@@ -85,20 +85,20 @@ form .formbx{
     border-radius: 10px;
     /* transition: transform 0.5s; */
     overflow-y: visible;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     
 }
 section, dialog {
     background-color: var(--Magnolia);
     width: 100%;
-    max-width: 95%;
+    max-width: 93%;
     height: 100%;
     justify-self: center;
     /* margin-inline: 1rem; */
     border-radius: 10px;
     position: absolute;
     inset: 0;
-    border: 1px solid yellowgreen;
+    /* border: 1px solid yellowgreen; */
     /* z-index: 500; */
     /* transition: all 0.5s; */
     display: none;
