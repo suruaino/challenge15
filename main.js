@@ -54,55 +54,99 @@ document.addEventListener("DOMContentLoaded", function () {
   // let addBx = document.querySelectorAll(".left");
   let addBx = document.querySelectorAll(".add_container");
 
-  addBx.forEach((container, index) => {
-    const check = container.querySelector('input[type="checkbox"]');
-    let selectableCheckValue = container.querySelector(".add_container > p");
-    let addOutput = container.querySelector(
-      ".add_container .left .content h4"
-    ).innerText;
-    // let addOutput2 = container.querySelector(".add_container > p").innerText;
-    check.checked;
-    check.addEventListener("change", () => {
-      let selectedItemId = addOutput.split(" ")[0].toLowerCase();
-      // let selectedItemId2 = addOutput.split(" ")[0].toLowerCase() + 2;
-      let itemToRemove = selectedAddList.querySelector(`#${selectedItemId}`);
-      // let itemToRemove2 = selectedAddList.querySelector(`#${selectedItemId2}`);
-      if (check.checked) {
-        container.style.border = "1px solid #473dff";
-        selectableCheckValue.style.color = "#473dff";
-        // selectedAddList.innerHTML = "";
-        let liLeft = document.createElement("li");
-        console.log(liLeft);
-        liLeft.innerHTML = `<span id="${addOutput
-          .split(" ")[0]
-          .toLowerCase()}"> ${addOutput} </span>
-                            <span id="${addOutput
-                              .split(" ")[0]
-                              .toLowerCase()}2" style="color: #473dff;"> ${
-                              check.value
-                            } </span>`;
-        selectedAddList.appendChild(liLeft);
-        document.querySelector("#selected_add").appendChild(selectedAddList);
-        // document.querySelector("#selected_add").n
-        liLeft.querySelector("span:last-child").style.color = "#473dff";
-        selectedAddList.style.width = "100%";
-        liLeft.style.width = "100%";
-        liLeft.style.display = "flex";
-        liLeft.style.justifyContent = "space-between";
-      } else {
-        let selectedAddList = document.getElementById("selected_add_list");
-        container.style.border = "1px solid #9699ab";
-        selectableCheckValue.style.color = "#9699ab";
+  // let selectedAddList = document.getElementById("selected_add_list");
 
-        if (itemToRemove) {
-          selectedAddList.remove(itemToRemove);
-          itemToRemove.style.display = "none";
-          // liLeft.querySelector("#${addOutput}2").style.display = "none";
-          // itemToRemove2.style.display = "none";
-        }
-      }
-    });
+  // let addBx = document.querySelectorAll(".add_container");
+  
+  addBx.forEach((container, index) => {
+      const check = container.querySelector('input[type="checkbox"]');
+      let selectableCheckValue = container.querySelector(".add_container > p");
+      let addOutput = container.querySelector(".add_container .left .content h4").innerText;
+      
+      check.addEventListener("change", () => {
+          let selectedItemId = addOutput.split(" ")[0].toLowerCase() + index;
+          let itemToRemove = selectedAddList.querySelector(`#${selectedItemId}`);
+  
+          if (check.checked) {
+              container.style.border = "1px solid #473dff";
+              selectableCheckValue.style.color = "#473dff";
+  
+              let liLeft = document.createElement("li");
+              liLeft.setAttribute("id", selectedItemId);
+              liLeft.innerHTML = `<span id="${addOutput.split(" ")[0].toLowerCase()}"> ${addOutput} </span>
+                                  <span id="${addOutput.split(" ")[0].toLowerCase()}2" style="color: #473dff;"> ${check.value} </span>`;
+              selectedAddList.appendChild(liLeft);
+              liLeft.querySelector("span:last-child").style.color = "#473dff";
+              selectedAddList.style.width = "100%";
+              liLeft.style.width = "100%";
+              liLeft.style.display = "flex";
+              liLeft.style.justifyContent = "space-between";
+          } else {
+              container.style.border = "1px solid #9699ab";
+              selectableCheckValue.style.color = "#9699ab";
+  
+              if (itemToRemove) {
+                  selectedAddList.removeChild(itemToRemove);
+              }
+          }
+      });
   });
+  
+
+
+
+  // addBx.forEach((container, index) => {
+  //   const check = container.querySelector('input[type="checkbox"]');
+  //   let selectableCheckValue = container.querySelector(".add_container > p");
+  //   let addOutput = container.querySelector(
+  //     ".add_container .left .content h4"
+  //   ).innerText;
+  //   // let addOutput2 = container.querySelector(".add_container > p").innerText;
+  //   check.checked;
+  //   check.addEventListener("change", () => {
+  //     // let selectedItemId = addOutput.split(" ")[0].toLowerCase();
+  //     let selectedItemId = addOutput.split(" ")[0].toLowerCase() + 1;
+  //     let itemToRemove = selectedAddList.querySelector(`#${selectedItemId}`);
+  //     // let itemToRemove2 = selectedAddList.querySelector(`#${selectedItemId2}`);
+  //     if (check.checked) {
+  //       container.style.border = "1px solid #473dff";
+  //       selectableCheckValue.style.color = "#473dff";
+  //       // selectedAddList.innerHTML = "";
+  //       let liLeft = document.createElement("li");
+  //       console.log(liLeft);
+  //       liLeft.setAttribute("id", `${addOutput
+  //         .split(" ")[0]
+  //         .toLowerCase()}1`);
+  //       liLeft.innerHTML = `<span id="${addOutput
+  //         .split(" ")[0]
+  //         .toLowerCase()}"> ${addOutput} </span>
+  //                           <span id="${addOutput
+  //                             .split(" ")[0]
+  //                             .toLowerCase()}2" style="color: #473dff;"> ${
+  //                             check.value
+  //                           } </span>`;
+  //       selectedAddList.appendChild(liLeft);
+  //       document.querySelector("#selected_add").appendChild(selectedAddList);
+  //       // document.querySelector("#selected_add").n
+  //       liLeft.querySelector("span:last-child").style.color = "#473dff";
+  //       selectedAddList.style.width = "100%";
+  //       liLeft.style.width = "100%";
+  //       liLeft.style.display = "flex";
+  //       liLeft.style.justifyContent = "space-between";
+  //     } else {
+  //       // let selectedAddList = document.getElementById("selected_add_list");
+  //       container.style.border = "1px solid #9699ab";
+  //       selectableCheckValue.style.color = "#9699ab";
+
+  //       if (itemToRemove) {
+  //         selectedAddList.remove(itemToRemove);
+  //         // itemToRemove.style.display = "none";
+  //         // liLeft.querySelector("#${addOutput}2").style.display = "none";
+  //         // itemToRemove2.style.display = "none";
+  //       }
+  //     }
+  //   });
+  // });
 
   function calcTotal() {
     // Get the selected radio button value
