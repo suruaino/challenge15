@@ -121,14 +121,16 @@ form .btnbx {
     width: 100%;
 }
 form .btnbx button{
-    padding: .4rem 1rem;
+    padding: .9rem 2rem;
     border-radius: 5px;
 }
 form .btnbx button:active{
     scale: 0.9;
 }
 form .btnbx button:first-child{
-    background-color: var(--Cool_gray); 
+    background-color: transparent; 
+    color: var(--Cool_gray);
+    padding-inline: 0; 
 }
 form .btnbx button:first-child:hover{
     background-color: transparent;
@@ -416,7 +418,7 @@ aside>div span:last-child h4 {
     }
     .main_wrapper {
         height: 41rem;
-        max-width: 75%;
+        max-width: 65%;
         min-width: 50rem;
         background-color: var(--Alabaster);
         padding: 1rem 1rem 1rem 1rem;
@@ -467,7 +469,7 @@ aside>div span:last-child h4 {
         border-radius: 10px;
     }
     form .btnbx {
-        /* background-color: transparent; */
+        padding-inline: 5rem;
         position: absolute;
         left: 0;
         right: 0;
@@ -551,6 +553,9 @@ aside>div span:last-child h4 {
         margin: 0;
         padding-inline: 4rem;
         border-radius: 0;
+    }
+    .Vote_of_thanks .contentbx img{
+        width: 5rem;
     }
 }
 
