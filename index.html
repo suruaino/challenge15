@@ -114,7 +114,7 @@
             <div class="content md:w-full">
               <article id="plan_monthly" class="md:w-full px-5 md:px-0 flex flex-col md:flex-row md:justify-between gap-3">
 
-                <div class="select_box arcade flex md:flex-col gap-4 md:gap-10 px-4 py-2 md:py-4 relative">
+                <div class="select_box arcade flex md:flex-col gap-4 md:gap-10 px-4 py-2 md:py-4 relative" title="Monthly">
                   <input id="arcade" type="radio" value="$9/mo" name="radio_plan" class=" absolute">
                   <img src="assets/images/icon-arcade.svg" alt="">
                   <div class="content">
@@ -123,7 +123,7 @@
                   </div>
                 </div>
 
-                <div class="select_box advance flex md:flex-col gap-4 md:gap-10 px-4 py-2 md:py-4 relative">
+                <div class="select_box advance flex md:flex-col gap-4 md:gap-10 px-4 py-2 md:py-4 relative" title="Monthly">
                   <input id="advance" type="radio" value="$12/mo" name="radio_plan" class=" absolute">
                   <img src="assets/images/icon-advanced.svg" alt="">
                   <div class="content">
@@ -132,7 +132,7 @@
                   </div>
                 </div>
 
-                <div class="select_box pro flex md:flex-col gap-4 md:gap-10 px-4 py-2 md:py-4 relative">
+                <div class="select_box pro flex md:flex-col gap-4 md:gap-10 px-4 py-2 md:py-4 relative" title="Monthly">
                   <input id="pro" type="radio" value="$15/mo" name="radio_plan" class=" absolute">
                   <img src="assets/images/icon-pro.svg" alt="">
                   <div class="content">
@@ -146,7 +146,7 @@
 
               <article id="plan_yearly" class="md:w-full px-5 md:px-0 flex flex-col md:flex-row md:justify-between gap-3 hidden">
 
-                <div class="select_box arcade flex md:flex-col gap-4 md:gap-10 px-4 py-2 md:py-4 relative">
+                <div class="select_box arcade flex md:flex-col gap-4 md:gap-10 px-4 py-2 md:py-4 relative" title="Yearly">
                   <input type="radio" value="$90/yr" name="radio_plan" class=" absolute">
                   <img src="assets/images/icon-arcade.svg" alt="">
                   <div class="content">
@@ -155,7 +155,7 @@
                   </div>
                 </div>
 
-                <div class="select_box Advance flex md:flex-col gap-4 md:gap-10 px-4 py-2 md:py-4 relative">
+                <div class="select_box Advance flex md:flex-col gap-4 md:gap-10 px-4 py-2 md:py-4 relative" title="Yearly">
                   <input type="radio" value="$120/yr" name="radio_plan" class=" absolute">
                   <img src="assets/images/icon-advanced.svg" alt="">
                   <div class="content">
@@ -164,7 +164,7 @@
                   </div>
                 </div>
 
-                <div class="select_box pro flex md:flex-col gap-4 md:gap-10 px-4 py-2 md:py-4 relative">
+                <div class="select_box pro flex md:flex-col gap-4 md:gap-10 px-4 py-2 md:py-4 relative" title="Yearly">
                   <input type="radio" value="$150/yr" name="radio_plan" class=" absolute">
                   <img src="assets/images/icon-pro.svg" alt="">
                   <div class="content">
@@ -292,7 +292,7 @@
               <h2 class="text-2xl md:text-4xl font-bold">Finishing up</h2>
               <p id="screen" class="">Double-check everything looks OK before confirming.</p>
             </header>
-            <div class="finishing_content px-7 md:px-4 md:py-4 flex flex-col gap-4">
+            <div class="finishing_content px-4 md:px-4 py-4 md:py-4 flex flex-col self-center gap-4">
               <div class="finishing_planbx md:py-4 flex justify-between border-b-2">
                 <div class="selected_planbx">
                   <div id="selected_plan" class="font-normal"></div>
@@ -304,7 +304,7 @@
               <div class="finishing_addpx flex justify-between">
                 <!-- <div class="selected_addbx"> -->
                   <div id="selected_add" class="font-normal w-full flex justify-between">
-                    <ul id="selected_add_list" class="flex flex-col gap-5"></ul>
+                    <ul id="selected_add_list" class="flex flex-col gap-3"></ul>
                     <div id="finish_add" class="font-bold"></div>
                   </div>
                 <!-- </div> -->
@@ -312,7 +312,7 @@
               </div>
         
             </div>
-            <div class="totalbx font-normal text-gray-400 px-7 md:px-4 flex justify-between">
+            <div class="totalbx font-normal text-gray-400 px-9 md:px-4 flex justify-between">
               <p>Total(per month)</p>
               <div id="total" class="text-xl text-blue-600 font-medium"></div>
             </div>

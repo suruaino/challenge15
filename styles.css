@@ -71,7 +71,7 @@ form {
     /* height: 95.5dvh; */
     height: 100%;
     /* height: max-content; */
-    margin-top: 6.3rem;
+    margin-top: 6.1rem;
     overflow-x: hidden;
     position: relative;
     /* border: 2px solid brown; */
@@ -91,7 +91,7 @@ form .formbx{
 section, dialog {
     background-color: var(--Magnolia);
     width: 100%;
-    max-width: 93%;
+    max-width: 90%;
     height: 100%;
     justify-self: center;
     /* margin-inline: 1rem; */
@@ -111,7 +111,7 @@ form .btnbx {
     color: var(--Alabaster);
     font-size: .85rem;
     font-weight: 500;
-    padding: .5rem 1rem;
+    padding: 1rem 1rem;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -121,8 +121,9 @@ form .btnbx {
     width: 100%;
 }
 form .btnbx button{
-    padding: .9rem 2rem;
+    padding: .5rem 1rem;
     border-radius: 5px;
+    font-size: 1rem;
 }
 form .btnbx button:active{
     scale: 0.9;
@@ -362,11 +363,14 @@ aside>div span:last-child h4 {
 .finishing_up .contentbx{
     /* width: calc(100% - 1rem); */
     width: 100%;
+    /* max-width: 90%; */
     background-color: var(--Alabaster);
     border-radius: 10px;
 }
 .finishing_up .finishing_content{
     width: 100%;
+    max-width: 90%;
+    justify-self: center;
     background-color: #f0f6ff50;
     border-radius: 10px;
 }

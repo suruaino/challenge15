@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let selectedAdd = document.getElementById("selected_add");
   let voteOfThanks = document.querySelector(".Vote_of_thanks");
   let selectedAddList = document.getElementById("selected_add_list");
+
+  
   let total = document.getElementById("total");
 
   const form = document.querySelector("form");
@@ -32,6 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
     ).innerText;
 
     container.addEventListener("click", () => {
+      let title = container.getAttribute("title");
+      console.log(title);
+
       if (currentlyCheckedRadio !== radio) {
         if (currentlyCheckedRadio) {
           const prevContainer = currentlyCheckedRadio.closest(".select_box");
@@ -41,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         radio.checked = true;
         finishPlan.innerText = ` ${radio.value}`;
-        selectedPlan.innerText = `${planOutput}`;
+        selectedPlan.innerText = `${planOutput}(${title})`;
         container.style.border = "1px solid #02295a";
         container.style.backgroundColor = "#f0f6ff";
 
@@ -57,43 +62,48 @@ document.addEventListener("DOMContentLoaded", function () {
   // let selectedAddList = document.getElementById("selected_add_list");
 
   // let addBx = document.querySelectorAll(".add_container");
-  
+
   addBx.forEach((container, index) => {
-      const check = container.querySelector('input[type="checkbox"]');
-      let selectableCheckValue = container.querySelector(".add_container > p");
-      let addOutput = container.querySelector(".add_container .left .content h4").innerText;
-      
-      check.addEventListener("change", () => {
-          let selectedItemId = addOutput.split(" ")[0].toLowerCase() + index;
-          let itemToRemove = selectedAddList.querySelector(`#${selectedItemId}`);
-  
-          if (check.checked) {
-              container.style.border = "1px solid #473dff";
-              selectableCheckValue.style.color = "#473dff";
-  
-              let liLeft = document.createElement("li");
-              liLeft.setAttribute("id", selectedItemId);
-              liLeft.innerHTML = `<span id="${addOutput.split(" ")[0].toLowerCase()}"> ${addOutput} </span>
-                                  <span id="${addOutput.split(" ")[0].toLowerCase()}2" style="color: #473dff;"> ${check.value} </span>`;
-              selectedAddList.appendChild(liLeft);
-              liLeft.querySelector("span:last-child").style.color = "#473dff";
-              selectedAddList.style.width = "100%";
-              liLeft.style.width = "100%";
-              liLeft.style.display = "flex";
-              liLeft.style.justifyContent = "space-between";
-          } else {
-              container.style.border = "1px solid #9699ab";
-              selectableCheckValue.style.color = "#9699ab";
-  
-              if (itemToRemove) {
-                  selectedAddList.removeChild(itemToRemove);
-              }
-          }
-      });
+    const check = container.querySelector('input[type="checkbox"]');
+    let selectableCheckValue = container.querySelector(".add_container > p");
+    let addOutput = container.querySelector(
+      ".add_container .left .content h4"
+    ).innerText;
+
+    check.addEventListener("change", () => {
+      let selectedItemId = addOutput.split(" ")[0].toLowerCase() + index;
+      let itemToRemove = selectedAddList.querySelector(`#${selectedItemId}`);
+
+      if (check.checked) {
+        container.style.border = "1px solid #473dff";
+        selectableCheckValue.style.color = "#473dff";
+
+        let liLeft = document.createElement("li");
+        liLeft.setAttribute("id", selectedItemId);
+        liLeft.innerHTML = `<span id="${addOutput
+          .split(" ")[0]
+          .toLowerCase()}"> ${addOutput} </span>
+                                  <span id="${addOutput
+                                    .split(" ")[0]
+                                    .toLowerCase()}2" style="color: #473dff;"> ${
+          check.value
+        } </span>`;
+        selectedAddList.appendChild(liLeft);
+        liLeft.querySelector("span:last-child").style.color = "#473dff";
+        selectedAddList.style.width = "100%";
+        liLeft.style.width = "100%";
+        liLeft.style.display = "flex";
+        liLeft.style.justifyContent = "space-between";
+      } else {
+        container.style.border = "1px solid #9699ab";
+        selectableCheckValue.style.color = "#9699ab";
+
+        if (itemToRemove) {
+          selectedAddList.removeChild(itemToRemove);
+        }
+      }
+    });
   });
-  
-
-
 
   // addBx.forEach((container, index) => {
   //   const check = container.querySelector('input[type="checkbox"]');
@@ -150,9 +160,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function calcTotal() {
     // Get the selected radio button value
+    
+    
+
     let planValue = 0;
+    let title;
     document.querySelectorAll('input[name="radio_plan"]').forEach((radio) => {
+      // if (radio.checked) {
+     
+      //   planBx.forEach(container => {
+      //     // container.addEventListener("change", function(){
+      //       title = container.getAttribute("title");
+      //     // })
+         
+      //   })
+        
+      //   planValue = parseFloat(radio.value.replace(/[^\d.-]/g, ""));
+      // }
       if (radio.checked) {
+        planBx.forEach(container => {
+          if (container.contains(radio)) {
+            
+            if(title == "Monthly"){
+              title = container.getAttribute("title").substring(0, 2).toLocaleLowerCase();
+            } else{
+              title = container.getAttribute("title").charAt[0];
+            }
+            // title = planValue.slice(planValue.length - 2);
+            // console.log(duration.length);
+            // title = duration.split(4, duration.length);
+          }
+        });
         planValue = parseFloat(radio.value.replace(/[^\d.-]/g, ""));
       }
     });
@@ -170,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Return the total value
-    return "$" + ((planValue || 0) + (addSum || 0));
+    return "$" + ((planValue || 0) + (addSum || 0))  + title;
     // console.log("$" + ((planValue || 0) + (addSum || 0)));
   }
 
