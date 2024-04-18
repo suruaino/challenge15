@@ -56,51 +56,40 @@ body {
 
 .main_wrapper {
     width: 100%;
-    /* max-width: 95%; */
     height: 100%;
     height: 95.5dvh;
     background-color: transparent;
-    /* overflow-x: hidden; */
-    /* border:  2px solid limegreen; */
     overflow-y: visible;
 }
 
 form {
     width: 100%;
     max-width: 100%;
-    /* height: 95.5dvh; */
     height: 100%;
-    /* height: max-content; */
     margin-top: 6.1rem;
     overflow-x: hidden;
     position: relative;
-    /* border: 2px solid brown; */
+
 }
 
 form .formbx{
     
     width: 100%;
-    /* width: fit-content; */
     min-height: 100%;
     border-radius: 10px;
-    /* transition: transform 0.5s; */
     overflow-y: visible;
-    /* border: 2px solid red; */
     
 }
 section, dialog {
     background-color: var(--Magnolia);
     width: 100%;
     max-width: 90%;
+    -moz-max-width: 90%;
     height: 100%;
     justify-self: center;
-    /* margin-inline: 1rem; */
     border-radius: 10px;
     position: absolute;
     inset: 0;
-    /* border: 1px solid yellowgreen; */
-    /* z-index: 500; */
-    /* transition: all 0.5s; */
     display: none;
 }
 dialog{
@@ -167,7 +156,6 @@ aside>div {
 
 aside>.one span:first-child {
     background-color: var(--Light_blue);
-    /* color: var(--Marine_blue); */
 }
 
 aside>div span:first-child {
@@ -193,11 +181,7 @@ aside>div span:last-child h4 {
     color: var(--Alabaster);
     font-weight: bold;
 }
-/* .personal_info{
-    display: block;
-    opacity: 0;
-    visibility: visible;
-} */
+
 .personal_info .contentbx{
     background-color: var(--Alabaster);
     border-radius: 10px;
@@ -242,12 +226,9 @@ aside>div span:last-child h4 {
 .select_plan .contentbx{
     background-color: var(--Alabaster);
     border-radius: 10px;
-    /* margin-bottom: -20rem; */
-    /* height: 100%; */
 }
 
 .select_plan .contentbx .content{
-    /* background-color: var(--Alabaster); */
     border-radius: 10px;
 }
 
@@ -361,17 +342,13 @@ aside>div span:last-child h4 {
 }
 
 .finishing_up .contentbx{
-    /* width: calc(100% - 1rem); */
     width: 100%;
-    
-    /* padding-inline: 2rem; */
     background-color: var(--Alabaster);
     border-radius: 10px;
 }
 .finishing_up .finishing_content{
     width: 100%;
     max-width: 90%;
-    /* margin-inline: 10rem; */
     justify-self: center;
     background-color: #f0f6ff50;
     border-radius: 10px;
@@ -423,7 +400,7 @@ aside>div span:last-child h4 {
         padding: 0;
     }
     .main_wrapper {
-        height: 41rem;
+        height: 38rem;
         max-width: 65%;
         min-width: 50rem;
         background-color: var(--Alabaster);
@@ -460,12 +437,9 @@ aside>div span:last-child h4 {
     }
     form .formbx{
         width: 100%;
-        /* width: fit-content; */
         height: 100%;
         border-radius: 10px;
         padding: 0;
-        /* margin-left: 12rem; */
-        /* margin: 1rem 1rem 1rem 12rem; */
         margin: 0;
     }
     section {
@@ -502,7 +476,6 @@ aside>div span:last-child h4 {
     .select_plan {
         background-color: var(--Alabaster);
         height: 100%;
-        /* width: 100%; */
         padding: 0;
         margin: 0;
     }
@@ -548,7 +521,6 @@ aside>div span:last-child h4 {
         margin-right: 0;
     }
     .finishing_up .finishing_content{
-        /* width: 100%; */
         max-width: 100%;
     }
     .Vote_of_thanks{
