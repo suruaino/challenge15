@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let voteOfThanks = document.querySelector(".Vote_of_thanks");
   let selectedAddList = document.getElementById("selected_add_list");
 
-  
   let total = document.getElementById("total");
 
   const form = document.querySelector("form");
@@ -23,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  //   let currentlyCheckedRadio = null;
   let planBx = document.querySelectorAll(".select_box");
 
   planBx.forEach((container, index) => {
@@ -56,12 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // let addBx = document.querySelectorAll(".left");
   let addBx = document.querySelectorAll(".add_container");
-
-  // let selectedAddList = document.getElementById("selected_add_list");
-
-  // let addBx = document.querySelectorAll(".add_container");
 
   addBx.forEach((container, index) => {
     const check = container.querySelector('input[type="checkbox"]');
@@ -160,35 +153,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function calcTotal() {
     // Get the selected radio button value
-    
-    
 
     let planValue = 0;
-    let title;
+    let title = "";
     document.querySelectorAll('input[name="radio_plan"]').forEach((radio) => {
-      // if (radio.checked) {
-     
-      //   planBx.forEach(container => {
-      //     // container.addEventListener("change", function(){
-      //       title = container.getAttribute("title");
-      //     // })
-         
-      //   })
-        
-      //   planValue = parseFloat(radio.value.replace(/[^\d.-]/g, ""));
-      // }
+    
       if (radio.checked) {
-        planBx.forEach(container => {
+        planBx.forEach((container) => {
           if (container.contains(radio)) {
-            
-            if(title == "Monthly"){
-              title = container.getAttribute("title").substring(0, 2).toLocaleLowerCase();
-            } else{
-              title = container.getAttribute("title").charAt[0];
+            title = container.getAttribute("title");
+            if (title == "Monthly") {
+              title = title.substring(0, 2).toLowerCase();
+            } else {
+              title = title.charAt(0).toLowerCase() + title.charAt(3);
             }
-            // title = planValue.slice(planValue.length - 2);
-            // console.log(duration.length);
-            // title = duration.split(4, duration.length);
+           
           }
         });
         planValue = parseFloat(radio.value.replace(/[^\d.-]/g, ""));
@@ -208,8 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Return the total value
-    return "$" + ((planValue || 0) + (addSum || 0))  + title;
-    // console.log("$" + ((planValue || 0) + (addSum || 0)));
+    return "$" + ((planValue || 0) + (addSum || 0)) + title;
   }
 
   function updateTotal() {
@@ -227,7 +205,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initial calculation
   updateTotal();
 
-  // summaryScreen.innerText = "Weldon bro, This is your summary page!";
   let monthly = document.getElementById("monthly");
   let yearly = document.getElementById("yearly");
   let monthlyPlan = document.getElementById("plan_monthly");
@@ -246,7 +223,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   /*===== Navigative BTN algorithm =====*/
-  // const formBx = document.querySelector(".formbx");
   const slides = Array.from(document.querySelectorAll("section"));
 
   let totalSlides = slides.length;
@@ -293,11 +269,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    // const translateValue = -currentSlide - 3 * 105;
-    // slides.forEach((slide) => {
-    //   slide.style.transform = `translateX(${translateValue}%)`;
-    // });
-
     console.log("change is clicked");
   });
   /***===== SUMMARY CHANGE LINK ARGORITHM ENDS ABOVE=====***/
@@ -313,11 +284,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (currentSlide > 0) {
         slides[currentSlide - 1].style.display = "none";
       }
-      // const translateValue = -currentSlide * 105;
-      // slides.forEach((slide) => {
-      //   // slide.style.transform = `translateX(${translateValue}%)`;
-      //   indicatorBtns[currentSlide].style.backgroundColor = "#bfe2fd";
-      // });
+
       if (currentSlide === 0) {
         indicatorBtns[currentSlide].style.color = "black";
       }
@@ -349,10 +316,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (currentSlide < slides.length) {
         slides[currentSlide + 1].style.display = "none";
       }
-      // const translateValue = -currentSlide * 105;
-      // slides.forEach((slide) => {
-      //   slide.style.transform = `translateX(${translateValue}%)`;
-      // });
+
       nextBtn.style.display = "block";
       submitBtn.style.display = "none";
     }
@@ -426,7 +390,7 @@ nameInput.addEventListener("input", function () {
     nameError.innerHTML = `This field is required`;
   } else {
     nameError.style.display = "block";
-    nameError.innerHTML = `name Ok`;
+    nameError.innerHTML = `name is valid`;
     nameError.style.color = "green";
     nameInput.style.border = "1px solid green";
   }
@@ -443,7 +407,7 @@ email.addEventListener("input", function () {
     emailError.innerHTML = `This field is required`;
   } else {
     emailError.style.display = "block";
-    emailError.innerHTML = `email Ok`;
+    emailError.innerHTML = `email is valid`;
     emailError.style.color = "green";
     email.style.border = "1px solid green";
   }
@@ -457,7 +421,7 @@ phoneNumber.addEventListener("input", function () {
     phoneError.innerHTML = `Invalid Phone Number!`;
   } else {
     phoneError.style.display = "block";
-    phoneError.innerHTML = `phone Ok`;
+    phoneError.innerHTML = `phone number is valid`;
     phoneError.style.color = "green";
     phone.style.border = "1px solid green";
   }

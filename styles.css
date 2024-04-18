@@ -104,7 +104,7 @@ section, dialog {
     display: none;
 }
 dialog{
-    max-width: 95%;
+    max-width: 90%;
 }
 form .btnbx {
     background-color: var(--Alabaster);
@@ -363,13 +363,15 @@ aside>div span:last-child h4 {
 .finishing_up .contentbx{
     /* width: calc(100% - 1rem); */
     width: 100%;
-    /* max-width: 90%; */
+    
+    /* padding-inline: 2rem; */
     background-color: var(--Alabaster);
     border-radius: 10px;
 }
 .finishing_up .finishing_content{
     width: 100%;
     max-width: 90%;
+    /* margin-inline: 10rem; */
     justify-self: center;
     background-color: #f0f6ff50;
     border-radius: 10px;
@@ -544,6 +546,10 @@ aside>div span:last-child h4 {
     .finishing_up .contentbx{
         width: 100%;
         margin-right: 0;
+    }
+    .finishing_up .finishing_content{
+        /* width: 100%; */
+        max-width: 100%;
     }
     .Vote_of_thanks{
         width: 100%;
