@@ -98,66 +98,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // addBx.forEach((container, index) => {
-  //   const check = container.querySelector('input[type="checkbox"]');
-  //   let selectableCheckValue = container.querySelector(".add_container > p");
-  //   let addOutput = container.querySelector(
-  //     ".add_container .left .content h4"
-  //   ).innerText;
-  //   // let addOutput2 = container.querySelector(".add_container > p").innerText;
-  //   check.checked;
-  //   check.addEventListener("change", () => {
-  //     // let selectedItemId = addOutput.split(" ")[0].toLowerCase();
-  //     let selectedItemId = addOutput.split(" ")[0].toLowerCase() + 1;
-  //     let itemToRemove = selectedAddList.querySelector(`#${selectedItemId}`);
-  //     // let itemToRemove2 = selectedAddList.querySelector(`#${selectedItemId2}`);
-  //     if (check.checked) {
-  //       container.style.border = "1px solid #473dff";
-  //       selectableCheckValue.style.color = "#473dff";
-  //       // selectedAddList.innerHTML = "";
-  //       let liLeft = document.createElement("li");
-  //       console.log(liLeft);
-  //       liLeft.setAttribute("id", `${addOutput
-  //         .split(" ")[0]
-  //         .toLowerCase()}1`);
-  //       liLeft.innerHTML = `<span id="${addOutput
-  //         .split(" ")[0]
-  //         .toLowerCase()}"> ${addOutput} </span>
-  //                           <span id="${addOutput
-  //                             .split(" ")[0]
-  //                             .toLowerCase()}2" style="color: #473dff;"> ${
-  //                             check.value
-  //                           } </span>`;
-  //       selectedAddList.appendChild(liLeft);
-  //       document.querySelector("#selected_add").appendChild(selectedAddList);
-  //       // document.querySelector("#selected_add").n
-  //       liLeft.querySelector("span:last-child").style.color = "#473dff";
-  //       selectedAddList.style.width = "100%";
-  //       liLeft.style.width = "100%";
-  //       liLeft.style.display = "flex";
-  //       liLeft.style.justifyContent = "space-between";
-  //     } else {
-  //       // let selectedAddList = document.getElementById("selected_add_list");
-  //       container.style.border = "1px solid #9699ab";
-  //       selectableCheckValue.style.color = "#9699ab";
-
-  //       if (itemToRemove) {
-  //         selectedAddList.remove(itemToRemove);
-  //         // itemToRemove.style.display = "none";
-  //         // liLeft.querySelector("#${addOutput}2").style.display = "none";
-  //         // itemToRemove2.style.display = "none";
-  //       }
-  //     }
-  //   });
-  // });
-
   function calcTotal() {
     // Get the selected radio button value
 
     let planValue = 0;
     let title = "";
     document.querySelectorAll('input[name="radio_plan"]').forEach((radio) => {
-    
       if (radio.checked) {
         planBx.forEach((container) => {
           if (container.contains(radio)) {
@@ -167,7 +113,6 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
               title = title.charAt(0).toLowerCase() + title.charAt(3);
             }
-           
           }
         });
         planValue = parseFloat(radio.value.replace(/[^\d.-]/g, ""));
@@ -212,6 +157,9 @@ document.addEventListener("DOMContentLoaded", function () {
   let monthlyAdd = document.getElementById("add_monthly");
   let yearlyAdd = document.getElementById("add_yearly");
   let checkInput = document.getElementById("toggle_input");
+  let totalFor = document.getElementById("total-for");
+
+  
 
   checkInput.addEventListener("change", function () {
     monthly.style.color = this.checked ? "#9699ab" : "#02295a";
@@ -220,6 +168,11 @@ document.addEventListener("DOMContentLoaded", function () {
     yearlyPlan.style.display = this.checked ? "flex" : "none";
     monthlyAdd.style.display = this.checked ? "none" : "flex";
     yearlyAdd.style.display = this.checked ? "flex" : "none";
+
+//to change the descriptive total text according to the duration of the selected plan.
+    totalFor.classList.toggle("total-for");
+    document.querySelector(".total-for").innerText = `Total(per year)`;
+
   });
 
   /*===== Navigative BTN algorithm =====*/
