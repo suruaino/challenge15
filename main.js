@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("Page has succesfully loaded");
+
   let finishPlan = document.getElementById("finish_plan");
   let finishAdd = document.getElementById("finish_add");
   const plan = document.querySelector("#plan");
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     container.addEventListener("click", () => {
       let title = container.getAttribute("title");
-      console.log(title);
+
 
       if (currentlyCheckedRadio !== radio) {
         if (currentlyCheckedRadio) {
@@ -49,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function () {
         container.style.backgroundColor = "#f0f6ff";
 
         currentlyCheckedRadio = radio;
-        console.log(finishPlan.innerText);
       }
     });
   });
@@ -131,13 +130,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Return the total value
     return "$" + ((planValue || 0) + (addSum || 0)) + title;
   }
 
   function updateTotal() {
     total.innerText = calcTotal();
-    console.log(calcTotal());
+
   }
 
   // Update total whenever a checkbox or radio button is clicked
@@ -162,6 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
 
   checkInput.addEventListener("change", function () {
+
     monthly.style.color = this.checked ? "#9699ab" : "#02295a";
     yearly.style.color = this.checked ? "#02295a" : "#9699ab";
     monthlyPlan.style.display = this.checked ? "none" : "flex";
@@ -179,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const slides = Array.from(document.querySelectorAll("section"));
 
   let totalSlides = slides.length;
-  console.log(totalSlides);
+  // console.log(totalSlides);
   const btnBx = document.querySelector(".btnbx");
   const nextBtn = document.getElementById("nextBtn");
   const prevBtn = document.getElementById("prevBtn");
@@ -222,7 +221,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    console.log("change is clicked");
   });
   /***===== SUMMARY CHANGE LINK ARGORITHM ENDS ABOVE=====***/
 
@@ -257,7 +255,7 @@ document.addEventListener("DOMContentLoaded", function () {
         indicatorBtns[currentSlide].style.color = "black";
       }
     });
-    console.log(currentSlide);
+
   });
 
   prevBtn.addEventListener("click", (event) => {
@@ -290,7 +288,7 @@ document.addEventListener("DOMContentLoaded", function () {
         indicatorBtns[currentSlide].style.color = "black";
       }
     });
-    console.log(currentSlide);
+
   });
 
   submitBtn.addEventListener("click", () => {
